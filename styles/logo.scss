@@ -1,0 +1,14 @@
+.logo {
+	flex-shrink: 0;
+	&__link {
+		display: block;
+		font-size: 0;
+		width: 168px;
+		@include media-breakpoint-down(md) {
+			width: 125px;
+		}
+	}
+	&__img {
+		width: 100%;
+	}
+}

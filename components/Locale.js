@@ -6,9 +6,14 @@ import {getDefaultLocale} from '../lib/i18n';
 import {isLocalstorageSupported} from '../lib/utils';
 
 const strings = {
-	de: require('../locales/de/translation.json'),
-	en: require('../locales/en/translation.json'),
-	ru: require('../locales/ru/translation.json'),
+	// de: require('../locales/de/translation.json'),
+	// en: require('../locales/en/translation.json')
+	en: {},
+	de: {},
+	es: {},
+	fr: {},
+	sl: {},
+	it: {}
 };
 
 const defaultLocale = getDefaultLocale();

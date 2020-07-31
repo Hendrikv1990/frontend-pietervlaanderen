@@ -1,0 +1,32 @@
+.hide {
+	&_md {
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
+	&_sm {
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+	}
+	&_xs {
+		@include media-breakpoint-down(xs) {
+			display: none;
+		}
+	}
+}
+
+.show {
+	&_md {
+		display: none;
+		@include media-breakpoint-down(md) {
+			display: block;
+		}
+	}
+	&_sm {
+		display: none;
+		@include media-breakpoint-down(sm) {
+			display: block;
+		}
+	}
+}

@@ -1,0 +1,22 @@
+.secondary-menu {
+	&__item {
+		margin: 0 0 40px 0;
+		@include media-breakpoint-down(lg) {
+			margin: 0 0 30px 0;
+		}
+		&.is-active {
+			.secondary-menu__link {
+				transform: scale(1.1);
+			}
+		}
+	}
+	&__link {
+		display: block;
+		font-size: $font-size-btn;
+		font-weight: $font-bold;
+		transition: all .35s ease-in-out;
+		&:hover {
+			transform: scale(1.1);
+		}
+	}
+}

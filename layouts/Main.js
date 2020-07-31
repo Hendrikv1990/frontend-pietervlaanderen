@@ -1,21 +1,52 @@
 import PropTypes from 'prop-types';
-import LangSwitcher from '../components/LangSwitcher';
 import PrismicScript from '../components/PrismicScript';
+import Head from 'next/head';
+import TopLine from '../components/header/TopLine';
+import Footer from '../components/Footer';
+import AsideMenu from '../components/AsideMenu';
+import {connect} from 'react-redux';
+import clsx from 'clsx';
+import {actionTypes as asideMenuActionTypes} from '../redux/reducers/asideMenu';
 
-export default function MainLayout({children}) {
+function MainLayout({children, asideIsOpened, closeAsideMenu}) {
 	return (
-		<div className={'layout'}>
-			<section>
-				<LangSwitcher />
-			</section>
-			<section>
-				{children}
-			</section>
-			<PrismicScript />
-		</div>
+		<>
+			<Head>
+				<meta charSet="UTF-8" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
+			</Head>
+			<div className={clsx('layout', 'layout-main', {'aside-opened': asideIsOpened})}>
+				<header className="header">
+					<TopLine />
+				</header>
+				<main className="main">
+					{children}
+				</main>
+				<Footer />
+				<PrismicScript />
+				<div className={'aside-backdrop'} onClick={() => closeAsideMenu()} />
+			</div>
+			<AsideMenu/>
+		</>
 	);
 }
 
 MainLayout.propTypes = {
-	children: PropTypes.node
+	children: PropTypes.node,
+	asideIsOpened: PropTypes.bool.isRequired,
+	closeAsideMenu: PropTypes.func.isRequired
 };
+
+const mapStateToProps = state => ({
+	asideIsOpened: state.asideMenu.isOpened
+});
+
+const mapDispatchToProps = dispatch => ({
+	closeAsideMenu: () => dispatch({
+		type: asideMenuActionTypes.SET_IS_OPENED,
+		payload: false
+	})
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainLayout);

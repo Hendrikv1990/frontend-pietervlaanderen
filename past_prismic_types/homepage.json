@@ -1,0 +1,91 @@
+{
+	"Main" : {
+		"uid" : {
+			"type" : "UID",
+			"config" : {
+				"label" : "Slug"
+			}
+		},
+		"group_slides" : {
+			"type" : "Group",
+			"config" : {
+				"fields" : {
+					"image" : {
+						"type" : "Image",
+						"config" : {
+							"constraint" : { },
+							"thumbnails" : [ ],
+							"label" : "Image"
+						}
+					},
+					"title" : {
+						"type" : "StructuredText",
+						"config" : {
+							"single" : "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label" : "Title"
+						}
+					},
+					"link" : {
+						"type" : "Link",
+						"config" : {
+							"select" : "document",
+							"customtypes" : [ "yacht" ],
+							"label" : "Link"
+						}
+					},
+					"link_label" : {
+						"type" : "StructuredText",
+						"config" : {
+							"single" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label" : "Link Label"
+						}
+					}
+				},
+				"label" : "Slides"
+			}
+		},
+		"group_sections" : {
+			"type" : "Group",
+			"config" : {
+				"fields" : {
+					"image" : {
+						"type" : "Image",
+						"config" : {
+							"constraint" : { },
+							"thumbnails" : [ ],
+							"label" : "Image"
+						}
+					},
+					"title" : {
+						"type" : "StructuredText",
+						"config" : {
+							"single" : "heading1",
+							"label" : "Title"
+						}
+					},
+					"text" : {
+						"type" : "StructuredText",
+						"config" : {
+							"multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label" : "Text"
+						}
+					},
+					"link" : {
+						"type" : "Link",
+						"config" : {
+							"label" : "Link"
+						}
+					},
+					"link_label" : {
+						"type" : "StructuredText",
+						"config" : {
+							"multi" : "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label" : "Link Label"
+						}
+					}
+				},
+				"label" : "Sections"
+			}
+		}
+	}
+}

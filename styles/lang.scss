@@ -1,0 +1,92 @@
+.lang {
+	margin: 0 38px 0 auto;
+	@include media-breakpoint-down(lg) {
+		margin: 0 31px 0 auto;
+	}
+	@include media-breakpoint-down(md) {
+		margin: 0 31px 0 auto;
+	}
+	&__current {
+		position: relative;
+
+		button {
+			background: transparent;
+			border: 0;
+			font-weight: $font-bold;
+			font-size: $font-size;
+			letter-spacing: 1px;
+			color: $color-white;
+			cursor: pointer;
+			text-transform: uppercase;
+			padding: 0;
+			margin: 0;
+			position: relative;
+
+			@include media-breakpoint-down(md) {
+				font-size: $font-size+2;
+				letter-spacing: 1.14px;
+			}
+
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				right: -15px;
+				top: 5px;
+				width: 0;
+				height: 0;
+				border-style: solid;
+				border-width: 5px 5px 0 5px;
+				border-color: #ffffff transparent transparent;
+			}
+		}
+
+		.switch-lang-menu {
+			position: absolute;
+			top: 22px;
+			right: -20px;
+			z-index: 10;
+			background: #ffffff;
+			box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 6px, rgba(0, 0, 0, 0.12) 0px 1px 4px;
+			border-radius: 2px;
+
+			max-height: 0;
+			overflow: hidden;
+			//visibility: hidden;
+			transition: max-height 0.15s ease-out;
+
+			&.opened {
+				max-height: 500px;
+				//visibility: visible;
+				transition: max-height 0.25s ease-in;
+				//padding: 10px 0;
+			}
+
+			li {
+				margin: 0 0 2px 0;
+
+				&:first-child {
+					margin-top: 10px;
+				}
+
+				&:last-child {
+					margin-bottom: 10px;
+				}
+
+				a {
+					font-size: 16px;
+					display: block;
+					padding: 5px 20px;
+
+					&.active {
+						font-weight: bold;
+					}
+
+					&:hover {
+						background: rgba(165, 164, 164, 0.5);
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,159 @@
+.reviews {
+	background: $color-white;
+	padding: 103px 0 52px;
+	text-align: center;
+	overflow: hidden;
+	@include media-breakpoint-down(md) {
+		padding: 75px 0 40px;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 60px 0 20px;
+	}
+	@include media-breakpoint-down(xs) {
+		text-align: left;
+		padding: 40px 0 30px;
+	}
+}
+
+.rev-slider {
+	position: relative;
+	padding: 0 100px;
+	@include media-breakpoint-down(lg) {
+		padding: 0 50px;
+	}
+	@include media-breakpoint-down(md) {
+		padding: 0;
+	}
+
+	&:before {
+		content: '';
+		position: absolute;
+		width: 96px;
+		height: 75px;
+		left: 0;
+		top: 0;
+		background: url(/assets/img/quote-start.svg) 100% 100% / cover no-repeat;
+		@include media-breakpoint-down(md) {
+			left: -40px;
+			top: -40px;
+		}
+		@include media-breakpoint-down(sm) {
+			left: -50px;
+			top: -50px;
+		}
+		@include media-breakpoint-down(xs) {
+			left: initial;
+			top: -50px;
+			right: -50px;
+		}
+	}
+
+	&:after {
+		content: '';
+		position: absolute;
+		width: 96px;
+		height: 75px;
+		right: 0;
+		bottom: 0;
+		background: url(/assets/img/quote-finish.svg) 100% 100% / cover no-repeat;
+		@include media-breakpoint-down(md) {
+			right: -40px;
+		}
+		@include media-breakpoint-down(sm) {
+			right: -50px;
+		}
+		@include media-breakpoint-down(xs) {
+			display: none;
+		}
+	}
+
+	&__title {
+		margin: 0 0 10px 0;
+		font-size: $font-size-h3;
+		@include media-breakpoint-down(xs) {
+			font-size: $font-size-h4;
+		}
+	}
+
+	&__author {
+		font-weight: $font-bold;
+		font-size: $font-size-text-sm;
+		margin: 0 0 20px 0;
+	}
+
+	&__text {
+		font-size: $font-size-text-sm;
+
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	&__dots {
+		padding: 40px 0 70px;
+		@include media-breakpoint-down(md) {
+			padding: 40px 0 60px;
+		}
+		@include media-breakpoint-down(sm) {
+			padding: 40px 0 50px;
+		}
+		@include media-breakpoint-down(xs) {
+			padding: 40px 0 0;
+		}
+
+	}
+
+	&__dot {
+		display: block;
+		font-size: 0;
+		width: 12px;
+		height: 12px;
+		margin: 0 15px;
+		position: relative;
+		@include media-breakpoint-down(sm) {
+			margin: 0 10px;
+		}
+
+		&:first-child {
+			margin: 0 15px 0 0;
+			@include media-breakpoint-down(sm) {
+				margin: 0 10px 0 0;
+			}
+		}
+
+		&:last-child {
+			margin: 0 0 0 15px;
+			@include media-breakpoint-down(sm) {
+				margin: 0 0 0 10px;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 6px;
+			height: 6px;
+			background: fade_out($color-black, .90);
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			transition: all .35s ease-in-out;
+			-webkit-border-radius: 50%;
+			-moz-border-radius: 50%;
+			border-radius: 50%;
+			@include media-breakpoint-down(sm) {
+				width: 12px;
+				height: 12px;
+			}
+		}
+
+		&.is-active,
+		&:hover {
+			&:after {
+				width: 12px;
+				height: 12px;
+				background: $color-black;
+			}
+		}
+	}
+}

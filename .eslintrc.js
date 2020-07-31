@@ -20,8 +20,9 @@ module.exports = {
 		'react-hooks'
 	],
 	'rules': {
-		'semi': ['error', 'always'],
-		'quotes': ['error', 'single'],
+		'semi': ['warn', 'always'],
+		'quotes': ['warn', 'single'],
+		'no-unused-vars': ['warn', { 'vars': 'all', 'args': 'after-used', 'ignoreRestSiblings': false }],
 		'no-mixed-spaces-and-tabs': ['error', 'smart-tabs'],
 		'react-hooks/rules-of-hooks': 'error',
 		'react-hooks/exhaustive-deps': 'warn',

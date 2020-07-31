@@ -1,0 +1,38 @@
+.menu {
+	margin: 0 auto;
+}
+.top-menu {
+	&__item {
+		&:not(:last-child) {
+			margin: 0 40px 0 0;
+			@include media-breakpoint-down(lg) {
+				margin: 0 25px 0 0;
+			}
+		}
+	}
+	&__link {
+		color: $color-white;
+		font-size: $font-size;
+		font-weight: $font-bold;
+		letter-spacing: 1px;
+		display: block;
+		position: relative;
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			width: 0;
+			bottom: -1px;
+			height: 1px;
+			background: $color-white;
+			transition: all .35s ease-in-out;
+		}
+		&:hover {
+			&:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+

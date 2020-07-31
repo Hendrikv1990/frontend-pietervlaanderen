@@ -1,0 +1,50 @@
+.scroll-nav {
+	position: fixed;
+	left: 15px;
+	top: 50%;
+	z-index: 100;
+	transform: translate(0, -50%);
+
+	@include media-breakpoint-down(xs) {
+		display: none;
+	}
+
+	a {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		margin: 0 0 3px 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		.vert-line {
+			width: 4px;
+			height: 40px;
+			background: $color-white;
+			margin-right: 11px;
+			opacity: 0.15;
+			transition: all .5s ease-in-out;
+		}
+
+		.block-title {
+			font-size: 10px;
+			font-weight: bold;
+			color: $color-white;
+			opacity: 0;
+			transition: all .5s ease-in-out;
+		}
+
+		&.active,
+		&:hover {
+			.vert-line {
+				opacity: 1;
+			}
+
+			.block-title {
+				opacity: 1;
+			}
+		}
+	}
+}

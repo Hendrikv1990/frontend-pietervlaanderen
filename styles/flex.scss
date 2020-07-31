@@ -1,0 +1,44 @@
+.flex {
+	display: flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	&_fs {
+		&_c {
+			align-items: center;
+		}
+		&_s {
+			align-items: stretch;
+		}
+	}
+	&_sb {
+		&_c {
+			justify-content: space-between;
+			align-items: center;
+		}
+		&_s {
+			justify-content: space-between;
+			align-items: stretch;
+		}
+	}
+	&_c {
+		&_fs {
+			justify-content: center;
+		}
+		&_c {
+			justify-content: center;
+			align-items: center;
+		}
+	}
+	&_fe {
+		&_c {
+			justify-content: flex-end;
+			align-items: center;
+		}
+	}
+	&_column {
+		flex-direction: column;
+	}
+	&_wrap {
+		flex-wrap: wrap;
+	}
+}

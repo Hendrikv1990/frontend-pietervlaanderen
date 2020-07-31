@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="105" height="41" viewBox="0 0 105 41">
+    <g fill="none" fill-rule="evenodd" transform="translate(1 1)">
+        <circle cx="19.5" cy="19.5" r="19.5" stroke="#FFF" stroke-linejoin="round" stroke-width="1.2"/>
+        <text fill="#FFF" font-family="Helvetica" font-size="24">
+            <tspan x="11.334" y="29">D</tspan>
+        </text>
+        <text fill="#FFF" font-family="Helvetica" font-size="8" letter-spacing="1">
+            <tspan x="46" y="18">DIESEL</tspan>
+        </text>
+        <text fill="#FFF" font-family="Helvetica" font-size="8" letter-spacing="1">
+            <tspan x="46" y="28">DRIVE</tspan>
+        </text>
+        <path stroke="#FFF" stroke-linejoin="round" stroke-width="1.2" d="M33 5h55.5c8.008 0 14.5 6.492 14.5 14.5S96.508 34 88.5 34H33"/>
+    </g>
+</svg>

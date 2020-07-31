@@ -1,0 +1,126 @@
+// headings
+h1, .h1 {
+	font-weight: $font-bold;
+	font-size: $font-size-h1;
+	padding: 0;
+	margin: 0;
+}
+
+h2, .h2 {
+	font-weight: $font-bold;
+	font-size: $font-size-h2;
+	padding: 0;
+	margin: 0;
+}
+
+h3, .h3 {
+	font-weight: $font-bold;
+	font-size: $font-size-h3;
+	padding: 0;
+	margin: 0;
+}
+
+h4, .h4 {
+	font-weight: $font-bold;
+	font-size: $font-size-h4;
+	padding: 0;
+	margin: 0 0 10px 0;
+}
+
+// Text
+p {
+	margin: 0 0 1rem 0;
+}
+
+.text {
+	font-weight: $font-regular;
+	font-size: $font-size-text;
+	line-height: 24px;
+	padding: 0;
+	margin: 0;
+
+	&_color {
+		&_white {
+			color: $color-white;
+		}
+		&_black1 {
+			color: $color-black1;
+		}
+	}
+}
+
+// List
+ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+// Link
+a {
+	text-decoration: none;
+	color: $color-black1;
+}
+
+.link {
+	display: inline-block;
+	font-size: $font-size-text;
+	line-height: 24px;
+	text-decoration: underline;
+
+	&:hover {
+		text-decoration: none;
+	}
+
+	&_small {
+		text-decoration: none;
+		font-size: $font-size;
+		font-weight: $font-bold;
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}
+
+.link-list {
+	&__item {
+		display: inline-block;
+		position: relative;
+		padding: 0 20px;
+		@include media-breakpoint-down(md) {
+			margin: 40px auto 10px;
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			right: 0;
+			top: 50%;
+			width: 1px;
+			height: 80%;
+			background: $color-black1;
+			transform: translate(0, -50%);
+		}
+
+		&:first-child {
+			padding: 0 20px 0 0;
+		}
+
+		&:last-child {
+			padding: 0 0 0 20px;
+
+			&:after {
+				display: none;
+			}
+		}
+	}
+
+	&__link {
+		font-size: $font-size-text;
+		line-height: 24px;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+}

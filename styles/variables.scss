@@ -1,0 +1,63 @@
+$gutters : 15px;
+
+// Colors
+$color-background-body    : #003952;
+$color-white              : #ffffff;
+$color-black              : #000000;
+$color-black1             : #343434;
+$color-black2             : #484a54;
+$color-teal               : #36c3c4;
+$color-teal-blue          : #008898;
+$color-teal-dark          : #003a42;
+$color-teal-dark1         : #003248;
+$color-yellow-piss        : #ead710;
+$color-yellow-mustard     : #e2d00e;
+$color-turquoise          : #00bbaf;
+$color-turquoise-blue     : #00b2b9;
+$color-green-dull         : #74a360;
+$color-grey-brown         : #9d9d9d;
+$color-grey-medium        : #595a59;
+$color-grey-steel         : #7a817f;
+$color-grey-warm          : #979797;
+$color-very-light-pink    : #d7d7d7;
+$color-ui-tint-color-fill : #007aff;
+$color-beige              : #c2c2c1;
+
+$color-base-text          : $color-black1;
+
+// Fonts
+$font-family       : 'ProximaNovaA', sans-serif;
+$font-family-round : 'SnellRoundhand', sans-serif;
+
+$font-light        : 300;
+$font-regular      : 400;
+$font-semi-bold    : 600;
+$font-bold         : 700;
+
+$font-size         : 14px;
+$font-size-text    : 18px;
+$font-size-text-sm : 16px;
+$font-size-btn     : 20px;
+$font-size-btn-big : 24px;
+$font-size-title   : 26px;
+$font-size-h1      : 48px;
+$font-size-h1-sm   : 42px;
+$font-size-h2      : 36px;
+$font-size-h3      : 30px;
+$font-size-h4      : 24px;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// Container width
+$container-width-xl : 1140px;
+$container-width-lg : 960px;
+$container-width-md : 720px;
+$container-width-sm : 540px;
+$container-width-xs : 100%;

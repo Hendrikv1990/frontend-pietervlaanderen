@@ -6,27 +6,29 @@ export const apiEndpoint = `https://${REPOSITORY_NAME}.prismic.io/api/v2`;
 export const accessToken = process.env.PRISMIC_API_TOKEN || '';
 
 export const linkResolver = function(doc) {
-	if (doc.type === 'page') {
-		const locale = getLocaleByPrismic(doc.lang);
+	const type = String(doc.__typename).toLowerCase();
+	const locale = (doc._meta?.lang) ? getLocaleByPrismic(doc._meta.lang) : null;
 
-		if (doc.uid == 'homepage')
-			return `/${locale}`;
-
-		return `/${locale}/${doc.uid}`;
+	if (type == 'yacht') {
+		return `/${locale}/yacht/${doc._meta.uid}`;
+	} else if (type == 'home_page') {
+		return `/${locale}`;
+	} else if (/_page$/.test(type)) {
+		return `/${locale}/${doc._meta.uid}`;
 	}
 
 	return '/';
 };
 
 export const hrefResolver = (doc) => {
-	if (doc.type === 'page') {
+	const type = String(doc.__typename).toLowerCase();
 
-		let link = '/[lang]';
-		if (doc.uid != 'homepage') {
-			link += `/${doc.uid}`;
-		}
-
-		return link;
+	if (type == 'yacht') {
+		return '/[lang]/yacht/[yacht]';
+	} else if (type == 'home_page') {
+		return '/[lang]';
+	} else if (/_page$/.test(type)) {
+		return `/[lang]/${doc._meta.uid}`;
 	}
 
 	return '/';
@@ -38,12 +40,24 @@ export const locales = {
 		prismicLocale: 'en-us',
 		title: 'English'
 	},
-	// de: {
-	// 	prismicLocale: 'de-de',
-	// 	title: 'German'
-	// },
-	ru: {
-		prismicLocale: 'ru',
-		title: 'Рус'
+	de: {
+		prismicLocale: 'de-de',
+		title: 'German'
+	},
+	es: {
+		prismicLocale: 'es-es',
+		title: 'Spanish'
+	},
+	fr: {
+		prismicLocale: 'fr-fr',
+		title: 'French'
+	},
+	sl: {
+		prismicLocale: 'sl',
+		title: 'Slovenian'
+	},
+	it: {
+		prismicLocale: 'it-it',
+		title: 'Italian'
 	}
 };

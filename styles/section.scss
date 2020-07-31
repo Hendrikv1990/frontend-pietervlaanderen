@@ -1,0 +1,10 @@
+.section {
+	padding: 52px 0 32px;
+	background: $color-white;
+	&__header {
+		margin: 0 0 48px 0;
+		@include media-breakpoint-down(sm) {
+			margin: 0 0 20px 0;
+		}
+	}
+}

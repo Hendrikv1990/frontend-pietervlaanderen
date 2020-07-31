@@ -1,6 +1,7 @@
 const webpack = require('webpack');
+const withImages = require('next-images');
 
-module.exports = {
+module.exports = withImages({
 	webpack: (config) => {
 		config.plugins.push(
 			new webpack.DefinePlugin({
@@ -10,4 +11,4 @@ module.exports = {
 
 		return config;
 	}
-};
+});
