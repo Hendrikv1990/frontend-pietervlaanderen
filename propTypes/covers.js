@@ -15,6 +15,6 @@ export const coverBlock = () => PropTypes.shape({
 	text: PropTypes.array,
 	link: linkPropType(),
 	link_label: PropTypes.array,
-	block_type: PropTypes.string.isRequired,
+	block_type: PropTypes.string,
 	name_in_scroll_menu: PropTypes.string
 });

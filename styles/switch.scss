@@ -1,0 +1,32 @@
+.switch {
+	-webkit-border-radius: 16px;
+	-moz-border-radius: 16px;
+	border-radius: 16px;
+	border: 1px solid $color-turquoise-blue;
+	background: transparent;
+	padding: 4px;
+	@include media-breakpoint-down(sm) {
+		padding: 3px;
+	}
+	&__item {
+		color: $color-turquoise-blue;
+		font-size: $font-size;
+		width: 85px;
+		font-weight: $font-bold;
+		display: inline-block;
+		padding: 4px;
+		text-align: center;
+		transition: all .35s ease-in-out;
+		-webkit-border-radius: 12px;
+		-moz-border-radius: 12px;
+		border-radius: 12px;
+		@include media-breakpoint-down(sm) {
+			padding: 4px 12px;
+		}
+
+		&.is-active {
+			color: $color-white;
+			background: $color-turquoise-blue;
+		}
+	}
+}

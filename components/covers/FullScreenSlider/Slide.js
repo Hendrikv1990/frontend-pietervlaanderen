@@ -5,6 +5,7 @@ import GoDownLink from '../components/GoDownLink';
 import PropTypes from 'prop-types';
 import {fullScreeSlidePropTypes} from '../../../propTypes/covers';
 import {useTextLabels} from '../../../hooks/appData';
+import CoverEngineTypesImgList from '../components/CoverEngineTypesImgList';
 
 export default function FullScreenSliderSlide({slide, showDownArrow, blockIndex}) {
 	const {textLabels} = useTextLabels();
@@ -27,17 +28,7 @@ export default function FullScreenSliderSlide({slide, showDownArrow, blockIndex}
 							</ResolvedLink>
 							<div className="detailed">
 								<div className="detailed__title">{textLabels.all_our_models_available_as}</div>
-								<ul className="detailed__list">
-									<li className="detailed__item">
-										<img className="detailed__img" src={require('../../../assets/img/diesel.svg')} alt="" />
-									</li>
-									<li className="detailed__item">
-										<img className="detailed__img" src={require('../../../assets/img/hybrid.svg')} alt="" />
-									</li>
-									<li className="detailed__item">
-										<img className="detailed__img" src={require('../../../assets/img/electric.svg')} alt="" />
-									</li>
-								</ul>
+								<CoverEngineTypesImgList />
 							</div>
 							{showDownArrow && <GoDownLink blockIndex={blockIndex} />}
 						</div>

@@ -1,7 +1,6 @@
 .reviews {
 	background: $color-white;
 	padding: 103px 0 52px;
-	text-align: center;
 	overflow: hidden;
 	@include media-breakpoint-down(md) {
 		padding: 75px 0 40px;
@@ -16,6 +15,7 @@
 }
 
 .rev-slider {
+	text-align: center;
 	position: relative;
 	padding: 0 100px;
 	@include media-breakpoint-down(lg) {
@@ -32,7 +32,7 @@
 		height: 75px;
 		left: 0;
 		top: 0;
-		background: url(/assets/img/quote-start.svg) 100% 100% / cover no-repeat;
+		background: url(../assets/img/quote.svg) 100% 100% / cover no-repeat;
 		@include media-breakpoint-down(md) {
 			left: -40px;
 			top: -40px;
@@ -55,7 +55,7 @@
 		height: 75px;
 		right: 0;
 		bottom: 0;
-		background: url(/assets/img/quote-finish.svg) 100% 100% / cover no-repeat;
+		background: url(../assets/img/quote.svg) 100% 100% / cover no-repeat;
 		@include media-breakpoint-down(md) {
 			right: -40px;
 		}
@@ -110,6 +110,8 @@
 		height: 12px;
 		margin: 0 15px;
 		position: relative;
+		cursor: pointer;
+
 		@include media-breakpoint-down(sm) {
 			margin: 0 10px;
 		}

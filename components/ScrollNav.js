@@ -7,6 +7,7 @@ import _throttle from 'lodash/throttle';
 
 export default function ScrollNav({links}) {
 	const [activeSection, setActiveSection] = useState(null);
+	const [color, setColor] = useState(null);
 
 	const reCalcPositions = _throttle(() => {
 		const sections = document.querySelectorAll('[data-section]');
@@ -23,10 +24,16 @@ export default function ScrollNav({links}) {
 		const [firstSection] = sectionsWithVisibility;
 		if (firstSection && firstSection.visiblePercent > 25) {
 			setActiveSection(parseInt(firstSection.$section.dataset.section));
+
+			if (firstSection.$section.dataset.sectionColor) {
+				setColor(firstSection.$section.dataset.sectionColor);
+			} else {
+				setColor(null);
+			}
 		} else {
 			setActiveSection(null);
 		}
-	}, 400, {
+	}, 300, {
 		leading: false
 	});
 
@@ -47,7 +54,7 @@ export default function ScrollNav({links}) {
 	}
 
 	return (
-		<div className={'scroll-nav'}>
+		<div className={clsx('scroll-nav', color && `color-${color}`)}>
 			{links.map((link, i) => (
 				<a key={i}
 					 href={`#${getSectionIdByIndex(link.sectionKey)}`}
@@ -72,6 +79,10 @@ ScrollNav.propTypes = {
 };
 
 function calcVisiblePercent($section) {
+	if ($section.parentNode.dataset.subSection == 'closed') {
+		return 0;
+	}
+
 	const {top, height} = $section.getBoundingClientRect();
 
 	const topCorner = top + window.scrollY;
@@ -87,8 +98,9 @@ function calcVisiblePercent($section) {
 		return 0;
 	}
 
+	// (bottomIntersection - topIntersection) / height * 100
 	return Math.round(
-		(bottomIntersection - topIntersection) / height * 100
+		(bottomIntersection - topIntersection) / Math.min(height, windowHeight) * 100
 	);
 	// if (
 	// 	//block inside viewport:

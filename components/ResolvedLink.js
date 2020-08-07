@@ -8,7 +8,7 @@ export default function ResolvedLink(props) {
 
 	const defaultLink = <a href="#" {...aAttrs}>{children}</a>;
 	if (!link)
-		return defaultLink
+		return defaultLink;
 
 	switch (link._linkType) {
 		case 'Link.document':
@@ -35,7 +35,7 @@ export default function ResolvedLink(props) {
 
 export function LinkDocument({link, children, aAttrs}) {
 	return (
-		<NextLink as={linkResolver(link)} href={hrefResolver(link)}>
+		<NextLink href={hrefResolver(link)} as={linkResolver(link)}>
 			<a {...aAttrs}>{children}</a>
 		</NextLink>
 	);
@@ -43,7 +43,7 @@ export function LinkDocument({link, children, aAttrs}) {
 
 const componentPropTypes = {
 	children: PropTypes.node.isRequired,
-	link: linkPropType().isRequired,
+	link: linkPropType(),
 	aAttrs: PropTypes.object
 };
 ResolvedLink.propTypes = componentPropTypes;

@@ -6,7 +6,6 @@ import {getInitialLocale} from '../lib/i18n';
 export default function Index() {
 	const router = useRouter();
 
-	//@
 	useEffect(() => {
 		router.replace('/[lang]', `/${getInitialLocale()}`);
 	}, []);// eslint-disable-line

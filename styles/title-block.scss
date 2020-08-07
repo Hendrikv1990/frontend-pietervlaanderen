@@ -1,0 +1,32 @@
+.title-block {
+	&_center {
+		.h3_quote {
+			width: 100%;
+			max-width: 872px;
+		}
+	}
+
+	.link {
+		margin: 20px 0 0 0;
+	}
+
+	&__sub-title {
+		width: 100%;
+		max-width: 542px;
+		font-size: $font-size-text;
+		line-height: (24 / 18);
+		margin: 20px 0 0 0;
+		@include media-breakpoint-down(sm) {
+			margin: 40px 0;
+			font-size: $font-size-text-sm;
+			line-height: 24px;
+		}
+
+		&_center {
+			text-align: center;
+			@include media-breakpoint-down(sm) {
+				text-align: left;
+			}
+		}
+	}
+}

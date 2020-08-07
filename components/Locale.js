@@ -5,6 +5,14 @@ import {locales} from '../prismic-configuration';
 import {getDefaultLocale} from '../lib/i18n';
 import {isLocalstorageSupported} from '../lib/utils';
 
+import dayjs from 'dayjs';
+import 'dayjs/locale/en';
+import 'dayjs/locale/de';
+import 'dayjs/locale/es';
+import 'dayjs/locale/fr';
+import 'dayjs/locale/sl';
+import 'dayjs/locale/it';
+
 const strings = {
 	// de: require('../locales/de/translation.json'),
 	// en: require('../locales/en/translation.json')
@@ -43,6 +51,8 @@ export function LocaleProvider({children, ssLang}) {
 			setLocale(query.lang);
 		}
 	}, [query.lang, locale]);
+
+	dayjs.locale(locale);
 
 	return (
 		<LocaleContext.Provider

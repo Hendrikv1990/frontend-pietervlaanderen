@@ -46,7 +46,7 @@ function AsideMenu({isOpened, closeAsideMenu}) {
 		>
 
 			<div className={'logo'}>
-				<NextLink href='[lang]' as={`/${locale}`}>
+				<NextLink href='/[lang]' as={`/${locale}`}>
 					<a className="logo__link">
 						<img className="logo__img"
 								 src={require('../assets/img/logo-black.svg')} alt={''} />

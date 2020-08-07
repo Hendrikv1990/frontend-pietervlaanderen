@@ -76,7 +76,7 @@
 			-webkit-border-radius: 50%;
 			-moz-border-radius: 50%;
 			border-radius: 50%;
-			background: $color-white url(/assets/img/add.svg) 100% 100% / cover no-repeat;
+			background: $color-white url(../assets/img/add.svg) 100% 100% / cover no-repeat;
 			left: 0;
 			top: 50%;
 			transform: translate(0, -50%);
@@ -96,7 +96,7 @@
 		&_white {
 			color: $color-white;
 			&:before {
-				background: transparent url(/assets/img/add-white.svg) 100% 100% / cover no-repeat;
+				background: transparent url(../assets/img/add-white.svg) 100% 100% / cover no-repeat;
 			}
 		}
 	}
@@ -112,7 +112,7 @@
 			width: 40px;
 			height: 16px;
 			transform: translate(0, -50%);
-			background: url(/assets/img/next.svg) 100% 100% / cover no-repeat;;
+			background: url(../assets/img/next.svg) 100% 100% / cover no-repeat;;
 			transition: all .35s ease-in-out;
 		}
 		&:hover {
@@ -165,6 +165,20 @@
 			@include media-breakpoint-down(xs) {
 				padding: 13px 20px;
 			}
+		}
+	}
+	&_teal {
+		padding: 10px 30px;
+		color: $color-white;
+		background: $color-teal-dark1;
+		-webkit-border-radius: 23px;
+		-moz-border-radius: 23px;
+		border-radius: 23px;
+		font-weight: $font-bold;
+		font-size: $font-size-text-sm;
+		border: none;
+		&:hover {
+			background: lighten($color-teal-dark1, 10%);
 		}
 	}
 	&_xs {

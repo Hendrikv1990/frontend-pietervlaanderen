@@ -29,4 +29,10 @@
 			display: block;
 		}
 	}
+	&_xs {
+		display: none;
+		@include media-breakpoint-down(xs) {
+			display: block;
+		}
+	}
 }

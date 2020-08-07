@@ -18,6 +18,43 @@ h3, .h3 {
 	font-size: $font-size-h3;
 	padding: 0;
 	margin: 0;
+	&_quote {
+		text-align: center;
+		position: relative;
+		margin: 0 auto;
+		&:before {
+			content: '';
+			position: absolute;
+			width: 51px;
+			height: 40px;
+			left: -15px;
+			top: -20px;
+			background: url(../assets/img/quote-start.svg) 100% 100% / cover no-repeat;
+			@include media-breakpoint-down(sm) {
+				top: -40px;
+				left: -50px;
+			}
+		}
+
+		&:after {
+			content: '';
+			position: absolute;
+			width: 51px;
+			height: 40px;
+			right: -25px;
+			bottom: 0;
+			background: url(../assets/img/quote-finish.svg) 100% 100% / cover no-repeat;
+			@include media-breakpoint-down(sm) {
+				right: -30px;
+				bottom: -30px;
+			}
+		}
+
+		@include media-breakpoint-down(sm) {
+			text-align: left;
+		}
+
+	}
 }
 
 h4, .h4 {
@@ -46,6 +83,10 @@ p {
 		&_black1 {
 			color: $color-black1;
 		}
+	}
+
+	&_center {
+		text-align: center;
 	}
 }
 
@@ -78,6 +119,44 @@ a {
 		font-weight: $font-bold;
 		&:hover {
 			text-decoration: underline;
+		}
+	}
+
+	&_video {
+		text-decoration: none;
+		padding: 0 0 0 50px;
+		position: relative;
+		line-height: 32px;
+		font-size: $font-size-text;
+		@include media-breakpoint-down(sm) {
+			font-size: $font-size-text-sm;
+		}
+		&:before {
+			content: '';
+			position: absolute;
+			left: 0;
+			top: 50%;
+			width: 32px;
+			height: 32px;
+			transform: translate(0, -50%);
+			background: url(../assets/img/play.svg) center center / cover no-repeat;
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50px;
+			width: 0;
+			bottom: 5px;
+			height: 1px;
+			background: $color-black1;
+			opacity: 0;
+			transition: all .35s ease-in-out;
+		}
+		&:hover {
+			&:after {
+				width: calc(100% - 50px);
+				opacity: 1;
+			}
 		}
 	}
 }

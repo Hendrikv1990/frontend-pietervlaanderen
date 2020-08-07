@@ -1,0 +1,100 @@
+.cover {
+	&.virtual-tour {
+		.cover__wrapper {
+			.virtual-tour-viewer {
+				position: absolute;
+				top: 0;
+				right: 0;
+				bottom: 0;
+				left: 0;
+				z-index: 1;
+
+				.psv-container {
+					.psv-markers {
+						.psv-marker {
+							.yacht-marker {
+								width: 22px;
+								height: 22px;
+								background: url('../assets/img/oval.svg') no-repeat;
+
+								&:hover {
+									background: url('../assets/img/oval-hover.svg') no-repeat;
+									background-size: contain;
+								}
+							}
+						}
+					}
+				}
+			}
+
+			.virtual-tour-view-switcher {
+				z-index: 2;
+				position: absolute;
+				z-index: 2;
+				right: 15px;
+				bottom: 50px;
+
+				@include media-breakpoint-up(sm) {
+					top: 50%;
+					transform: translate(0, -50%);
+					right: 20px;
+					bottom: initial;
+				}
+
+				@include media-breakpoint-up(lg) {
+					right: 30px;
+				}
+
+				@include media-breakpoint-up(xl) {
+					right: 50px;
+				}
+
+				li {
+					margin: 0 0 15px 0;
+					text-align: right;
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+
+					a {
+						color: $color-white;
+						opacity: 0.75;
+						font-size: 16px;
+						position: relative;
+
+						&:after {
+							content: '';
+							position: absolute;
+							left: 50%;
+							width: 0;
+							bottom: -1px;
+							height: 1px;
+							background: $color-white;
+							transition: all .35s ease-in-out;
+						}
+
+						&:hover {
+							&:after {
+								left: 0;
+								width: 100%;
+							}
+						}
+					}
+
+					&.active {
+						a {
+							opacity: 1;
+							font-weight: bold;
+
+							&:after {
+								left: 0;
+								width: 100%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

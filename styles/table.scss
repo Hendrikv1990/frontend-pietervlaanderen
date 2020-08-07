@@ -1,0 +1,17 @@
+.table {
+	&__row {
+		&:not(:last-child) {
+			border-bottom: 1px solid fade_out($color-black, .9);
+		}
+	}
+	&__col {
+		font-size: $font-size-text-sm;
+		&_left {
+			padding: 20px 10px 20px 0;
+		}
+		&_right {
+			padding: 20px 0 20px 10px;
+			font-weight: $font-bold;
+		}
+	}
+}

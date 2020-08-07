@@ -19,7 +19,7 @@ function TopLine({openAsideMenu}) {
 			<div className={'container'}>
 				<div className={'flex flex_sb_c'}>
 					<div className={'logo'}>
-						<NextLink href='[lang]' as={`/${locale}`}>
+						<NextLink href='/[lang]' as={`/${locale}`}>
 							<a className="logo__link">
 								<img className="logo__img"
 										 src={require('../../assets/img/logo.svg')} alt={''} />

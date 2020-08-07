@@ -1,0 +1,760 @@
+{
+	"Main": {
+		"uid": {
+			"type": "UID",
+			"config": {
+				"label": "Slug"
+			}
+		},
+		"title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Title"
+			}
+		},
+		"hero_promo": {
+			"type": "StructuredText",
+			"config": {
+				"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+				"label": "Hero promo"
+			}
+		},
+		"hero_image": {
+			"type": "Image",
+			"config": {
+				"constraint": {
+					"width": 1408,
+					"height": 792
+				},
+				"thumbnails": [
+					{
+						"name": "md",
+						"width": 992,
+						"height": 558
+					},
+					{
+						"name": "sm",
+						"width": 774,
+						"height": 1376
+					},
+					{
+						"name": "xs",
+						"width": 576,
+						"height": 1024
+					}
+				],
+				"label": "Hero Image"
+			}
+		}
+	},
+	"Technical Specifications": {
+		"technical_specs_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Technical Specs Title"
+			}
+		},
+		"technical_specs_image": {
+			"type": "Image",
+			"config": {
+				"constraint": {
+					"width": 1408,
+					"height": 792
+				},
+				"thumbnails": [
+					{
+						"name": "md",
+						"width": 992,
+						"height": 558
+					},
+					{
+						"name": "sm",
+						"width": 774,
+						"height": 1376
+					},
+					{
+						"name": "xs",
+						"width": 576,
+						"height": 1024
+					}
+				],
+				"label": "Technical Specs Image"
+			}
+		},
+		"group_technical_specs_perspective_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {
+								"width": 1225,
+								"height": 667
+							},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"option": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Option"
+						}
+					}
+				},
+				"label": "Technical Specs Perspective Slides"
+			}
+		},
+		"technical_specs_slider_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Technical Specs Slider Title"
+			}
+		},
+		"group_technical_specs_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {
+								"width": 678,
+								"height": 532
+							},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					}
+				},
+				"label": "Technical Specs Slides"
+			}
+		},
+		"dimensions_specs": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"characteristic_title": {
+						"type": "Text",
+						"config": {
+							"label": "Title",
+							"placeholder": "Hull overall, Length overall, Beam, etc"
+						}
+					},
+					"imperial_value": {
+						"type": "Text",
+						"config": {
+							"label": "Imperial value",
+							"placeholder": "inch, foot, yard, etc"
+						}
+					},
+					"metric_value": {
+						"type": "Text",
+						"config": {
+							"label": "Metric value",
+							"placeholder": "meters, kgs, etc"
+						}
+					}
+				},
+				"label": "Dimensions specs"
+			}
+		}
+	},
+	"Propulsion": {
+		"propulsion_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Propulsion Title"
+			}
+		},
+		"propulsion_image": {
+			"type": "Image",
+			"config": {
+				"constraint": {
+					"width": 1408,
+					"height": 792
+				},
+				"thumbnails": [
+					{
+						"name": "md",
+						"width": 992,
+						"height": 558
+					},
+					{
+						"name": "sm",
+						"width": 774,
+						"height": 1376
+					},
+					{
+						"name": "xs",
+						"width": 576,
+						"height": 1024
+					}
+				],
+				"label": "Propulsion image"
+			}
+		},
+		"quote": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Quote"
+			}
+		},
+		"engine_quote": {
+			"type": "StructuredText",
+			"config": {
+				"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+				"label": "Engine Quote"
+			}
+		},
+		"group_engine_technical_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"description": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Description"
+						}
+					},
+					"caption_1": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 1"
+						}
+					},
+					"caption_2": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 2"
+						}
+					},
+					"caption_3": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 3"
+						}
+					}
+				},
+				"label": "Engine Technical slides"
+			}
+		},
+		"hybrid_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Hybrid Title"
+			}
+		},
+		"hybrid_description": {
+			"type": "StructuredText",
+			"config": {
+				"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+				"label": "Hybrid Description"
+			}
+		},
+		"group_propulsion_videos": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Title"
+						}
+					},
+					"video_url": {
+						"type": "Link",
+						"config": {
+							"label": "Video URL"
+						}
+					}
+				},
+				"label": "Videos"
+			}
+		},
+		"group_hybrid_technical_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"description": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Description"
+						}
+					},
+					"caption_1": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 1"
+						}
+					},
+					"caption_2": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 2"
+						}
+					},
+					"caption_3": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 3"
+						}
+					}
+				},
+				"label": "Hybrid Technical slides"
+			}
+		},
+		"electric_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Electric Title"
+			}
+		},
+		"electric_description": {
+			"type": "StructuredText",
+			"config": {
+				"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+				"label": "Electric Description"
+			}
+		},
+		"group_electric_technical_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"description": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Description"
+						}
+					},
+					"caption_1": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 1"
+						}
+					},
+					"caption_2": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 2"
+						}
+					},
+					"caption_3": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 3"
+						}
+					}
+				},
+				"label": "Electric Technical slides"
+			}
+		}
+	},
+	"Solar / Power Management": {
+		"solar_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Solar Title"
+			}
+		},
+		"solar_image": {
+			"type": "Image",
+			"config": {
+				"constraint": {},
+				"thumbnails": [],
+				"label": "Solar image"
+			}
+		},
+		"group_solar_technical_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"option": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Option"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"description": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Description"
+						}
+					},
+					"caption_1": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 1"
+						}
+					},
+					"caption_2": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 2"
+						}
+					},
+					"caption_3": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 3"
+						}
+					},
+					"caption_4": {
+						"type": "Link",
+						"config": {
+							"select": "document",
+							"customtypes": [
+								"technical_caption"
+							],
+							"label": "Caption 4"
+						}
+					}
+				},
+				"label": "Solar Technical Slides"
+			}
+		}
+	},
+	"Interior": {
+		"interior_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Interior Title"
+			}
+		},
+		"interior_image": {
+			"type": "Image",
+			"config": {
+				"constraint": {},
+				"thumbnails": [],
+				"label": "Interior Image"
+			}
+		},
+		"group_interior_image_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					}
+				},
+				"label": "Interior Image Slides"
+			}
+		},
+		"group_interior_feature_image_blocks": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"icon": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Icon"
+						}
+					},
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"caption": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Caption"
+						}
+					}
+				},
+				"label": "Interior Feature Image Blocks"
+			}
+		}
+	},
+	"Exterior": {
+		"exterior_title": {
+			"type": "StructuredText",
+			"config": {
+				"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+				"label": "Exterior Title"
+			}
+		},
+		"exterior_image": {
+			"type": "Image",
+			"config": {
+				"constraint": {},
+				"thumbnails": [],
+				"label": "Exterior Image"
+			}
+		},
+		"group_exterior_image_slides": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					}
+				},
+				"label": "Exterior Image Slides"
+			}
+		},
+		"group_exterior_feature_image_blocks": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"icon": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Icon"
+						}
+					},
+					"image": {
+						"type": "Image",
+						"config": {
+							"constraint": {},
+							"thumbnails": [],
+							"label": "Image"
+						}
+					},
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"caption": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Caption"
+						}
+					}
+				},
+				"label": "Exterior Feature Image Blocks"
+			}
+		}
+	},
+	"Virtual Tour": {},
+	"Footer": {},
+	"Reviews": {
+		"group_review_slide": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"reviewer": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Reviewer"
+						}
+					},
+					"review": {
+						"type": "StructuredText",
+						"config": {
+							"multi": "paragraph, preformatted, heading1, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, image, embed, list-item, o-list-item, o-list-item",
+							"label": "Review"
+						}
+					}
+				},
+				"label": "Review Slide"
+			}
+		}
+	},
+	"Videos": {
+		"group_videos": {
+			"type": "Group",
+			"config": {
+				"fields": {
+					"title": {
+						"type": "StructuredText",
+						"config": {
+							"single": "heading1, heading2, heading3, heading4, heading5, heading6",
+							"label": "Title"
+						}
+					},
+					"video_url": {
+						"type": "Link",
+						"config": {
+							"label": "Video URL"
+						}
+					}
+				},
+				"label": "Videos"
+			}
+		}
+	}
+}

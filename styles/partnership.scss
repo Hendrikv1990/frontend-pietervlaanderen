@@ -1,0 +1,11 @@
+.partnership {
+	&__title {
+		font-weight: $font-regular;
+		font-size: $font-size-text;
+		margin: 0 0 12px 0;
+	}
+	&__logo {
+		width: 100%;
+		max-width: 106px;
+	}
+}

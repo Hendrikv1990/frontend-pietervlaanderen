@@ -28,3 +28,16 @@ export const imagePropType = () => PropTypes.shape({
 	sm: singleImagePropType(),
 	xs: singleImagePropType()
 });
+
+export const reviewPropType = () => PropTypes.shape({
+	title: PropTypes.array.isRequired,
+	reviewer: PropTypes.array.isRequired,
+	review: PropTypes.array.isRequired
+});
+
+export const technicalCaptionIconType = () => PropTypes.shape({
+	icon: PropTypes.shape({
+		url: PropTypes.string,
+		alt: PropTypes.string
+	})
+});

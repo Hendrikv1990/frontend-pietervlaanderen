@@ -24,5 +24,20 @@ export const textLabelsPropType = () => PropTypes.shape({
 	privacy_link: linkPropType().isRequired,
 	models_label: PropTypes.string.isRequired,
 	download_brochure_label: PropTypes.string.isRequired,
-	download_brochure_link: linkPropType().isRequired
+	download_brochure_link: linkPropType().isRequired,
+	discover_more_label: PropTypes.string.isRequired,
+	discover_label: PropTypes.string.isRequired,
+	videos_label: PropTypes.string.isRequired,
+	get_in_touch_label: PropTypes.string.isRequired,
+	get_in_touch_link: linkPropType().isRequired,
+	press_tests_label: PropTypes.string.isRequired,
+	read_more_label: PropTypes.string.isRequired,
+	reviews_label: PropTypes.string.isRequired,
+	imperial_label: PropTypes.string.isRequired,
+	metric_label: PropTypes.string.isRequired,
+	check_propulsion_option_label: PropTypes.string.isRequired,
+	how_it_works_watch_video: PropTypes.string.isRequired,
+	in_partnership_with: PropTypes.string.isRequired,
+	contact_us_label: PropTypes.string,
+	contact_us_link: linkPropType()
 });

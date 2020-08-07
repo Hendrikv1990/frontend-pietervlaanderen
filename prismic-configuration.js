@@ -24,7 +24,7 @@ export const hrefResolver = (doc) => {
 	const type = String(doc.__typename).toLowerCase();
 
 	if (type == 'yacht') {
-		return '/[lang]/yacht/[yacht]';
+		return '/[lang]/yacht/[slug]';
 	} else if (type == 'home_page') {
 		return '/[lang]';
 	} else if (/_page$/.test(type)) {

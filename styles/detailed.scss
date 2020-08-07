@@ -64,6 +64,36 @@
 		height: 100%;
 	}
 
+	&__svg {
+		width: 105px;
+		height: 41px;
+		.svg {
+			width: 100%;
+			height: 100%;
+			fill: none;
+			stroke: $color-black1;
+			stroke-width: 1.20000005;
+			transition: all .35s ease-in-out;
+			.svg-text {
+				fill: $color-black1;
+				stroke: none;
+			}
+		}
+		&_dark {
+			.svg {
+				fill: $color-black1;
+				stroke: $color-white;
+				.svg-path {
+					stroke: $color-black1;
+				}
+				.svg-text {
+					fill: $color-white;
+					stroke: none;
+				}
+			}
+		}
+	}
+
 	&_horizontal {
 		position: absolute;
 		transform: translate(50%, 0);
@@ -102,6 +132,51 @@
 			}
 		}
 	}
+
+	&_rel {
+		position: relative;
+		bottom: initial;
+		transform: none;
+		right: initial;
+		@include media-breakpoint-down(sm) {
+			display: none;
+		}
+		.detailed__item {
+			@include media-breakpoint-down(md) {
+				width: 75px;
+				height: 29px;
+				&:not(:last-child) {
+					margin: 0 20px 0 0;
+				}
+			}
+		}
+	}
+
+	&_color {
+		position: relative;
+		bottom: initial;
+		transform: none;
+		right: initial;
+		@include media-breakpoint-down(sm) {
+			margin: 0;
+		}
+		.detailed__item {
+			@include media-breakpoint-down(md) {
+				width: 105px;
+				height: 41px;
+				&:not(:last-child) {
+					margin: 0 40px 0 0;
+				}
+			}
+			@include media-breakpoint-down(sm) {
+				width: 75px;
+				height: 29px;
+				&:not(:last-child) {
+					margin: 0 20px 0 0;
+				}
+			}
+		}
+	}
 }
 
 @keyframes pulse {
@@ -113,5 +188,12 @@
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+.svg {
+	&_reverce {
+		stroke: none;
+		fill: #000000
 	}
 }

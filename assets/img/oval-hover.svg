@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60px" height="60px" viewBox="0 0 60 60" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>Group 12 Copy</title>
+    <g id="Boat-detailpage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="48-FLY---expanded" transform="translate(-979.000000, -21890.000000)">
+            <g id="Group-12-Copy" transform="translate(980.000000, 21891.000000)">
+                <circle id="Oval" fill="#FFFFFF" cx="29" cy="29" r="10.5"></circle>
+                <path d="M29,50 C35.16696,50 40.7130483,47.341732 44.5549261,43.1085349 C47.9383295,39.3805105 50,34.4310197 50,29 C50,24.0747834 48.3044634,19.5455805 45.4652477,15.9642489 C41.6186323,11.1122029 35.6727631,8 29,8 C17.4020203,8 8,17.4020203 8,29 C8,40.5979797 17.4020203,50 29,50 Z" id="Oval" stroke="#FFFFFF" opacity="0.746814546"></path>
+                <path d="M29,58 C37.5162781,58 45.1751619,54.3290585 50.4806122,48.4832148 C55.1529313,43.3349907 58,36.4999796 58,29 C58,22.1985104 55.6585447,15.9438969 51.737723,10.9982485 C46.4257303,4.29780402 38.2147681,0 29,0 C12.9837423,0 0,12.9837423 0,29 C0,45.0162577 12.9837423,58 29,58 Z" id="Oval" stroke="#FFFFFF" opacity="0.244303385"></path>
+            </g>
+        </g>
+    </g>
+</svg>

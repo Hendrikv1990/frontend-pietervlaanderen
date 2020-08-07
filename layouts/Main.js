@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import clsx from 'clsx';
 import {actionTypes as asideMenuActionTypes} from '../redux/reducers/asideMenu';
 
-function MainLayout({children, asideIsOpened, closeAsideMenu}) {
+function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses}) {
 	return (
 		<>
 			<Head>
@@ -16,7 +16,7 @@ function MainLayout({children, asideIsOpened, closeAsideMenu}) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 			</Head>
-			<div className={clsx('layout', 'layout-main', {'aside-opened': asideIsOpened})}>
+			<div className={clsx('layout', 'layout-main', {'aside-opened': asideIsOpened}, extraClasses)}>
 				<header className="header">
 					<TopLine />
 				</header>
@@ -35,7 +35,11 @@ function MainLayout({children, asideIsOpened, closeAsideMenu}) {
 MainLayout.propTypes = {
 	children: PropTypes.node,
 	asideIsOpened: PropTypes.bool.isRequired,
-	closeAsideMenu: PropTypes.func.isRequired
+	closeAsideMenu: PropTypes.func.isRequired,
+	extraClasses: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.array
+	])
 };
 
 const mapStateToProps = state => ({
