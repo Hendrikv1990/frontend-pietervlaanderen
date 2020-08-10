@@ -1,0 +1,167 @@
+.team-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	margin: 0 0 0 0;
+
+	> li {
+		margin: 0 0 40px 0;
+		background: #f5f5f5;
+		width: 100%;
+
+		@include media-breakpoint-between(sm, md) {
+			width: calc((100% - (35px * 1))/ 2);
+			margin-right: 35px;
+			margin-bottom: 35px;
+
+			&:nth-child(2n) {
+				margin-right: 0;
+			}
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: calc((100% - (24px * 3))/ 4);
+			margin-right: 24px;
+			margin-bottom: 60px;
+
+			&:nth-child(4n) {
+				margin-right: 0;
+			}
+		}
+
+		display: flex;
+		flex-direction: column;
+		transition: all 0.25s ease-out;
+
+		&:hover {
+			box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.1);
+			background-color: #fff;
+			transition: all 0.25s ease-in;
+
+			.info {
+				.contact {
+					&:before {
+						visibility: visible;
+						right: -45px;
+					}
+				}
+			}
+
+			.img-wrapper {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+
+		.img-wrapper {
+			padding: (240/288*100%) 0 0 0;
+			background: darken(#f5f5f5, 20%);
+			position: relative;
+			flex-shrink: 0;
+			overflow: hidden;
+
+			img {
+				display: block;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				height: 100%;
+				transition: all .35s ease-in-out;
+			}
+		}
+
+		.info {
+			padding: 10px 10px;
+			flex-grow: 1;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: flex-start;
+
+			@include media-breakpoint-up(sm) {
+				padding: 20px 17px;
+			}
+
+			> h6 {
+				font-size: 14px;
+				font-weight: normal;
+				margin: 0 0 10px 0;
+				padding: 0;
+
+				@include media-breakpoint-up(sm) {
+					margin-bottom: 30px;
+				}
+			}
+
+			.name {
+				margin: 0 0 20px 0;
+
+				@include media-breakpoint-up(sm) {
+					margin-bottom: 65px;
+				}
+
+				h5 {
+					margin: 0;
+					padding: 0;
+					font-size: 20px;
+					font-weight: bold;
+					color: $color-black1;
+				}
+
+				.phone {
+					margin: 9px 0 0 0;
+				}
+			}
+
+			.contact {
+				font-weight: $font-bold;
+				position: relative;
+
+				&:hover {
+					text-decoration: underline;
+				}
+
+				&:before {
+					content: '';
+					display: block;
+					width: 30px;
+					height: 11px;
+					background: url('../assets/img/arrow-right.svg') no-repeat;
+					transition: all 0.35s ease-in-out;
+					visibility: hidden;
+					position: absolute;
+					right: -35px;
+					top: 3px;
+				}
+			}
+		}
+	}
+}
+
+.contact-with-teammate-dialog {
+	.MuiDialog-container {
+		#form-dialog-title {
+			position: relative;
+
+			.header {
+				.envelope-icon {
+					vertical-align: middle;
+					margin-right: 10px;
+					position: relative;
+					top: -2px;
+				}
+			}
+
+			.close-icon {
+				position: absolute;
+				right: 5px;
+				top: 5px;
+			}
+		}
+	}
+}

@@ -1,7 +1,7 @@
 .hide {
 	&_md {
 		@include media-breakpoint-down(md) {
-			display: none;
+			display: none !important;
 		}
 	}
 	&_sm {
@@ -12,6 +12,14 @@
 	&_xs {
 		@include media-breakpoint-down(xs) {
 			display: none;
+		}
+	}
+}
+
+.hide_up {
+	&_lg {
+		@include media-breakpoint-up(lg) {
+			display: none !important;
 		}
 	}
 }

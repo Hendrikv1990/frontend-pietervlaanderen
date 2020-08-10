@@ -1,0 +1,15 @@
+.subscription-form {
+	background-image: radial-gradient(circle at 4% 100%, #008898, #003952 79%);
+	padding: 65px 0;
+
+	.subscribe-header {
+		color: $color-white;
+		margin: 0 0 50px 0;
+	}
+
+	.MuiFormControl-root {
+		.MuiInputLabel-root {
+			color: $color-white;
+		}
+	}
+}

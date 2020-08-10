@@ -34,5 +34,15 @@
 			}
 		}
 	}
+
+	&.is-black {
+		.top-menu__link {
+			color: $color-black;
+
+			&:after {
+				background: $color-black;
+			}
+		}
+	}
 }
 

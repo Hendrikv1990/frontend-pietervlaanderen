@@ -1,0 +1,16 @@
+.centered-form {
+	max-width: 445px;
+	margin: 0 auto;
+
+	@include media-breakpoint-up(lg) {
+		max-width: 600px;
+	}
+
+	.MuiFormControl-root {
+		margin-bottom: 50px;
+	}
+
+	.btns-row {
+		text-align: center;
+	}
+}

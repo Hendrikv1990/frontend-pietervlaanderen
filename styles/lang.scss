@@ -39,6 +39,14 @@
 				border-width: 5px 5px 0 5px;
 				border-color: #ffffff transparent transparent;
 			}
+
+			&.is-black {
+				color: $color-black;
+
+				&:after {
+					border-color: $color-black transparent transparent;
+				}
+			}
 		}
 
 		.switch-lang-menu {

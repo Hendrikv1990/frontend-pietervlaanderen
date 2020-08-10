@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types';
 import {RichText} from 'prismic-reactjs';
+import _isString from 'lodash/isString'
 
 export default function AsText({value}) {
+	if (_isString(value))
+		return (<>{value}</>);
+
 	let sanitizedValue = Array.isArray(value) ? value : [];
 
 	return (
@@ -10,5 +14,7 @@ export default function AsText({value}) {
 }
 
 AsText.propTypes = {
-	value: PropTypes.array
+	value: PropTypes.oneOfType([
+		PropTypes.array, PropTypes.string
+	])
 };

@@ -1,7 +1,7 @@
 import {
-	fetchYachtPageWithLayoutData,
 	fetchYachtAdditionalInfo,
-	fetchStaticPaths
+	fetchStaticPaths,
+	fetchYachtBasicInfo
 } from '../../../lib/services/yacht';
 import {textLabelsPropType} from '../../../propTypes/textLabels';
 import {yachtPagePropType} from '../../../propTypes/yacht';
@@ -25,6 +25,7 @@ import ReviewsSlider from '../../../components/ReviewsSlider';
 import YachtVideos from '../../../components/pages/yacht/Videos';
 import YachtPosts from '../../../components/pages/yacht/Posts';
 import ScrollNav from '../../../components/ScrollNav';
+import {fetchLayoutData} from '../../../lib/services/layoutData';
 
 export default function YachtPage({yacht, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -160,11 +161,12 @@ function isVideoExists(yacht) {
 }
 
 export async function getStaticProps(context) {
-	const {yacht, menus, textLabels} = await fetchYachtPageWithLayoutData(context.params.slug, context);
-
+	const {yacht} = await fetchYachtBasicInfo(context.params.slug, context);
 	//we need to split yacht request due to the GET limits
 	const {yacht: yachtAdditions} = await fetchYachtAdditionalInfo(context.params.slug, context);
 	Object.assign(yacht, _omit(yachtAdditions, ['__typename']));
+
+	const {menus, textLabels} = await fetchLayoutData(context);
 
 	return {
 		props: {

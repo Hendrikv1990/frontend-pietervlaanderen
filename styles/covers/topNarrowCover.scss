@@ -1,0 +1,46 @@
+.top-narrow-cover {
+	padding: 160px 0 0 0;
+
+	@include media-breakpoint-up(lg) {
+		padding-top: 220px;
+		background-image: linear-gradient(to bottom, rgba(0, 136, 152, .25), rgba(255, 255, 255, 0) 103%);
+	}
+
+	.head {
+		margin: 0 0 40px 0;
+		padding: 0;
+		color: $color-black1;
+		font-size: 30px;
+		font-weight: bold;
+		text-align: center;
+
+		@include media-breakpoint-up(sm) {
+			font-size: 36px;
+		}
+
+		@include media-breakpoint-up(lg) {
+			margin-bottom: 50px;
+		}
+	}
+
+	.btns-row {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+
+		@include media-breakpoint-down(lg) {
+			flex-direction: column;
+		}
+
+		.btn {
+			margin: 10px 0;
+			flex-shrink: 0;
+
+			@include media-breakpoint-up(lg) {
+				margin-left: 29px;
+				margin-right: 29px;
+			}
+		}
+	}
+}

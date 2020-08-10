@@ -159,6 +159,30 @@ a {
 			}
 		}
 	}
+
+	&_muted {
+		color: $color-black1;
+		opacity: .25;
+		position: relative;
+
+		&:after {
+			content: '';
+			position: absolute;
+			left: 50%;
+			width: 0;
+			bottom: -1px;
+			height: 1px;
+			background: $color-black1;
+			transition: all .35s ease-in-out;
+		}
+
+		&:hover {
+			&:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
 }
 
 .link-list {
@@ -197,9 +221,12 @@ a {
 	&__link {
 		font-size: $font-size-text;
 		line-height: 24px;
+		position: relative;
 
 		&:hover {
 			text-decoration: underline;
 		}
+
+
 	}
 }

@@ -7,11 +7,10 @@
 	padding: 13px 45px;
 	text-decoration: none;
 	background: $color-white;
-	-webkit-border-radius: 30px;
-	-moz-border-radius: 30px;
 	border-radius: 30px;
 	border: 2px solid $color-white;
 	transition: all .35s ease-in-out;
+	cursor: pointer;
 	&:hover {
 		background: darken($color-white, 10%);
 		border-color: darken($color-white, 10%);
@@ -51,6 +50,39 @@
 			}
 		}
 	}
+	&_border_stretched {
+		border: 2px solid $color-black1;
+		border-radius: 27.5px;
+		font-weight: $font-bold;
+		width: auto;
+		padding: 12px 30px;
+		font-size: 18px;
+		font-weight: 600;
+
+		@include media-breakpoint-up(sm) {
+			padding: 14px 40px;
+			font-size: $font-size-btn;
+			font-weight: 700;
+		}
+
+		&:hover {
+			border-color: $color-black1;
+		}
+	}
+	&_border_stretched_30 {
+		border: 2px solid $color-black1;
+		padding: 12px 60px;
+
+		&:hover {
+			border-color: $color-black1;
+		}
+
+		&:disabled {
+			opacity: .25;
+			cursor: not-allowed;
+		}
+	}
+
 	&_plus {
 		font-size: 0;
 		padding: 0 0 0 52px;
@@ -185,6 +217,39 @@
 		@include media-breakpoint-down(xs) {
 			font-size: $font-size-text-sm;
 		}
+	}
+}
+
+.btn_link {
+	border: 0;
+	background: none;
+	display: inline-block;
+	position: relative;
+	color: $color-black1;
+	cursor: pointer;
+	padding: 0;
+
+	&:after {
+		content: '';
+		position: absolute;
+		left: 50%;
+		width: 0;
+		bottom: -1px;
+		height: 1px;
+		background: $color-black1;
+		transition: all .35s ease-in-out;
+	}
+
+	&:hover:not([disabled]) {
+		&:after {
+			left: 0;
+			width: 100%;
+		}
+	}
+
+	&:disabled {
+		opacity: .5;
+		cursor: not-allowed;
 	}
 }
 

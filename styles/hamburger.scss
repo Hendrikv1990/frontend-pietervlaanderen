@@ -55,4 +55,10 @@
 			top: 23px;
 		}
 	}
+
+	&.is-black {
+		.hamburger__line {
+			background-color: $color-black;
+		}
+	}
 }

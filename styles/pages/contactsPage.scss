@@ -1,0 +1,82 @@
+.contacts-page {
+	.meet-the-team {
+		text-align: center;
+		margin: 108px 0 57px 0;
+	}
+
+	.main-office-form {
+		margin-top: 10px;
+		margin-bottom: 80px;
+
+		@include media-breakpoint-up(lg) {
+			margin-top: 20px;
+			margin-bottom: 100px;
+		}
+	}
+}
+
+.contacts-page-yacht {
+	.meet-the-team {
+		text-align: center;
+		margin: 120px 0 50px 0;
+	}
+
+	.footer-nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		margin: 40px 0 40px 0;
+		position: relative;
+
+		.back {
+			font-weight: bold;
+			font-size: 20px;
+		}
+
+		.next {
+			font-weight: bold;
+			font-size: 20px;
+
+			span {
+				display: inline-block;
+				margin-right: 35px;
+			}
+		}
+	}
+
+	&.hint-about-location {
+		.hint-about-location-form {
+			@include media-breakpoint-up(sm) {
+				margin-top: 120px;
+			}
+		}
+
+		.footer-nav {
+			margin-top: 0px;
+			@include media-breakpoint-up(sm) {
+				margin-top: 150px;
+			}
+		}
+	}
+
+	&.about-you {
+		.footer-nav {
+			@include media-breakpoint-up(sm) {
+				margin-top: 60px;
+			}
+
+			@include media-breakpoint-up(lg) {
+				.back {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+
+				.progress-bar {
+					margin-left: auto;
+					margin-right: auto;
+				}
+			}
+		}
+	}
+}

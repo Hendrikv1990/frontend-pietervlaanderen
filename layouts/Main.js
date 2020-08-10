@@ -8,7 +8,7 @@ import {connect} from 'react-redux';
 import clsx from 'clsx';
 import {actionTypes as asideMenuActionTypes} from '../redux/reducers/asideMenu';
 
-function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses}) {
+function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses, isWhite}) {
 	return (
 		<>
 			<Head>
@@ -16,9 +16,17 @@ function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses}) {
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 			</Head>
-			<div className={clsx('layout', 'layout-main', {'aside-opened': asideIsOpened}, extraClasses)}>
+			<div className={clsx(
+				'layout',
+				'layout-main',
+				{
+					'aside-opened': asideIsOpened,
+					'is-white': isWhite === true
+				},
+				extraClasses
+			)}>
 				<header className="header">
-					<TopLine />
+					<TopLine isWhite={isWhite} />
 				</header>
 				<main className="main">
 					{children}
@@ -39,7 +47,8 @@ MainLayout.propTypes = {
 	extraClasses: PropTypes.oneOfType([
 		PropTypes.string,
 		PropTypes.array
-	])
+	]),
+	isWhite: PropTypes.bool
 };
 
 const mapStateToProps = state => ({

@@ -8,7 +8,7 @@ import {actionTypes as langSwitcherActionTypes} from '../redux/reducers/langSwit
 import {connect} from 'react-redux';
 import NextLink from 'next/link';
 
-function LangSwitcher({isOpened, setIsOpened}) {
+function LangSwitcher({isOpened, setIsOpened, isBlack}) {
 	const router = useRouter();
 	const {locale} = useTranslation();
 	const rootEl = useRef(null);
@@ -49,7 +49,10 @@ function LangSwitcher({isOpened, setIsOpened}) {
 				 data-open={isOpened ? '1' : '0'}
 		>
 			<div className="lang__current">
-				<button type={'button'} onClick={() => setIsOpened(!isOpened)}>
+				<button type={'button'}
+								onClick={() => setIsOpened(!isOpened)}
+								className={clsx({'is-black': isBlack})}
+				>
 					{locale}
 				</button>
 				<ul className={clsx('switch-lang-menu', {opened: isOpened})}>
@@ -75,7 +78,8 @@ function LangSwitcher({isOpened, setIsOpened}) {
 
 LangSwitcher.propTypes = {
 	setIsOpened: PropTypes.func.isRequired,
-	isOpened: PropTypes.bool.isRequired
+	isOpened: PropTypes.bool.isRequired,
+	isBlack: PropTypes.bool
 };
 
 const mapStateToProps = state => ({
