@@ -1,0 +1,30 @@
+.list-icon {
+	width: 100%;
+	max-width: 480px;
+	@include media-breakpoint-down(md) {
+		max-width: initial;
+		margin: 0 0 40px 0;
+	}
+	@include media-breakpoint-down(xs) {
+		margin: 0 0 30px 0;
+	}
+	&__item {
+		width: 100%;
+		max-width: 137px;
+		@include media-breakpoint-down(xs) {
+			max-width: 79px;
+		}
+	}
+	&__icon-block {
+		flex-grow: 1;
+	}
+	&__icon {
+		max-width: 67px;
+	}
+	&__title {
+		margin: 10px 0 0 0;
+		font-weight: $font-bold;
+		font-size: $font-size;
+		color: $color-white;
+	}
+}

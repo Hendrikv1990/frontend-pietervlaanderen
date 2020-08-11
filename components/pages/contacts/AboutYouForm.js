@@ -14,6 +14,7 @@ import axios from 'axios';
 import {contactModelsPropType} from '../../../propTypes/contacts';
 import {RichText} from 'prismic-reactjs';
 import NProgress from 'nprogress';
+import ProgressBar from './ProgressBar';
 
 export default function AboutYouForm({queryParams, models}) {
 	const {textLabels} = useTextLabels();
@@ -28,7 +29,7 @@ export default function AboutYouForm({queryParams, models}) {
 				.filter((model, i) => queryParams.models.includes(String(i)))
 				.map(({title}) => RichText.asText(title))
 		}))
-			.then((data) => {
+			.then(() => {
 				NProgress.done();
 
 				helpers.setSubmitting(false);
@@ -51,9 +52,7 @@ export default function AboutYouForm({queryParams, models}) {
 					{({
 							values,
 							errors,
-							touched,
 							handleChange,
-							handleBlur,
 							handleSubmit,
 							isSubmitting
 						}) => (
@@ -109,9 +108,7 @@ export default function AboutYouForm({queryParams, models}) {
 										{textLabels.back}
 									</a>
 								</NextLink>
-								<div className={'progress-bar hide_md'}>
-									1 - 2 - 3 - 4
-								</div>
+								<ProgressBar steps={4} current={4} className={'hide_md'}/>
 							</nav>
 						</form>
 					)}

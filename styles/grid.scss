@@ -18,6 +18,9 @@
 
 	@include media-breakpoint-down(xs) {
 		max-width: $container-width-xs;
+
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 }
 

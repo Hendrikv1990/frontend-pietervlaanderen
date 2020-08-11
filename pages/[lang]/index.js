@@ -1,6 +1,7 @@
 import MainLayout from '../../layouts/Main';
 import Head from 'next/head';
-import {fetchHomePageWithLayoutData, fetchStaticPaths} from '../../lib/services/homePage';
+import {fetchHomePage, fetchStaticPaths} from '../../lib/services/homePage';
+import {fetchLayoutData} from '../../lib/services/layoutData';
 import {useAppData} from '../../hooks/appData';
 import FullScreenSlider from '../../components/covers/FullScreenSlider';
 import CoverWithBtn from '../../components/covers/CoverWithBtn';
@@ -38,15 +39,24 @@ export default function Index({homePage, menus, textLabels}) {
 														blockIndex={blockIndex}
 							/>
 						);
-					} else if (block.block_type == 'low-cover') {
-						return (
-							<LowCover key={i}
-												block={block}
-												blockIndex={blockIndex}
-							/>
-						);
 					}
+					// else if (block.block_type == 'low-cover') {
+					// 	return (
+					// 		<LowCover key={i}
+					// 							block={block}
+					// 							blockIndex={blockIndex}
+					// 		/>
+					// 	);
+					// }
 				})}
+
+				<LowCover block={{title: textLabels.looking_for_a_new_boat,
+					text: textLabels.looking_for_a_new_boat_subtitle,
+					link: textLabels.get_in_touch_link,
+					link_label: textLabels.get_in_touch_label
+				}}
+				/>
+
 				<ScrollNav links={scrollNavLinks} />
 			</MainLayout>
 		</>
@@ -84,7 +94,8 @@ Index.propTypes = {
 };
 
 export async function getStaticProps(context) {
-	const {homePage, menus, textLabels} = await fetchHomePageWithLayoutData(context);
+	const homePage = await fetchHomePage(context);
+	const {menus, textLabels} = await fetchLayoutData(context);
 
 	return {
 		props: {

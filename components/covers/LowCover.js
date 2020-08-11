@@ -2,6 +2,7 @@ import {coverBlock} from '../../propTypes/covers';
 import {RichText} from 'prismic-reactjs';
 import ResolvedLink from '../ResolvedLink';
 import PropTypes from 'prop-types';
+import AsText from '../AsText';
 
 export default function LowCover({block}) {
 	return (
@@ -12,7 +13,7 @@ export default function LowCover({block}) {
 				<ResolvedLink link={block.link}
 											aAttrs={{className: 'btn btn_big'}}
 				>
-					{RichText.asText(block.link_label)}
+					<AsText value={block.link_label} />
 				</ResolvedLink>
 			</div>
 		</section>
@@ -21,5 +22,5 @@ export default function LowCover({block}) {
 
 LowCover.propTypes = {
 	block: coverBlock().isRequired,
-	blockIndex: PropTypes.number.isRequired
+	blockIndex: PropTypes.number
 };

@@ -11,6 +11,8 @@ import {useAppData} from '../../../../hooks/appData';
 import TeamList from '../../../../components/lists/Team';
 import AboutYouForm from '../../../../components/pages/contacts/AboutYouForm';
 import parseContactsQueryParams from '../../../../lib/contactsQueryParams';
+import SubscriptionForm from '../../../../components/pages/contacts/SubscriptionForm';
+import ProgressBar from '../../../../components/pages/contacts/ProgressBar';
 
 export default function ContactsYachtYourContactsPage({contactsPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -28,6 +30,9 @@ export default function ContactsYachtYourContactsPage({contactsPage, menus, text
 			<MainLayout isWhite={true} extraClasses={'contacts-page-yacht about-you'}>
 				<TopNarrowCoverWithGradient>
 					<div className={'container'}>
+						<div className={'show_md'}>
+							<ProgressBar steps={4} current={4} />
+						</div>
 						<h1 className={'head'}>{textLabels.little_bit_about_you}</h1>
 					</div>
 				</TopNarrowCoverWithGradient>
@@ -38,6 +43,7 @@ export default function ContactsYachtYourContactsPage({contactsPage, menus, text
 					<h2 className={'meet-the-team'}>{textLabels.meet_the_team}</h2>
 					<TeamList team={contactsPage.team} />
 				</div>
+				<SubscriptionForm />
 			</MainLayout>
 		</>
 	);

@@ -1,0 +1,34 @@
+.timeline {
+	padding: 40px 0;
+	@include media-breakpoint-down(md) {
+		padding: 0;
+	}
+	&__img {
+		width: 100%;
+		margin: 0 auto;
+		@include media-breakpoint-down(md) {
+			width: initial;
+			max-width: 100%;
+		}
+		&_xl {
+			@include media-breakpoint-down(md) {
+				display: none;
+			}
+		}
+		&_md {
+			display: none;
+			@include media-breakpoint-down(md) {
+				display: block;
+			}
+			@include media-breakpoint-down(xs) {
+				display: none;
+			}
+		}
+		&_xs {
+			display: none;
+			@include media-breakpoint-down(xs) {
+				display: block;
+			}
+		}
+	}
+}

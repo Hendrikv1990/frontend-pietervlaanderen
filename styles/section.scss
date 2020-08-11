@@ -1,7 +1,19 @@
 .section {
-	padding: 40px 0;
+	padding: 70px 0;
 	background: $color-white;
 	overflow: hidden;
+
+	@include media-breakpoint-down(lg) {
+		padding: 60px 0;
+	}
+
+	@include media-breakpoint-down(md) {
+		padding: 50px 0;
+	}
+
+	@include media-breakpoint-down(sm) {
+		padding: 40px 0;
+	}
 
 	&__header {
 		margin: 0 0 40px 0;
@@ -55,6 +67,96 @@
 				left: 50%;
 				transform: translate(-50%, 0);
 				width: 100vw;
+			}
+		}
+	}
+
+	&_eco {
+		padding: 70px 0 0 0;
+		@include media-breakpoint-down(lg) {
+			padding: 60px 0 0 0;
+		}
+		@include media-breakpoint-down(md) {
+			padding: 50px 0 0 0;
+		}
+		@include media-breakpoint-down(sm) {
+			padding: 40px 0 0 0;
+		}
+		@include media-breakpoint-down(sm) {
+			text-align: left;
+			.h2 {
+				font-size: $font-size-h3;
+			}
+		}
+	}
+
+	&_timeline {
+		@include media-breakpoint-down(md) {
+			padding: 50px 0 0 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 40px 0 0 0;
+		}
+
+		.title-block {
+			margin: 0 0 0 70px;
+			@include media-breakpoint-down(lg) {
+				margin: 0 0 0 35px;
+			}
+			@include media-breakpoint-down(md) {
+				margin: 0;
+			}
+		}
+
+		.title-block__sub-title {
+			margin: 5px 0 0 0;
+			font-size: $font-size-btn-big;
+			@include media-breakpoint-down(xs) {
+				font-size: $font-size-text;
+				line-height: (24 / 18);
+			}
+		}
+
+		.h1 {
+			@include media-breakpoint-down(md) {
+				font-size: $font-size-h2;
+			}
+			@include media-breakpoint-down(xs) {
+				font-size: $font-size-h3;
+			}
+		}
+	}
+
+	&_our-identity {
+		background: rgb(131, 220, 221);
+		background: linear-gradient(0deg, rgba(99, 180, 184, 1) 30%, rgba(0, 50, 72, 1) 100%);
+		color: $color-white;
+
+		.title-block {
+			margin: 0 0 0 70px;
+			@include media-breakpoint-down(lg) {
+				margin: 0 0 0 35px;
+			}
+			@include media-breakpoint-down(md) {
+				margin: 0;
+				.h1 {
+					font-size: $font-size-h2;
+				}
+			}
+			@include media-breakpoint-down(xs) {
+				.h1 {
+					font-size: $font-size-h3;
+				}
+			}
+		}
+
+		.title-block__sub-title {
+			margin: 5px 0 0 0;
+			font-size: $font-size-btn-big;
+			@include media-breakpoint-down(xs) {
+				font-size: $font-size-text;
+				line-height: (24 / 18);
 			}
 		}
 	}

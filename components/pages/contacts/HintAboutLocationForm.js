@@ -10,6 +10,7 @@ import NextLink from 'next/link';
 import {useTranslation} from '../../Locale';
 import {createGetStr} from '../../../lib/utils';
 import {useEffect, useRef} from 'react';
+import ProgressBar from './ProgressBar';
 
 export default function HintAboutLocationForm({queryParams, onSubmit}) {
 	const {textLabels} = useTextLabels();
@@ -20,7 +21,7 @@ export default function HintAboutLocationForm({queryParams, onSubmit}) {
 		if (formikRef.current) {
 			formikRef.current.setValues(queryParams);
 		}
-	}, []);
+	}, [queryParams]);
 
 	return (
 		<div className={'hint-about-location-form'}>
@@ -31,9 +32,7 @@ export default function HintAboutLocationForm({queryParams, onSubmit}) {
 				{({
 						values,
 						errors,
-						touched,
 						handleChange,
-						handleBlur,
 						handleSubmit,
 						isSubmitting
 					}) => (
@@ -64,9 +63,7 @@ export default function HintAboutLocationForm({queryParams, onSubmit}) {
 									{textLabels.back}
 								</a>
 							</NextLink>
-							<div className={'progress-bar hide_md'}>
-								1 - 2 - 3 - 4
-							</div>
+							<ProgressBar steps={4} current={3} className={'hide_md'} />
 							<button type="submit"
 											className={'next btn_link'}
 											disabled={isSubmitting}

@@ -8,8 +8,9 @@ import NextLink from 'next/link';
 import {useTranslation} from '../../Locale';
 import {useRouter} from 'next/router';
 import {createGetStr} from '../../../lib/utils';
-import {useEffect, useState, useRef} from 'react';
+import {useEffect, useRef} from 'react';
 import queryString from 'query-string';
+import ProgressBar from './ProgressBar';
 
 export default function ModelsForm({models}) {
 	const {textLabels} = useTextLabels();
@@ -53,10 +54,7 @@ export default function ModelsForm({models}) {
 			>
 				{({
 						values,
-						errors,
-						touched,
 						handleChange,
-						handleBlur,
 						handleSubmit,
 						isSubmitting,
 						setFieldValue
@@ -97,9 +95,7 @@ export default function ModelsForm({models}) {
 										{textLabels.back}
 									</a>
 								</NextLink>
-								<div className={'progress-bar hide_md'}>
-									1 - 2 - 3 - 4
-								</div>
+								<ProgressBar steps={4} current={2} className={'hide_md'} />
 								<button type="submit"
 												className={'next btn_link'}
 												disabled={isSubmitting}
@@ -120,4 +116,4 @@ ModelsForm.propTypes = {
 	models: PropTypes.arrayOf(
 		contactModelsPropType()
 	).isRequired
-}
+};

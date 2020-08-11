@@ -94,4 +94,4 @@ TeamList.propTypes = {
 	team: PropTypes.arrayOf(
 		contactTeamPropType()
 	),
-}
+};

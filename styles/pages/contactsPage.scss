@@ -16,6 +16,16 @@
 }
 
 .contacts-page-yacht {
+	.top-narrow-cover {
+		.progress-bar {
+			margin-bottom: 40px;
+
+			@include media-breakpoint-up(sm) {
+				margin-bottom: 35px;
+			}
+		}
+	}
+
 	.meet-the-team {
 		text-align: center;
 		margin: 120px 0 50px 0;
@@ -68,13 +78,89 @@
 			@include media-breakpoint-up(lg) {
 				.back {
 					position: absolute;
-					top: 0;
+					top: 15px;
 					left: 0;
 				}
 
 				.progress-bar {
 					margin-left: auto;
 					margin-right: auto;
+				}
+			}
+		}
+	}
+}
+
+.progress-bar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	&__item {
+		transition: all .35s ease-in-out;
+		width: 34px;
+		height: 34px;
+		color: $color-teal2;
+		font-weight: $font-bold;
+		font-size: $font-size;
+		text-align: center;
+		line-height: 34px;
+		-webkit-border-radius: 50%;
+		-moz-border-radius: 50%;
+		border-radius: 50%;
+		background: $color-white;
+		border: 1px solid $color-teal2;
+		position: relative;
+		@include media-breakpoint-down(md) {
+			width: 24px;
+			height: 24px;
+			line-height: 24px;
+		}
+		&:not(:first-child) {
+			margin: 0 0 0 100px;
+			@include media-breakpoint-down(md) {
+				margin: 0 0 0 60px;
+			}
+			@include media-breakpoint-down(xs) {
+				margin: 0 0 0 50px;
+			}
+			&:before {
+				transition: all .35s ease-in-out;
+				position: absolute;
+				content: '';
+				width: 100px;
+				height: 6px;
+				border-top: 1px solid $color-teal2;
+				border-bottom: 1px solid $color-teal2;
+				top: 50%;
+				left: -1px;
+				transform: translate(-100%, -50%);
+				background: $color-white;
+				@include media-breakpoint-down(md) {
+					width: 60px;
+				}
+				@include media-breakpoint-down(xs) {
+					width: 50px;
+				}
+			}
+		}
+		&.is-current {
+			width: 48px;
+			height: 48px;
+			line-height: 48px;
+			@include media-breakpoint-down(md) {
+				width: 30px;
+				height: 30px;
+				line-height: 30px;
+			}
+		}
+		&.is-complete {
+			color: $color-white;
+			background: $color-teal2;
+			& + .is-complete,
+			& + .is-current {
+				&:before {
+					background: $color-teal2;
 				}
 			}
 		}

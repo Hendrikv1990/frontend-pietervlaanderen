@@ -5,7 +5,7 @@ export default function TechSpecsAfterTable() {
 	const {textLabels} = useTextLabels();
 
 	return (
-		<div className="tabs__content-item-footer">
+		<div className="tabs__content-item-footer hide_xs">
 			<a href="#"
 				 className="btn btn_teal"
 				 onClick={(e) => {e.preventDefault();scrollToSection(2);}}

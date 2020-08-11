@@ -67,6 +67,9 @@ h4, .h4 {
 // Text
 p {
 	margin: 0 0 1rem 0;
+	@include media-breakpoint-down(xs) {
+		font-size: $font-size-text-sm;
+	}
 }
 
 .text {
@@ -228,5 +231,13 @@ a {
 		}
 
 
+	}
+}
+
+.no-last-margin {
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 }

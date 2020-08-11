@@ -4,13 +4,21 @@ import {yachtPagePropType} from '../../../../propTypes/yacht';
 import AsText from '../../../AsText';
 import ResolvedHtmlField from '../../../ResolvedHtmlField';
 import {useTextLabels} from '../../../../hooks/appData';
-import clsx from 'clsx';
 import PropulsionTechSlider from './TechSlider';
 import {RichText} from 'prismic-reactjs';
+import _isEmpty from 'lodash/isEmpty';
+
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 
 export default function HybridDrive({yacht}) {
 	const {textLabels} = useTextLabels();
 	const [videoIsOpened, setVideoIsOpened] = useState(false);
+	const closeVideoModal = () => setVideoIsOpened(false);
 
 	return (
 		<div className="propulsion__wrapper hybrid-drive">
@@ -30,12 +38,25 @@ export default function HybridDrive({yacht}) {
 						>
 							{textLabels.how_it_works_watch_video}
 						</a>
-						{Array.isArray(yacht.propulsion_how_it_works_video) && yacht.propulsion_how_it_works_video.length &&
-						<div className={clsx('how-it-works-video', {opened: videoIsOpened})}>
-							<RichText
-								render={yacht.propulsion_how_it_works_video}
-							/>
-						</div>
+						{!_isEmpty(yacht.propulsion_how_it_works_video) &&
+						<Dialog
+							open={videoIsOpened}
+							onClose={closeVideoModal}
+						>
+							<DialogTitle>{textLabels.how_it_works_watch_video}</DialogTitle>
+							<DialogContent>
+								<DialogContentText>
+									<RichText
+										render={yacht.propulsion_how_it_works_video}
+									/>
+								</DialogContentText>
+							</DialogContent>
+							<DialogActions>
+								<Button onClick={closeVideoModal} color="primary">
+									{textLabels.close}
+								</Button>
+							</DialogActions>
+						</Dialog>
 						}
 					</div>
 				</div>

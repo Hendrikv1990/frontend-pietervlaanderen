@@ -1,0 +1,26 @@
+.eco {
+	&__item {
+		flex-shrink: 0;
+		width: 100%;
+		max-width: 280px;
+		margin: 0 0 40px 0;
+		@include media-breakpoint-down(sm) {
+			max-width: initial;
+			width: 50%;
+			padding: 0 15px 0 0;
+			&:nth-child(2n) {
+				padding: 0 0 0 20px;
+			}
+		}
+	}
+	&__icon-block {
+		font-size: 0;
+	}
+	&__descr {
+		font-size: $font-size-text;
+		margin: 20px 0 0 0;
+		@include media-breakpoint-down(md) {
+			font-size: $font-size-text-sm;
+		}
+	}
+}

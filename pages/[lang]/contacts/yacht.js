@@ -10,6 +10,8 @@ import TopNarrowCoverWithGradient from '../../../components/covers/TopNarrowWith
 import {useAppData} from '../../../hooks/appData';
 import ModelsForm from '../../../components/pages/contacts/ModelsForm';
 import TeamList from '../../../components/lists/Team';
+import SubscriptionForm from '../../../components/pages/contacts/SubscriptionForm';
+import ProgressBar from '../../../components/pages/contacts/ProgressBar';
 
 export default function ContactsYachtPage({contactsPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -24,6 +26,9 @@ export default function ContactsYachtPage({contactsPage, menus, textLabels}) {
 			<MainLayout isWhite={true} extraClasses={'contacts-page-yacht'}>
 				<TopNarrowCoverWithGradient>
 					<div className={'container'}>
+						<div className={'show_md'}>
+							<ProgressBar steps={4} current={2} />
+						</div>
 						<h1 className={'head'}>{textLabels.which_model_suits_you_best}</h1>
 					</div>
 				</TopNarrowCoverWithGradient>
@@ -34,6 +39,7 @@ export default function ContactsYachtPage({contactsPage, menus, textLabels}) {
 					<h2 className={'meet-the-team'}>{textLabels.meet_the_team}</h2>
 					<TeamList team={contactsPage.team} />
 				</div>
+				<SubscriptionForm />
 			</MainLayout>
 		</>
 	);

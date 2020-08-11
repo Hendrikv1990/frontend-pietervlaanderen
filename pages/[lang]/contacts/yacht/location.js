@@ -9,12 +9,13 @@ import MainLayout from '../../../../layouts/Main';
 import TopNarrowCoverWithGradient from '../../../../components/covers/TopNarrowWithGradient';
 import {useAppData} from '../../../../hooks/appData';
 import TeamList from '../../../../components/lists/Team';
-import queryString from 'query-string';
 import {createGetStr} from '../../../../lib/utils';
 import HintAboutLocationForm from '../../../../components/pages/contacts/HintAboutLocationForm';
 import {useTranslation} from '../../../../components/Locale';
 import {useRouter} from 'next/router';
 import parseContactsQueryParams from '../../../../lib/contactsQueryParams';
+import SubscriptionForm from '../../../../components/pages/contacts/SubscriptionForm';
+import ProgressBar from '../../../../components/pages/contacts/ProgressBar';
 
 export default function ContactsYachtLocationPage({contactsPage, menus, textLabels}) {
 	const router = useRouter();
@@ -44,6 +45,9 @@ export default function ContactsYachtLocationPage({contactsPage, menus, textLabe
 			<MainLayout isWhite={true} extraClasses={'contacts-page-yacht hint-about-location'}>
 				<TopNarrowCoverWithGradient>
 					<div className={'container'}>
+						<div className={'show_md'}>
+							<ProgressBar steps={4} current={3} />
+						</div>
 						<h1 className={'head'}>{textLabels.hint_about_your_location}</h1>
 					</div>
 				</TopNarrowCoverWithGradient>
@@ -54,6 +58,7 @@ export default function ContactsYachtLocationPage({contactsPage, menus, textLabe
 					<h2 className={'meet-the-team'}>{textLabels.meet_the_team}</h2>
 					<TeamList team={contactsPage.team} />
 				</div>
+				<SubscriptionForm />
 			</MainLayout>
 		</>
 	);

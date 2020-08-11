@@ -65,5 +65,10 @@ export const textLabelsPropType = () => PropTypes.shape({
 	little_bit_about_you: PropTypes.string,
 	your_message: PropTypes.string,
 	message_was_sent: PropTypes.string,
-	send_message_to: PropTypes.string
+	send_message_to: PropTypes.string,
+	added_to_newsletter: PropTypes.string,
+	timeline: PropTypes.string,
+	looking_for_a_new_boat: PropTypes.array,
+	looking_for_a_new_boat_subtitle: PropTypes.array,
+	close: PropTypes.string
 });

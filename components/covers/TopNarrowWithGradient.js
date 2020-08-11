@@ -10,4 +10,4 @@ export default function TopNarrowCoverWithGradient({children}) {
 
 TopNarrowCoverWithGradient.propTypes = {
 	children: PropTypes.node
-}
+};

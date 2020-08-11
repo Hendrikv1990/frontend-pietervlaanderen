@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import {RichText} from 'prismic-reactjs';
-import _isString from 'lodash/isString'
+import _isString from 'lodash/isString';
 
 export default function AsText({value}) {
 	if (_isString(value))

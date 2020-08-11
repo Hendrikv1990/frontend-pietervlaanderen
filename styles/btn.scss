@@ -81,6 +81,17 @@
 			opacity: .25;
 			cursor: not-allowed;
 		}
+
+		&.white {
+			background: transparent;
+			border-color: #fff;
+			color: #fff;
+
+			&:hover:not([disabled]) {
+				color: darken(#fff, 20%);
+				border-color: darken(#fff, 20%);
+			}
+		}
 	}
 
 	&_plus {

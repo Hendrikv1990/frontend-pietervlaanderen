@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 const withImages = require('next-images');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;// eslint-disable-line
 
 module.exports = withImages({
 	webpack: (config) => {

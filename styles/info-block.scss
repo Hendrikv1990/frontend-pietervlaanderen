@@ -1,0 +1,29 @@
+.info-block {
+	max-width: 392px;
+	color: $color-white;
+	@include media-breakpoint-down(md) {
+		max-width: initial;
+		margin: 50px 0 0 0;
+	}
+	@include media-breakpoint-down(xs) {
+		margin: 45px 0 0 0;
+	}
+	&__title {
+		font-weight: $font-regular;
+		margin: 0 0 25px 0;
+		@include media-breakpoint-down(md) {
+			max-width: 400px;
+		}
+	}
+	&__text {
+		font-size: $font-size-text;
+		line-height: (24 / 18);
+		@include media-breakpoint-down(md) {
+			font-size: $font-size-text-sm;
+			line-height: (24 / 16);
+		}
+		p {
+			margin: 0;
+		}
+	}
+}

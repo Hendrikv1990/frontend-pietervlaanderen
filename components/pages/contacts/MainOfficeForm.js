@@ -35,9 +35,7 @@ export default function MainOfficeForm({title, sendType, to}) {
 					{({
 							values,
 							errors,
-							touched,
 							handleChange,
-							handleBlur,
 							handleSubmit,
 							isSubmitting,
 						}) => (
@@ -105,7 +103,7 @@ export default function MainOfficeForm({title, sendType, to}) {
 MainOfficeForm.defaultProps = {
 	sendType: 'mainOffice',
 	showSubmitBtn: true
-}
+};
 
 MainOfficeForm.propTypes = {
 	title: PropTypes.oneOfType([

@@ -55,9 +55,9 @@ export default function TechSpecs({yacht}) {
 			<div className="container">
 				<div className="flex flex_fe_c">
 					<div className="tech-specs__table-block">
-						<div className="tech-specs__title flex flex_sb_c">
+						<div className="tech-specs__title flex flex_sb_c flex_xs_column flex_xs_fs-fs">
 							<h2 className="h2"><AsText value={title} /></h2>
-							<div className="switch flex flex_c_c flex_xs_column">
+							<div className="switch flex flex_c_c">
 								{Object.keys(systemOfMeasurements).map((key, i) => (
 									<a href="#"
 										 key={i}

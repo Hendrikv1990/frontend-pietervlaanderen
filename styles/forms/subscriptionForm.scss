@@ -1,15 +1,110 @@
 .subscription-form {
 	background-image: radial-gradient(circle at 4% 100%, #008898, #003952 79%);
 	padding: 65px 0;
+	position: relative;
+	&:before {
+		content: '';
+		position: absolute;
+		z-index: 0;
+		width: 460px;
+		height: 468px;
+		top: 50%;
+		background: url(../../assets/img/newsletter-background.svg) 100% 100% no-repeat;
+		transform: translate(-180px, -50%);
+		@include media-breakpoint-down(lg) {
+			transform: translate(-150px, -50%);
+		}
+		@include media-breakpoint-down(md) {
+			display: none;
+		}
+	}
 
 	.subscribe-header {
 		color: $color-white;
 		margin: 0 0 50px 0;
+
+		@include media-breakpoint-up(sm) {
+			text-align: center;
+		}
+	}
+
+	.success-msg {
+		color: $color-white;
+	}
+
+	.centered-form {
+		@include media-breakpoint-between(sm, md) {
+			max-width: 600px;
+		}
+
+		.btns-row {
+			text-align: left;
+
+			@include media-breakpoint-up(sm) {
+				text-align: center;
+			}
+		}
 	}
 
 	.MuiFormControl-root {
+		margin-bottom: 35px;
+
 		.MuiInputLabel-root {
 			color: $color-white;
+		}
+
+		.MuiInputBase-root {
+			&:before {
+				border-bottom-color: #fff;
+			}
+
+			&:after {
+				border-bottom-color: #fff;
+			}
+
+			&:hover {
+				&:before {
+					border-bottom-color: #fff;
+				}
+			}
+
+			.MuiInputBase-input {
+				color: #fff;
+			}
+		}
+	}
+
+	.agree-with-terms {
+		display: flex;
+		align-items: center;
+		margin-bottom: 35px;
+
+		> .MuiCheckbox-root {
+			.MuiIconButton-label {
+				svg {
+					color: #fff;
+				}
+			}
+		}
+
+		> label {
+			font-size: 16px;
+			color: #fff;
+
+			p {
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+
+			a {
+				color: #fff;
+				text-decoration: underline;
+
+				&:hover {
+					text-decoration: none;
+				}
+			}
 		}
 	}
 }

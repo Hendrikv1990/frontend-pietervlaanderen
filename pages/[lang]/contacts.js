@@ -1,4 +1,3 @@
-import {useEffect, useState} from 'react';
 import Head from 'next/head';
 import {fetchContactsPage, fetchStaticPaths} from '../../lib/services/contactsPage';
 import {fetchLayoutData} from '../../lib/services/layoutData';
@@ -28,7 +27,7 @@ export default function ContactsPage({contactsPage, menus, textLabels}) {
 	const scrollToMainOfficeForm = (e) => {
 		e.preventDefault();
 		scrollToElement('.main-office-form');
-	}
+	};
 
 	return (
 		<>

@@ -18,6 +18,10 @@
 	}
 
 	&_sb {
+		&_fs {
+			justify-content: space-between;
+		}
+
 		&_c {
 			justify-content: space-between;
 			align-items: center;
@@ -27,13 +31,18 @@
 			justify-content: space-between;
 			align-items: stretch;
 		}
+
+		&_fe {
+			justify-content: space-between;
+			align-items: flex-end;
+		}
 	}
 
 	&_sa {
 		&_fs {
 			justify-content: space-around;
-			align-items: flex-start;
 		}
+
 		&_c {
 			justify-content: space-around;
 			align-items: center;
@@ -76,9 +85,14 @@
 
 	&_md {
 		@include media-breakpoint-down(md) {
-			&_fs-fe {
+			&_fs-fs {
 				justify-content: flex-start;
 				align-items: flex-start;
+			}
+
+			&_fs-fe {
+				justify-content: flex-start;
+				align-items: flex-end;
 			}
 
 			&_sb-c {
@@ -90,6 +104,10 @@
 				flex-direction: column;
 			}
 
+			&_column-reverse {
+				flex-direction: column-reverse;
+			}
+
 			&_row {
 				flex-direction: row;
 			}
@@ -98,6 +116,11 @@
 
 	&_sm {
 		@include media-breakpoint-down(sm) {
+
+			&_sb-fs {
+				justify-content: space-between;
+				align-items: flex-start;
+			}
 
 			&_column {
 				flex-direction: column;
@@ -109,10 +132,19 @@
 	&_xs {
 		@include media-breakpoint-down(xs) {
 
+			&_fs-fs {
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
+
 			&_column {
 				flex-direction: column;
 			}
 
 		}
+	}
+
+	&_full {
+		height: 100%;
 	}
 }
