@@ -1,0 +1,21 @@
+.form-country {
+	&__input-block {
+		position: relative;
+		.btn_search {
+			position: absolute;
+			top: 50%;
+			left: 10px;
+			transform: translate(0, -50%);
+		}
+	}
+	&__input {
+		width: 100%;
+		text-align: right;
+		padding: 12px 30px 12px 60px;
+		font-size: $font-size-text-sm;
+		font-weight: $font-regular;
+		line-height: (24 / 16);
+		border: none;
+		background: $color-white;
+	}
+}

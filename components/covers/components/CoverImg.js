@@ -1,8 +1,12 @@
 import {imagePropType} from '../../../propTypes/common';
 import PropTypes from 'prop-types';
 import clsx from 'clsx';
+import _isEmpty from 'lodash/isEmpty';
 
 export default function CoverImg({image}) {
+	if (_isEmpty(image))
+		return null;
+
 	let existsResolutions = ['xs', 'sm', 'md'].filter((item) => item in image);
 
 	return (

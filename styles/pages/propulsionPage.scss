@@ -1,0 +1,33 @@
+.propulsion-page {
+	.section_propulsion {
+		.section__menu {
+			.top-menu {
+				flex-grow: 1;
+
+				.swiper-container {
+					text-align: right;
+
+					.swiper-wrapper {
+						display: inline-flex;
+						width: auto;
+
+						.swiper-slide {
+							width: auto;
+							padding-bottom: 3px;
+
+							@include media-breakpoint-up(lg) {
+								&:last-child {
+									margin-right: 0 !important;
+								}
+							}
+
+							.top-menu__link {
+								text-transform: uppercase;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

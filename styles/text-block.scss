@@ -1,10 +1,73 @@
 .text-block {
 	padding: 93px 0;
 	text-align: center;
-	background: rgb(0,57,82);
-	background: linear-gradient(90deg, rgba(0,57,82,1) 0%, rgba(32,178,197,1) 100%);
+	background: rgb(0, 57, 82);
+	background: radial-gradient(circle at 84% 139%, #20b2c5, #003952 105%);
 	@include media-breakpoint-down(sm) {
 		padding: 81px 0;
+	}
+
+	&__content {
+		@include media-breakpoint-down(sm) {
+			&:not(:last-child) {
+				margin: 0 0 40px 0;
+			}
+		}
+	}
+
+	&_propulsion {
+		text-align: left;
+
+		.logo {
+			margin: 0 0 50px 0;
+			@include media-breakpoint-down(md) {
+				margin: 0 0 25px 0;
+			}
+			@include media-breakpoint-down(sm) {
+				margin: 0 0 50px 0;
+			}
+		}
+
+		.title {
+			font-size: $font-size-h3;
+			max-width: 513px;
+			margin: 0 0 20px 0;
+			@include media-breakpoint-down(sm) {
+				font-size: $font-size-h4;
+			}
+		}
+
+		.detailed {
+			position: initial;
+			right: initial;
+			bottom: initial;
+			transform: none;
+			@include media-breakpoint-down(sm) {
+				width: 100%;
+			}
+			@include media-breakpoint-down(xs) {
+				margin: 0;
+			}
+		}
+
+		.detailed__item {
+			width: 130px;
+			height: 51px;
+			@include media-breakpoint-down(md) {
+				width: 105px;
+				height: 41px;
+			}
+
+			&:not(:last-child) {
+				margin: 0 0 40px 0;
+				@include media-breakpoint-down(md) {
+					margin: 0 0 20px 0;
+				}
+				@include media-breakpoint-down(md) {
+					margin: 0 20px 0 0;
+				}
+			}
+		}
 	}
 }
 

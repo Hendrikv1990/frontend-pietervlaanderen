@@ -23,7 +23,7 @@ export default function YachtPowerManagement({blockIndex, yacht}) {
 							 data-section-color={'black'}
 			>
 				<div className={'cover__more'}>
-					<SolarBenefitsSlider yacht={yacht} />
+					<SolarBenefitsSlider slides={yacht.group_solar_technical_slides} />
 				</div>
 			</section>
 		</ExpandedCover>

@@ -117,13 +117,32 @@
 	&_sm {
 		@include media-breakpoint-down(sm) {
 
+			&_fs-fs {
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
+
+			&_fs-s {
+				justify-content: flex-start;
+				align-items: stretch;
+			}
+
 			&_sb-fs {
 				justify-content: space-between;
 				align-items: flex-start;
 			}
 
+			&_c-c {
+				justify-content: center;
+				align-items: center;
+			}
+
 			&_column {
 				flex-direction: column;
+			}
+
+			&_row {
+				flex-direction: row;
 			}
 
 		}

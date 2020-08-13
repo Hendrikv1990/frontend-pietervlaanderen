@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {yachtPagePropType} from '../../../../propTypes/yacht';
+import {solarTechSlidePropType} from '../../../../propTypes/yacht';
 import AsText from '../../../AsText';
 import ResolvedHtmlField from '../../../ResolvedHtmlField';
 import {Swiper, SwiperSlide} from 'swiper/react';
@@ -7,14 +7,13 @@ import clsx from 'clsx';
 import {propulsionTechSlidePropType} from '../../../../propTypes/yacht';
 import PropTypes from 'prop-types';
 import {getIconsBySlide} from '../../../../lib/utils';
+import _isEmpty from 'lodash/isEmpty';
 
-export default function SolarBenefitsSlider({yacht}) {
+export default function SolarBenefitsSlider({slides, afterTitleInsertion, optionsTabsClasses}) {
 	const [swiper, setSwiper] = useState(null);
 	const [activeSlide, setActiveSlide] = useState(0);
 
-	const {group_solar_technical_slides: slides} = yacht;
-
-	if (!slides.length)
+	if (_isEmpty(slides))
 		return null;
 
 	function onChangeSlideLinkClicked(i, e) {
@@ -30,6 +29,21 @@ export default function SolarBenefitsSlider({yacht}) {
 				<div className="container">
 					<div className="tabs tabs_solar">
 						<div className="tabs__content">
+							{slides.map((slide, i) => (
+								<div key={i}
+										 className={clsx('tabs__content-item', {'is-active': activeSlide === i})}
+								>
+									<div className="solar__title">
+										<div className="title-block title-block_left">
+											<h2 className="h2"><AsText value={slide.title} /></h2>
+											<div className="title-block__sub-title no-last-margin">
+												<ResolvedHtmlField content={slide.description} />
+											</div>
+										</div>
+									</div>
+								</div>
+							))}
+							{afterTitleInsertion}
 							<Swiper
 								spaceBetween={0}
 								slidesPerView={1}
@@ -40,14 +54,6 @@ export default function SolarBenefitsSlider({yacht}) {
 								{slides.map((slide, i) => (
 									<SwiperSlide key={i}>
 										<div className="tabs__content-item is-active">
-											<div className="solar__title">
-												<div className="title-block title-block_left">
-													<h2 className="h2"><AsText value={slide.title} /></h2>
-													<div className="title-block__sub-title">
-														<ResolvedHtmlField content={slide.description} />
-													</div>
-												</div>
-											</div>
 											{slide.image?.url &&
 											<div className="tabs__img-block flex flex_c_c">
 												<img className="tabs__content-img"
@@ -58,7 +64,7 @@ export default function SolarBenefitsSlider({yacht}) {
 											<OptionsTabs slides={slides}
 																	 onClick={onChangeSlideLinkClicked}
 																	 activeSlide={activeSlide}
-																	 className={'show_md'}
+																	 className={clsx('show_md')}
 											/>
 											<div className="icons-block flex flex_sa_fs flex_wrap">
 												{getIconsBySlide(slide, 4).map((icon, i) => (
@@ -85,7 +91,7 @@ export default function SolarBenefitsSlider({yacht}) {
 						<OptionsTabs slides={slides}
 												 onClick={onChangeSlideLinkClicked}
 												 activeSlide={activeSlide}
-												 className={'hide_md'}
+												 className={clsx('hide_md', optionsTabsClasses)}
 						/>
 					</div>
 				</div>
@@ -95,7 +101,11 @@ export default function SolarBenefitsSlider({yacht}) {
 }
 
 SolarBenefitsSlider.propTypes = {
-	yacht: yachtPagePropType().isRequired
+	slides: PropTypes.arrayOf(
+		solarTechSlidePropType()
+	),
+	afterTitleInsertion: PropTypes.node,
+	optionsTabsClasses: PropTypes.string
 };
 
 function OptionsTabs({slides, activeSlide, onClick, className}) {

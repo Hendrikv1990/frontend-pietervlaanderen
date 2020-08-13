@@ -1,9 +1,9 @@
 import {coverBlock} from '../../propTypes/covers';
 import CoverImg from './components/CoverImg';
-import {RichText} from 'prismic-reactjs';
 import ResolvedLink from '../ResolvedLink';
 import PropTypes from 'prop-types';
 import GoDownLink from './components/GoDownLink';
+import AsText from '../AsText';
 
 export default function	CoverWithBtn(props) {
 	const {block, showDownArrow, blockIndex} = props;
@@ -21,15 +21,15 @@ export default function	CoverWithBtn(props) {
 				<div className="cover__content">
 					<div className="container">
 						<h2 className="cover__title">
-							{RichText.asText(block.title)}
+							<AsText value={block.title} />
 						</h2>
 						<div className="cover__subtitle">
-							{RichText.asText(block.text)}
+							<AsText value={block.text} />
 						</div>
 						<ResolvedLink link={block.link}
 													aAttrs={{className: 'btn'}}
 						>
-							{RichText.asText(block.link_label)}
+							<AsText value={block.link_label} />
 						</ResolvedLink>
 						{showDownArrow && <GoDownLink blockIndex={blockIndex} />}
 					</div>

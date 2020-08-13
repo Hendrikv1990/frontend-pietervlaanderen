@@ -1,0 +1,38 @@
+.solar-page {
+	.solar-benefits-slider {
+		.tabs {
+			.tabs__content {
+				.section__menu {
+
+					.top-menu {
+						width: 100%;
+
+						.swiper-container {
+							text-align: right;
+
+							.swiper-wrapper {
+								display: inline-flex;
+								width: auto;
+
+								.swiper-slide {
+									width: auto;
+									padding-bottom: 3px;
+
+									@include media-breakpoint-up(lg) {
+										&:last-child {
+											margin-right: 0 !important;
+										}
+									}
+
+									.top-menu__link {
+										text-transform: uppercase;
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

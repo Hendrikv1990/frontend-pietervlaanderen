@@ -56,10 +56,8 @@ export default function YachtPage({yacht, menus, textLabels}) {
 										blockIndex={0}
 										showDownArrow={true}
 				/>
-				{Array.isArray(yacht.technical_specs_title)
-					&& yacht.technical_specs_title.length
-					&& <YachtTechnicalSpecifications blockIndex={1}
-																					 yacht={yacht} />
+				{!isRichEmpty(yacht.technical_specs_title) &&
+					<YachtTechnicalSpecifications blockIndex={1} yacht={yacht} />
 				}
 				<YachtPropulsion blockIndex={2}
 												 yacht={yacht}
@@ -119,9 +117,15 @@ function makeScrollNavLinks(yacht, textLabels) {
 
 	for (const key of Object.keys(keys)) {
 		if (yacht[key]) {
+			let title = Array.isArray(yacht[key]) ? RichText.asText(yacht[key]) : yacht[key];
+
+			if (key == 'solar_title') {
+				title = textLabels.solar;
+			}
+
 			scrollNavLinks.push({
 				sectionKey: keys[key],
-				title: Array.isArray(yacht[key]) ? RichText.asText(yacht[key]) : yacht[key]
+				title
 			});
 		}
 	}

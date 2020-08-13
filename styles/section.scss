@@ -22,6 +22,17 @@
 		}
 	}
 
+	&__menu {
+		margin: 20px 0 30px 0;
+		width: 100%;
+		overflow: hidden;
+		min-height: 20px;
+
+		.link {
+			margin: 0;
+		}
+	}
+
 	&_gallery {
 		.title-block {
 			flex-grow: 1;
@@ -72,21 +83,16 @@
 	}
 
 	&_eco {
-		padding: 70px 0 0 0;
-		@include media-breakpoint-down(lg) {
-			padding: 60px 0 0 0;
-		}
-		@include media-breakpoint-down(md) {
-			padding: 50px 0 0 0;
-		}
-		@include media-breakpoint-down(sm) {
-			padding: 40px 0 0 0;
-		}
+		padding: 45px 0 0 0;
 		@include media-breakpoint-down(sm) {
 			text-align: left;
 			.h2 {
 				font-size: $font-size-h3;
 			}
+		}
+
+		.section__header {
+			margin: 0 0 60px 0;
 		}
 	}
 
@@ -159,5 +165,75 @@
 				line-height: (24 / 18);
 			}
 		}
+	}
+
+	&_propulsion {
+		background: $color-white;
+		padding: 0;
+
+		.propulsion__title {
+			margin: 0;
+
+			.title-block_center {
+				.title-block__sub-title {
+					margin: 10px auto 0;
+				}
+			}
+		}
+
+		.h3_quote {
+			font-size: $font-size-h2;
+			@include media-breakpoint-down(sm) {
+				font-size: $font-size-h3;
+			}
+
+			&:before {
+				left: -80px;
+				@include media-breakpoint-down(md) {
+					left: -60px;
+				}
+				@include media-breakpoint-down(sm) {
+					left: -25px;
+				}
+			}
+
+			&:after {
+				right: -80px;
+				@include media-breakpoint-down(md) {
+					right: -60px;
+				}
+				@include media-breakpoint-down(sm) {
+					right: -25px;
+				}
+			}
+		}
+
+		.top-menu {
+			@include media-breakpoint-down(md) {
+				margin: 20px 0 0 0;
+			}
+		}
+	}
+
+	&_solar {
+		background: $color-white;
+		padding: 0;
+
+		.solar__title {
+			.title-block_left {
+				padding: 0;
+			}
+		}
+
+		.top-menu {
+			@include media-breakpoint-down(md) {
+				margin: 20px 0 0 0;
+			}
+		}
+	}
+
+	&_map {
+		padding: 0;
+		position: relative;
 	}
 }

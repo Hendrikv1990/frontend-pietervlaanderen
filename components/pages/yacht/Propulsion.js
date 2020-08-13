@@ -21,18 +21,20 @@ export default function YachtPropulsion({blockIndex, yacht}) {
 									 isWhite={true}
 									 showEngineTypesList={true}
 		>
-			<section id={getSectionIdByIndex(blockIndex)}
-							 data-section={blockIndex}
-							 data-section-color={'black'}
-			>
-				<div className="cover__more">
-					<div className="propulsion">
-						<PropulsionDieselDrive yacht={yacht} />
-						<HybridDrive yacht={yacht} />
-						<ElectricDrive yacht={yacht} />
+			{() => (
+				<section id={getSectionIdByIndex(blockIndex)}
+								 data-section={blockIndex}
+								 data-section-color={'black'}
+				>
+					<div className="cover__more">
+						<div className="propulsion">
+							<PropulsionDieselDrive yacht={yacht} />
+							<HybridDrive yacht={yacht} />
+							<ElectricDrive yacht={yacht} />
+						</div>
 					</div>
-				</div>
-			</section>
+				</section>
+			)}
 		</ExpandedCover>
 	);
 }

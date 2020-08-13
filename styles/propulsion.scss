@@ -53,7 +53,15 @@
 								.swiper-wrapper {
 									.swiper-slide {
 										.motor-slide {
-											height: 100% !important;
+											//height: 100% !important;
+
+											@include media-breakpoint-down(lg) {
+												height: 309px;
+											}
+
+											@include media-breakpoint-down(xl) {
+												height: 378px;
+											}
 
 											img {
 												max-width: 100%;
@@ -75,6 +83,7 @@
 					flex-direction: column;
 					align-items: stretch;
 					justify-content: flex-start;
+
 					.tabs__tab-item {
 						flex-grow: 1;
 						display: flex;
@@ -96,6 +105,7 @@
 						&:hover {
 							filter: grayscale(0) opacity(1);
 						}
+
 						p {
 							margin: 0;
 						}
@@ -129,6 +139,7 @@
 							.swiper-slide {
 								flex-grow: 1;
 								width: auto;
+
 								&.swiper-slide-thumb-active {
 									.tabs__tab-item {
 										filter: grayscale(0) opacity(1)
@@ -137,6 +148,7 @@
 							}
 						}
 					}
+
 					.tabs__tab-item {
 						width: 100%;
 					}
@@ -166,6 +178,11 @@
 
 	&__title {
 		margin: 30px 0 50px 0;
+
+		.link {
+
+		}
+
 		.title-block_center {
 			.title-block__sub-title {
 				max-width: 716px;
@@ -186,6 +203,7 @@
 
 	&__footer {
 		margin: 40px 0 0 0;
+
 		.text {
 			width: 100%;
 			max-width: 398px;

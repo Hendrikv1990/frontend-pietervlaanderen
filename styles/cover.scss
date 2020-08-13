@@ -4,12 +4,13 @@
 	&__wrapper {
 		position: relative;
 		display: block;
-		padding: (9/16*100%) 0 0 0;
+		padding: (9 / 16 * 100%) 0 0 0;
 		overflow: hidden;
 		@include media-breakpoint-down(sm) {
 			width: 100%;
 			height: 100vh;
 			max-height: calc(16 / 9 * 100vw);
+			padding: 0;
 		}
 	}
 
@@ -93,6 +94,7 @@
 		@include media-breakpoint-down(xs) {
 			padding: 71px 0 0 0;
 		}
+
 		&_bottom {
 			text-align: left;
 			padding: 0;
@@ -110,6 +112,7 @@
 			@include media-breakpoint-down(xs) {
 				bottom: 40px;
 			}
+
 			&_md-full {
 				@include media-breakpoint-down(md) {
 					top: 0;
@@ -129,6 +132,7 @@
 		@include media-breakpoint-down(xs) {
 			font-size: $font-size-h2;
 		}
+
 		&_sm {
 			font-size: $font-size-h1-sm;
 			font-weight: $font-semi-bold;
@@ -136,8 +140,9 @@
 				font-size: $font-size-h3;
 			}
 		}
+
 		&_dark {
-			color: #000;
+			color: $color-black1;
 		}
 	}
 
@@ -153,6 +158,7 @@
 			font-size: $font-size-text;
 			max-width: 100%;
 		}
+
 		&_roundhand {
 			font-family: $font-family-round;
 			font-size: $font-size-h1;
@@ -163,10 +169,15 @@
 				font-size: $font-size-h3;
 			}
 		}
+
 		&_small {
 			font-size: $font-size-text;
 			line-height: (24 / 18);
 			margin: auto;
+		}
+
+		&_dark {
+			color: $color-black1;
 		}
 	}
 
@@ -215,15 +226,89 @@
 		background-size: 100% 416px;
 		background-image: linear-gradient(to bottom, rgba(0, 178, 185, .17), rgba(255, 255, 255, 0) 103%);
 		background-repeat: no-repeat;
+
 		.cover__img {
 			-webkit-background-size: 100% auto;
 			background-size: 100% auto;
 		}
+
 		.cover__content {
 			padding: 0;
+
 			.container {
 				height: 100%;
 			}
+		}
+	}
+
+	&_narrow {
+		.cover__wrapper {
+			padding: (460 / 1440 * 100%) 0 0 0;
+			@include media-breakpoint-down(md) {
+				padding: (459 / 834 * 100%) 0 0 0;
+			}
+			@include media-breakpoint-down(sm) {
+				padding: 0;
+				width: 100%;
+				height: 100vh;
+				max-height: calc(16 / 9 * 100vw);
+			}
+		}
+
+		.cover__content {
+			padding: initial;
+		}
+
+		.container {
+			height: 100%;
+		}
+
+		.cover__title {
+			margin: 0;
+		}
+
+		.cover__subtitle {
+			max-width: 375px;
+			margin: initial;
+		}
+
+		.cover__subtitle_roundhand {
+			font-size: $font-size-h3;
+		}
+	}
+
+	&_narrow_sm {
+		.cover__wrapper {
+			@include media-breakpoint-down(md) {
+				padding: (340 / 834 * 100%) 0 0 0;
+			}
+			@include media-breakpoint-down(sm) {
+				padding: (230 / 375 * 100%) 0 0 0;
+				width: 100%;
+				height: initial;
+				max-height: initial;
+			}
+		}
+
+		.cover__content {
+			padding: initial;
+		}
+
+		.container {
+			height: 100%;
+		}
+
+		.cover__title {
+			margin: 0;
+		}
+
+		.cover__subtitle {
+			max-width: 375px;
+			margin: initial;
+		}
+
+		.cover__subtitle_roundhand {
+			font-size: $font-size-h3;
 		}
 	}
 
