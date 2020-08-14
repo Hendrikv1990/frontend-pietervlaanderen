@@ -7,6 +7,8 @@ import 'photo-sphere-viewer/dist/plugins/markers.css';
 import 'photoswipe/dist/photoswipe.css';
 import 'photoswipe/dist/default-skin/default-skin.css';
 
+import 'mapbox-gl/dist/mapbox-gl.css';
+
 import PropTypes from 'prop-types';
 import {LocaleProvider} from '../components/Locale';
 import makeStore from '../redux/index';

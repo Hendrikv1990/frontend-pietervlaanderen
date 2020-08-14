@@ -42,7 +42,7 @@ export default function SolarPage({solarPage, menus, textLabels, yachtsData}) {
 					text: solarPage.header_subtitle,
 				}} />
 
-				<section className="section section_solar solar">
+				<section className="section section_solar">
 					<div className="container">
 						{activeYacht &&
 						<SolarBenefitsSlider slides={yachtsData[activeYacht].group_solar_technical_slides}

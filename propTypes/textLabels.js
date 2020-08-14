@@ -74,5 +74,6 @@ export const textLabelsPropType = () => PropTypes.shape({
 	hybrid: PropTypes.string,
 	electric: PropTypes.string,
 	enjoy_responsible_boating: PropTypes.array,
-	solar: PropTypes.string
+	solar: PropTypes.string,
+	cancel: PropTypes.string,
 });

@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import LangSwitcher from '../LangSwitcher';
 import clsx from 'clsx';
 
-function TopLine({openAsideMenu, isWhite}) {
+function TopLine({openAsideMenu, isWhite, extraClasses}) {
 	const {locale} = useTranslation();
 
 	function onHamburgerClicked(e) {
@@ -16,7 +16,7 @@ function TopLine({openAsideMenu, isWhite}) {
 	}
 
 	return (
-		<div className={'top-line'}>
+		<div className={clsx('top-line', extraClasses)}>
 			<div className={'container'}>
 				<div className={'flex flex_sb_c'}>
 					<div className={'logo'}>
@@ -47,7 +47,11 @@ function TopLine({openAsideMenu, isWhite}) {
 
 TopLine.propTypes = {
 	openAsideMenu: PropTypes.func.isRequired,
-	isWhite: PropTypes.bool
+	isWhite: PropTypes.bool,
+	extraClasses: PropTypes.oneOfType([
+		PropTypes.string,
+		PropTypes.array
+	]),
 };
 
 function mapDispatchToProps(dispatch) {

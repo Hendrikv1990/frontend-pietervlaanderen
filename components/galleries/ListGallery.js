@@ -50,7 +50,7 @@ export default function ListGallery({gallery}) {
 							<h3 className="h3">
 								<AsText value={item.title} />
 							</h3>
-							<div className="gallery-list__text">
+							<div className="gallery-list__text no-last-margin">
 								<ResolvedHtmlField content={item.caption} />
 							</div>
 						</div>

@@ -4,7 +4,12 @@
 	&__wrapper {
 		position: relative;
 		display: block;
-		padding: (9 / 16 * 100%) 0 0 0;
+
+		padding: 0;
+		height: 100vh;
+		max-height: calc(9 / 16 * 100vw);
+
+		//padding: (9 / 16 * 100%) 0 0 0;
 		overflow: hidden;
 		@include media-breakpoint-down(sm) {
 			width: 100%;

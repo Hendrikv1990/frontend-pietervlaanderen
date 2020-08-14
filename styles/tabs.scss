@@ -126,6 +126,7 @@
 
 	&__sub-title {
 		font-weight: $font-regular;
+		font-size: $font-size-text;
 		@include media-breakpoint-down(md) {
 			font-size: $font-size-xs;
 		}

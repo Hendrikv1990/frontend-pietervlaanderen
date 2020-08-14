@@ -7,7 +7,8 @@ module.exports = withImages({
 		config.plugins.push(
 			new webpack.DefinePlugin({
 				'process.env.PRISMIC_REPOSITORY_NAME': `'${process.env.PRISMIC_REPOSITORY_NAME}'`,
-				'process.env.FORM_APN': `'${process.env.FORM_APN}'`
+				'process.env.FORM_APN': `'${process.env.FORM_APN}'`,
+				'process.env.MAPBOX_TOKEN': `'${process.env.MAPBOX_TOKEN}'`
 			})
 		);
 
