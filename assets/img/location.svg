@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   id="svg376"
+   version="1.1"
+   viewBox="0 0 20 20"
+   height="20"
+   width="20">
+  <metadata
+     id="metadata382">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>pin-location-1</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs380" />
+  <title
+     id="title366">pin-location-1</title>
+  <g
+     transform="translate(0.75,0.5625)"
+     style="fill:none;fill-rule:evenodd;stroke:none;stroke-width:1;stroke-linecap:round;stroke-linejoin:round"
+     id="Charter">
+    <g
+       style="stroke:#000000"
+       transform="translate(-139,-724)"
+       id="Charter-1">
+      <g
+         transform="translate(140,723)"
+         id="Group-11">
+        <g
+           transform="translate(0,2)"
+           id="pin-location-1">
+          <circle
+             r="2.25"
+             cy="5.0625"
+             cx="8.25"
+             id="Oval" />
+          <path
+             id="Path"
+             d="m 8.25,0 c 2.795942,0 5.0625,2.2665584 5.0625,5.0625 0,2.43825 -3.849,7.89525 -4.8345,9.25275 -0.053264,0.07262 -0.1379384,0.115527 -0.228,0.115527 -0.090062,0 -0.174736,-0.0429 -0.228,-0.115527 C 7.0365,12.95775 3.1875,7.50075 3.1875,5.0625 3.1875,2.2665584 5.4540584,0 8.25,0 Z" />
+          <path
+             id="path370"
+             d="m 12.73425,12.7755 c 2.049,0.40575 3.39075,1.083 3.39075,1.8495 0,1.24275 -3.525,2.25 -7.875,2.25 -4.35,0 -7.875,-1.00725 -7.875,-2.25 0,-0.765 1.33575,-1.44075 3.375,-1.84725" />
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
