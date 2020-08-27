@@ -7,6 +7,7 @@ import FullScreenSliderSlide from './FullScreenSlider/Slide';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Pagination} from 'swiper';
 import ImagePreloader from 'image-preloader';
+import GoDownLink from './components/GoDownLink';
 
 SwiperCore.use([Pagination]);
 
@@ -49,11 +50,16 @@ export default function FullScreenSlider(props) {
 				{slides.map((slide, i) => (
 					<SwiperSlide key={i}>
 						<FullScreenSliderSlide slide={slide}
-																	 showDownArrow={showDownArrow}
+																	 showDownArrow={false}
 																	 blockIndex={blockIndex}
 						/>
 					</SwiperSlide>
 				))}
+				{showDownArrow &&
+				<span slot="container-end">
+					<GoDownLink blockIndex={blockIndex} />
+				</span>
+				}
 			</Swiper>
 		</section>
 	);

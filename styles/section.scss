@@ -236,4 +236,69 @@
 		padding: 0;
 		position: relative;
 	}
+
+	&_articles-list {
+		padding: 40px 0;
+		background: fade_out($color-black1, .95);
+		@include media-breakpoint-down(md) {
+			background: $color-white;
+		}
+	}
+
+	&_article {
+		padding: 170px 0 60px;
+		background: $color-white;
+		position: relative;
+		@include media-breakpoint-down(md) {
+			padding: 150px 0 50px;
+		}
+		@include media-breakpoint-down(sm) {
+			padding: 110px 0 50px;
+		}
+	}
+
+	&_more-articles {
+		.h4 {
+			@include media-breakpoint-down(sm) {
+				display: inline-block;
+				margin: 0 0 25px 0;
+			}
+		}
+
+	}
+
+	&_bg {
+		&_gradient {
+			height: 0;
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			padding: (427 / 1440 * 100%) 0 0 0;
+			background: linear-gradient(to bottom, fade_out($color-teal-blue, .75), $color-white 103%) no-repeat;
+			z-index: 0;
+			@include media-breakpoint-down(md) {
+				padding: (427 / 834 * 100%) 0 0 0;
+			}
+			@include media-breakpoint-down(sm) {
+				padding: (427 / 375 * 100%) 0 0 0;
+			}
+		}
+	}
+
+	&_p0 {
+		padding: 0;
+		@include media-breakpoint-down(lg) {
+			padding: 0;
+		}
+
+		@include media-breakpoint-down(md) {
+			padding: 0;
+		}
+
+		@include media-breakpoint-down(sm) {
+			padding: 0;
+		}
+	}
+
 }

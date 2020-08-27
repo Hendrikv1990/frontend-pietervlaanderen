@@ -13,6 +13,8 @@ export const linkResolver = function(doc) {
 		return `/${locale}/yacht/${doc._meta.uid}`;
 	} else if (type == 'home_page') {
 		return `/${locale}`;
+	} else if (type == 'blog_post') {
+		return `/${locale}/blog/${doc._meta.uid}`;
 	} else if (/_page$/.test(type) || type == 'propulsion') {
 		return `/${locale}/${doc._meta.uid}`;
 	}
@@ -27,6 +29,8 @@ export const hrefResolver = (doc) => {
 		return '/[lang]/yacht/[slug]';
 	} else if (type == 'home_page') {
 		return '/[lang]';
+	} else if (type == 'blog_post') {
+		return '/[lang]/blog/[slug]';
 	} else if (/_page$/.test(type) || type == 'propulsion') {
 		return `/[lang]/${doc._meta.uid}`;
 	}

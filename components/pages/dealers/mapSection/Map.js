@@ -29,8 +29,7 @@ export default class DealersMap extends Component {
 			zoom: 1.8623566060751735,
 			scrollZoom: false
 		});
-		this.mapbox.addControl(new mapboxgl.NavigationControl());
-
+		this.mapbox.addControl(new mapboxgl.NavigationControl(), 'bottom-left');
 		// this.mapbox.on('click', () => {
 		// 	console.log(this.mapbox.getCenter(), this.mapbox.getZoom());
 		// });
@@ -40,10 +39,19 @@ export default class DealersMap extends Component {
 		// 		mapboxgl: mapboxgl
 		// 	})
 		// );
+
+		const MapboxGeocoder = require('@mapbox/mapbox-gl-geocoder');
+		this.mapbox.addControl(new MapboxGeocoder({
+			accessToken: mapboxgl.accessToken,
+			mapboxgl: mapboxgl,
+			types: 'country,region,district,place'
+		}), 'top-right');
+
 		this.addMarkers();
 	}
 
 	addMarkers() {
+		const bounds = new mapboxgl.LngLatBounds();
 		this.props.dealersPage.dealers.forEach(({title, address, point}) => {
 			try {
 				const $div = document.createElement('div');
@@ -60,10 +68,20 @@ export default class DealersMap extends Component {
 				;
 
 				this.markers.push(marker);
+
+				// bounds.extend({lon: point.longitude, lat: point.latitude});
+				bounds.extend([point.longitude, point.latitude]);
 			} catch (e) {
 				console.error('Error adding marker:', e);
 			}
 		});
+
+		if (this.markers.length) {
+			this.mapbox.fitBounds(
+				bounds.toArray(),
+				{padding: 50}
+			);
+		}
 	}
 
 	componentWillUnmount() {
@@ -78,7 +96,7 @@ export default class DealersMap extends Component {
 		if (!(dealerIndex in this.markers))
 			return;
 
-		const marker = this.markers[dealerIndex]
+		const marker = this.markers[dealerIndex];
 		marker.getPopup().addTo(this.mapbox);
 
 		this.mapbox.flyTo({

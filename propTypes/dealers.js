@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 export const dealersPagePropType = () => PropTypes.shape({
 	seo_title: PropTypes.string,
 	seo_meta_description: PropTypes.array,
+	mobile_header: PropTypes.array,
 	dealers: PropTypes.arrayOf(
 		PropTypes.shape({
 			continent: PropTypes.string,

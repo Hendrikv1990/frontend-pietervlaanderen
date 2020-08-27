@@ -1,6 +1,7 @@
 .form-country {
 	&__input-block {
 		position: relative;
+
 		.btn_search {
 			position: absolute;
 			top: 50%;
@@ -8,6 +9,7 @@
 			transform: translate(0, -50%);
 		}
 	}
+
 	&__input {
 		width: 100%;
 		text-align: right;

@@ -77,6 +77,20 @@
 		bottom: 0;
 		left: 0;
 		z-index: 2;
+		background: #003952;
+		background: radial-gradient(circle at 52% 50%, rgba(0, 57, 82, 0), #003952 118%);;
+		opacity: .65;
+		mix-blend-mode: multiply;
+		transform: rotate(-180deg);
+	}
+
+	&__mask {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 2;
 		background: rgb(0, 57, 82);
 		background: linear-gradient(180deg, rgba(0, 57, 82, 0.65) 0%, rgba(0, 57, 82, 0) 100%);
 	}
@@ -198,6 +212,8 @@
 		margin: 0 0 0 -10px;
 		bottom: 25px;
 		animation: cover-go-down 1.7s infinite ease;
+		z-index: 10;
+
 		@include media-breakpoint-down(sm) {
 			display: none;
 		}
@@ -249,6 +265,8 @@
 	&_narrow {
 		.cover__wrapper {
 			padding: (460 / 1440 * 100%) 0 0 0;
+			height: 0;
+			max-height: 0;
 			@include media-breakpoint-down(md) {
 				padding: (459 / 834 * 100%) 0 0 0;
 			}

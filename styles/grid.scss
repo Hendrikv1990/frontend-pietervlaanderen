@@ -1,8 +1,8 @@
 .container {
 	width: 100%;
-  max-width: $container-width-xl;
-  padding: 0 $gutters;
-  margin: 0 auto;
+	max-width: $container-width-xl;
+	padding: 0 $gutters;
+	margin: 0 auto;
 
 	@include media-breakpoint-down(lg) {
 		max-width: $container-width-lg;
@@ -29,6 +29,7 @@
 		width: calc((100% - 1 * 24px) / 2);
 		flex: 0 0 calc((100% - 1 * 24px) / 2);
 		margin: 0 24px 0 0;
+
 		&:nth-child(2n) {
 			margin: 0;
 		}

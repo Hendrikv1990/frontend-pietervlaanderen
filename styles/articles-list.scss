@@ -1,0 +1,138 @@
+.articles-list {
+	&__item {
+		width: calc((100% - 2 * 24px) / 3);
+		flex: 0 0 calc((100% - 2 * 24px) / 3);
+		margin: 0 24px 60px 0;
+
+		&:nth-child(3n) {
+			margin: 0 0 60px 0;
+		}
+
+		@include media-breakpoint-down(md) {
+			width: 100%;
+			flex: 0 0 100%;
+			margin: 0 0 60px 0;
+		}
+	}
+}
+
+.articles-list-item {
+	display: block;
+	background: $color-white;
+	box-shadow: 0 2px 5px 0 fade_out($color-black, .97);
+	transition: all .35s ease-in-out;
+	@include media-breakpoint-down(md) {
+		border: none;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	&:hover {
+		box-shadow: 0 15px 15px 0 fade_out($color-black, .97);
+		@include media-breakpoint-down(md) {
+			-webkit-box-shadow: none;
+			-moz-box-shadow: none;
+			box-shadow: none;
+		}
+		.articles-list-item__img {
+			transform: scale(1.05);
+		}
+		.articles-list-item__title {
+			text-decoration: underline;
+		}
+	}
+
+	&__wrapper {
+		height: 100%;
+		@include media-breakpoint-down(md) {
+			height: initial;
+		}
+	}
+
+	&__img-block {
+		width: 100%;
+		padding: (260 / 392 * 100%) 0 0 0;
+		height: 0;
+		position: relative;
+		overflow: hidden;
+	}
+
+	&__img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		transition: all .35s ease-in-out;
+	}
+
+	&__info {
+		padding: 40px 20px 30px;
+		height: 100%;
+		@include media-breakpoint-down(md) {
+			padding: 20px 0;
+		}
+	}
+
+	&__title {
+		margin: 0 0 26px 0;
+		width: 100%;
+		@include media-breakpoint-down(md) {
+			flex-grow: 1;
+			margin: 0 0 20px 0;
+			order: 0;
+			width: initial;
+		}
+		@include media-breakpoint-down(sm) {
+			margin: 0 0 20px 0;
+			order: 1;
+			width: 100%;
+		}
+	}
+
+	&__text {
+		width: 100%;
+		font-size: $font-size-text;
+		line-height: (24 / 18);
+		flex-grow: 1;
+		@include media-breakpoint-down(md) {
+			order: 2;
+		}
+		@include media-breakpoint-down(sm) {
+			font-size: $font-size-text-sm;
+			line-height: (24 / 16);
+		}
+	}
+
+	&__date {
+		width: 100%;
+		margin: 46px 0 0 0;
+		font-size: $font-size-text;
+		line-height: (24 / 18);
+		flex-shrink: 0;
+		@include media-breakpoint-down(md) {
+			margin: 0 0 0 24px;
+			order: 1;
+			width: initial;
+		}
+		@include media-breakpoint-down(sm) {
+			margin: 0 0 10px 0;
+			order: 0;
+			width: 100%;
+			font-size: $font-size-text-sm;
+			line-height: (24 / 16);
+		}
+	}
+
+	&__btn-more {
+		display: none;
+		@include media-breakpoint-down(md) {
+			display: block;
+			order: 3;
+		}
+	}
+}

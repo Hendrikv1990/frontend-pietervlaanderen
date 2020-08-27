@@ -36,7 +36,7 @@
 		border: 2px solid $color-black1;
 		font-weight: $font-semi-bold;
 		width: 240px;
-		padding: 12px 10px;
+		padding: 11px 10px;
 
 		&:hover {
 			border-color: $color-black1;
@@ -56,6 +56,20 @@
 				color: $color-teal-dark1;
 			}
 		}
+	}
+
+	&_border_dark {
+		border: 2px solid $color-black1;
+		font-weight: $font-bold;
+		padding: 11px 50px;
+		color: $color-black1;
+
+		&:hover {
+			border-color: $color-black1;
+			color: $color-white;
+			background: $color-black1;
+		}
+
 	}
 
 	&_border_stretched {

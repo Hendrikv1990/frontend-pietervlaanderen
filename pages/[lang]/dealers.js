@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 import DealersMapSection from '../../components/pages/dealers/MapSection';
 import _trim from 'lodash/trim';
 import _uniq from 'lodash/uniq';
+import AsText from '../../components/AsText';
 
 
 export default function DealersPage({dealersPage, dealersTree, textLabels, menus}) {
@@ -35,7 +36,9 @@ export default function DealersPage({dealersPage, dealersTree, textLabels, menus
 					<div className="cover__wrapper">
 						<div className="cover__content">
 							<div className="container flex flex_column flex_c_c">
-								<h2 className="cover__title cover__title_dark">Find your distributor</h2>
+								<h2 className="cover__title cover__title_dark">
+									<AsText value={dealersPage.mobile_header} />
+								</h2>
 								<div className="cover__subtitle cover__subtitle_dark cover__subtitle_roundhand">
 									{dealersPage.preset_in_countries.replace('{number}', countries.length)}
 								</div>

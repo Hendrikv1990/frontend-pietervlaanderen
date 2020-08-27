@@ -1,4 +1,4 @@
-import {useState, useRef, useEffect} from 'react';
+import {useState, useRef} from 'react';
 import PropTypes from 'prop-types';
 import {dealersPagePropType} from '../../../propTypes/dealers';
 import clsx from 'clsx';
@@ -76,7 +76,7 @@ function CountriesMenu({dealersTree, onOfficeClicked, onContactClicked}) {
 
 	return (
 		<ul className="filter filter_level1 flex flex_fs_s flex_column">
-			{dealersTree.map(({continentTitle, countries}, continentIndex) => (
+			{dealersTree.map(({continentTitle}, continentIndex) => (
 				<li key={continentIndex}
 						className={clsx('filter__item filter__item_level1', {'is-open': openedContinents.includes(continentIndex)})}
 				>

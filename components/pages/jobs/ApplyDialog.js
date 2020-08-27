@@ -1,24 +1,23 @@
 import PropTypes from 'prop-types';
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import {useTextLabels} from '../../../../hooks/appData';
+import {jobPositionPropType} from '../../../propTypes/jobs';
+import {useTextLabels} from '../../../hooks/appData';
 import {useState} from 'react';
+import {postForm} from '../../../lib/api';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogActions from '@material-ui/core/DialogActions';
+import Button from '@material-ui/core/Button';
 import {Formik} from 'formik';
-import {postForm} from '../../../../lib/api';
-import ResolvedHtmlField from '../../../ResolvedHtmlField';
-import AsText from '../../../AsText';
-import {fieldAttrs} from '../../../../lib/utils';
+import TextField from '@material-ui/core/TextField';
+import {fieldAttrs} from '../../../lib/utils';
 
-export default function MapContactDialog({office, open, handleClose}) {
+export default function ApplyDialog({position, open, handleClose}) {
 	const {textLabels} = useTextLabels();
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	const onSubmit = (values, helpers) => {
-		postForm(Object.assign(values, {type: 'contactDealer', office: office}))
+		postForm(Object.assign(values, {type: 'applyForPosition', position: position}))
 			.then(() => setSentSuccessfully(true))
 			.catch(({errors}) => {
 				helpers.setErrors(errors);
@@ -29,18 +28,18 @@ export default function MapContactDialog({office, open, handleClose}) {
 
 	return (
 		<Dialog open={open} onClose={handleClose}>
-			<DialogTitle>{textLabels.contact}</DialogTitle>
+			<DialogTitle>{textLabels.apply}</DialogTitle>
 			{(sentSuccessfully)
 				? <>
-						<DialogContent>
-							<h4 className={'text_center'}>{textLabels.message_was_sent}</h4>
-						</DialogContent>
-						<DialogActions>
-							<Button onClick={() => {setSentSuccessfully(false);handleClose();}} color="primary">
-								{textLabels.close}
-							</Button>
-						</DialogActions>
-					</>
+					<DialogContent>
+						<h4 className={'text_center'}>{textLabels.message_was_sent}</h4>
+					</DialogContent>
+					<DialogActions>
+						<Button onClick={() => {handleClose();setSentSuccessfully(false);}} color="primary">
+							{textLabels.close}
+						</Button>
+					</DialogActions>
+				</>
 				: <Formik initialValues={{}} onSubmit={onSubmit}>
 					{({
 							values,
@@ -48,15 +47,11 @@ export default function MapContactDialog({office, open, handleClose}) {
 							handleChange,
 							handleSubmit,
 							isSubmitting,
-					}) => (
+						}) => (
 						<form onSubmit={handleSubmit}
 									className={'contact-office-form'}
 						>
 							<DialogContent dividers>
-								<div className={'office-info'}>
-									<h5><AsText value={office.title} /></h5>
-									<ResolvedHtmlField content={office.address} />
-								</div>
 								<TextField
 									label={`${textLabels.what_is_your_name}`}
 									{...fieldAttrs('name', values, errors)}
@@ -80,17 +75,12 @@ export default function MapContactDialog({office, open, handleClose}) {
 									required={true}
 								/>
 								<TextField
-									label={`${textLabels.whats_your_country_of_residence}`}
-									{...fieldAttrs('country', values, errors)}
-									fullWidth={true}
-									onChange={handleChange}
-								/>
-								<TextField
-									label={`${textLabels.how_can_we_help_you}`}
-									{...fieldAttrs('message', values, errors)}
+									label={`${textLabels.cv}`}
+									{...fieldAttrs('cv', values, errors)}
 									fullWidth={true}
 									onChange={handleChange}
 									multiline={true}
+									required={true}
 								/>
 							</DialogContent>
 							<DialogActions>
@@ -104,13 +94,13 @@ export default function MapContactDialog({office, open, handleClose}) {
 						</form>
 					)}
 					</Formik>
-			}
+				}
 		</Dialog>
 	);
 }
 
-MapContactDialog.propTypes = {
-	office: PropTypes.object,
+ApplyDialog.propTypes = {
 	open: PropTypes.bool,
-	handleClose: PropTypes.func
+	handleClose: PropTypes.func,
+	position: jobPositionPropType()
 };

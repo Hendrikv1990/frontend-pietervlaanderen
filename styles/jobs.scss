@@ -1,0 +1,75 @@
+.jobs-list {
+	&__item {
+		border: 1px solid fade_out($color-black1, .9);
+		box-shadow: 0 2px 5px 0 fade_out($color-black, .75);
+		padding: 40px 50px;
+		background: $color-white;
+		width: calc((100% - 1 * 24px) / 2);
+		flex: 0 0 calc((100% - 1 * 24px) / 2);
+		margin: 0 24px 24px 0;
+
+		&:nth-child(2n) {
+			margin: 0 0 24px 0;
+		}
+
+		@include media-breakpoint-down(lg) {
+			padding: 30px 40px;
+		}
+		@include media-breakpoint-down(md) {
+			padding: 60px 80px;
+			width: 100%;
+			flex: 100%;
+			margin: 0 0 40px 0;
+			&:nth-child(2n) {
+				margin: 0 0 40px 0;
+			}
+		}
+		@include media-breakpoint-down(sm) {
+			padding: 40px 50px;
+		}
+		@include media-breakpoint-down(xs) {
+			padding: 30px;
+		}
+	}
+
+	&__header {
+		margin: 0 0 40px 0;
+		@include media-breakpoint-down(xs) {
+			margin: 0 0 20px 0;
+		}
+	}
+
+	&__title {
+		@include media-breakpoint-down(xs) {
+			font-size: $font-size-btn-big;
+		}
+	}
+
+	&__subtitle {
+		font-size: $font-size;
+		font-weight: $font-bold;
+	}
+
+	&__text {
+		font-size: $font-size-text;
+		line-height: (24 / 18);
+		@include media-breakpoint-down(xs) {
+			font-size: $font-size-text-sm;
+			line-height: (24 / 16);
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	&__footer {
+		margin: 36px 0 0 0;
+
+		.btn {
+			@include media-breakpoint-down(xs) {
+				font-size: 18px;
+			}
+		}
+	}
+}

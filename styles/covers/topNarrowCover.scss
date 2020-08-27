@@ -44,3 +44,31 @@
 		}
 	}
 }
+
+.top-narrow {
+	padding: 185px 0 80px;
+	background: linear-gradient(to bottom, fade_out($color-teal-blue, .75), fade_out($color-black1, .95) 103%);
+	text-align: center;
+	@include media-breakpoint-down(md) {
+		background: linear-gradient(to bottom, fade_out($color-teal-blue, .75), $color-white 103%);
+		padding: 170px 0 80px;
+	}
+	@include media-breakpoint-down(sm) {
+		padding: 112px 0 40px;
+	}
+	&__title {
+		@include media-breakpoint-down(sm) {
+			font-size: $font-size-h2;
+		}
+	}
+	&__subtitle {
+		font-size: $font-size-h2;
+		margin: 11px 0 0 0;
+		@include media-breakpoint-down(sm) {
+			font-size: $font-size-btn-big;
+		}
+		&_roundhand {
+			font-family: $font-family-round;
+		}
+	}
+}
