@@ -1,0 +1,98 @@
+.job-position-text {
+	max-width: 600px;
+	margin: 0 auto 45px auto;
+
+	.rich-text {
+		& > * {
+			max-width: 100%;
+		}
+
+		> ul {
+			list-style-image: url("../../assets/img/check.svg");
+
+			li {
+				margin-bottom: 1rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}
+
+.job-how-to-apply {
+	background-image: radial-gradient(circle at 4% 100%, #008898, #003952 72%);
+	padding: 70px 0;
+	position: relative;
+
+	@include media-breakpoint-up(md) {
+		min-height: 190px;
+	}
+
+	@include media-breakpoint-up(lg) {
+		min-height: 215px;
+	}
+
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+
+		background: url("../../assets/img/newsletter-background.svg") no-repeat;
+		background-size: 140px;
+		background-position: bottom left;
+
+		right: 0;
+		top: 0;
+		width: 100px;
+		height: 100px;
+
+		@include media-breakpoint-up(md) {
+			background-size: cover;
+			width: 130px;
+			height: 190px;
+			top: calc(50% - 190px / 2);
+		}
+
+		@include media-breakpoint-up(lg) {
+			width: 140px;
+			height: 215px;
+			top: calc(50% - 215px/2);
+		}
+	}
+
+	.how-to-title {
+		color: #fff;
+		margin: 0 0 18px 0;
+
+		@include media-breakpoint-up(sm) {
+			text-align: center;
+		}
+	}
+
+	.instructions {
+		margin: 0 auto;
+		font-size: 18px;
+		line-height: 24px;
+		color: #fff;
+
+		@include media-breakpoint-up(sm) {
+			max-width: 512px;
+			text-align: center;
+		}
+
+		@include media-breakpoint-up(lg) {
+			max-width: 600px;
+		}
+
+		a {
+			font-weight: bold;
+			color: #ead710;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

@@ -20,7 +20,12 @@ export const jobsPagePropType = () => PropTypes.shape({
 });
 
 export const jobPositionPropType = () => PropTypes.shape({
-	title1: PropTypes.array,
+	title: PropTypes.array,
 	country: PropTypes.array,
-	description: PropTypes.array,
+	short_description: PropTypes.array,
+	full_description: PropTypes.array,
+	seo_title: PropTypes.string,
+	seo_meta_description: PropTypes.string,
+	how_to_apply: PropTypes.array,
+	apply_instructions: PropTypes.array,
 });

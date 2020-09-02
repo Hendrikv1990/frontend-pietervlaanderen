@@ -81,4 +81,5 @@ export const textLabelsPropType = () => PropTypes.shape({
 	next_article: PropTypes.string,
 	apply: PropTypes.string,
 	cv: PropTypes.string,
+	details_label: PropTypes.string
 });

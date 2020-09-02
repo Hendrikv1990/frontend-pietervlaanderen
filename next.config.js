@@ -8,7 +8,8 @@ module.exports = withImages({
 			new webpack.DefinePlugin({
 				'process.env.PRISMIC_REPOSITORY_NAME': `'${process.env.PRISMIC_REPOSITORY_NAME}'`,
 				'process.env.FORM_APN': `'${process.env.FORM_APN}'`,
-				'process.env.MAPBOX_TOKEN': `'${process.env.MAPBOX_TOKEN}'`
+				'process.env.MAPBOX_TOKEN': `'${process.env.MAPBOX_TOKEN}'`,
+				'process.env.GOOGLE_TAG_MANAGER_ID': `'${process.env.GOOGLE_TAG_MANAGER_ID}'`,
 			})
 		);
 
@@ -19,5 +20,15 @@ module.exports = withImages({
 		// );
 
 		return config;
-	}
+	},
+
+	redirects: async () => {
+		return [
+			{
+				source: '/some-old-yacht',
+				destination: '/en/yacht/45-fly',
+				permanent: true,
+			},
+		]
+	},
 });

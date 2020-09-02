@@ -7,6 +7,7 @@ import AsideMenu from '../components/AsideMenu';
 import {connect} from 'react-redux';
 import clsx from 'clsx';
 import {actionTypes as asideMenuActionTypes} from '../redux/reducers/asideMenu';
+import GoogleTagManager from '../components/GoogleTagManager';
 
 function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses, isWhite, topLineExtraClasses}) {
 	return (
@@ -16,6 +17,7 @@ function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses, isWh
 				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta httpEquiv="X-UA-Compatible" content="ie=edge" />
 			</Head>
+			<GoogleTagManager />
 			<div className={clsx(
 				'layout',
 				'layout-main',

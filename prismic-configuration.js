@@ -15,6 +15,8 @@ export const linkResolver = function(doc) {
 		return `/${locale}`;
 	} else if (type == 'blog_post') {
 		return `/${locale}/blog/${doc._meta.uid}`;
+	} else if (type == 'job_position_page') {
+		return '/${locale}/jobs/${doc._meta.uid}';
 	} else if (/_page$/.test(type) || type == 'propulsion') {
 		return `/${locale}/${doc._meta.uid}`;
 	}
@@ -31,6 +33,8 @@ export const hrefResolver = (doc) => {
 		return '/[lang]';
 	} else if (type == 'blog_post') {
 		return '/[lang]/blog/[slug]';
+	} else if (type == 'job_position_page') {
+		return '/[lang]/jobs/[slug]';
 	} else if (/_page$/.test(type) || type == 'propulsion') {
 		return `/[lang]/${doc._meta.uid}`;
 	}

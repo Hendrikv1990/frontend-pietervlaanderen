@@ -49,6 +49,12 @@
 	padding: 185px 0 80px;
 	background: linear-gradient(to bottom, fade_out($color-teal-blue, .75), fade_out($color-black1, .95) 103%);
 	text-align: center;
+
+	&.for-job-page {
+		//padding-bottom: 100px;
+		background: linear-gradient(to bottom, fade_out($color-teal-blue, .75), rgba(255, 255, 255, 0) 103%);
+	}
+
 	@include media-breakpoint-down(md) {
 		background: linear-gradient(to bottom, fade_out($color-teal-blue, .75), $color-white 103%);
 		padding: 170px 0 80px;
