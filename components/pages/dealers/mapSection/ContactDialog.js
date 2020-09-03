@@ -12,6 +12,14 @@ import {postForm} from '../../../../lib/api';
 import ResolvedHtmlField from '../../../ResolvedHtmlField';
 import AsText from '../../../AsText';
 import {fieldAttrs} from '../../../../lib/utils';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import CountryCombobox from '../../../forms/CountryCombobox';
+import {ThemeProvider} from '@material-ui/core/styles';
 
 export default function MapContactDialog({office, open, handleClose}) {
 	const {textLabels} = useTextLabels();
@@ -48,6 +56,7 @@ export default function MapContactDialog({office, open, handleClose}) {
 							handleChange,
 							handleSubmit,
 							isSubmitting,
+							setFieldValue
 					}) => (
 						<form onSubmit={handleSubmit}
 									className={'contact-office-form'}
@@ -79,12 +88,20 @@ export default function MapContactDialog({office, open, handleClose}) {
 									onChange={handleChange}
 									required={true}
 								/>
-								<TextField
-									label={`${textLabels.whats_your_country_of_residence}`}
-									{...fieldAttrs('country', values, errors)}
-									fullWidth={true}
-									onChange={handleChange}
+								<CountryCombobox autocompleteParams={{fullWidth: true}}
+																 inputParams={{
+																	 label: `${textLabels.whats_your_country_of_residence}`,
+																	 ...fieldAttrs('country', values, errors)
+																 }}
+																 setFieldValue={setFieldValue}
+																 fieldName={'country'}
 								/>
+								{/*<TextField*/}
+								{/*	label={`${textLabels.whats_your_country_of_residence}`}*/}
+								{/*	{...fieldAttrs('country', values, errors)}*/}
+								{/*	fullWidth={true}*/}
+								{/*	onChange={handleChange}*/}
+								{/*/>*/}
 								<TextField
 									label={`${textLabels.how_can_we_help_you}`}
 									{...fieldAttrs('message', values, errors)}
@@ -92,6 +109,26 @@ export default function MapContactDialog({office, open, handleClose}) {
 									onChange={handleChange}
 									multiline={true}
 								/>
+								<FormGroup className={'mb-4'}>
+									<FormControlLabel
+										control={
+											<Checkbox
+												onChange={handleChange}
+												name="gdpr"
+												value={1}
+												icon={<RadioButtonUncheckedIcon />}
+												checkedIcon={<CheckCircleIcon />}
+												className={'blue-checkbox'}
+												required={true}
+											/>
+										}
+										label={<ResolvedHtmlField content={textLabels.gdpr_checkbox} />}
+										classes={{label: 'no-last-margin'}}
+									/>
+									{errors.gdpr &&
+									<FormHelperText error={true}>{errors.gdpr}</FormHelperText>
+									}
+								</FormGroup>
 							</DialogContent>
 							<DialogActions>
 								<Button onClick={handleClose} color="primary">

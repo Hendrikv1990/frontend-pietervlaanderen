@@ -9,6 +9,14 @@ import {ThemeProvider} from '@material-ui/core/styles';
 import {basicTheme} from '../../materialUI/theme';
 import _isEmpty from 'lodash/isEmpty';
 import {postForm} from '../../../lib/api';
+import Checkbox from '@material-ui/core/Checkbox';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import ResolvedHtmlField from '../../ResolvedHtmlField';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import FormGroup from '@material-ui/core/FormGroup';
+import CountryCombobox from '../../forms/CountryCombobox';
 
 export default function MainOfficeForm({title, sendType, to}) {
 	const {textLabels} = useTextLabels();
@@ -38,6 +46,7 @@ export default function MainOfficeForm({title, sendType, to}) {
 							handleChange,
 							handleSubmit,
 							isSubmitting,
+							setFieldValue
 						}) => (
 						<form className={'centered-form'}
 									onSubmit={handleSubmit}
@@ -68,13 +77,21 @@ export default function MainOfficeForm({title, sendType, to}) {
 									onChange={handleChange}
 									required={true}
 								/>
-								<TextField
-									id={'form-what-is-your-country'}
-									label={`${textLabels.whats_your_country_of_residence}`}
-									{...fieldAttrs('country', values, errors)}
-									fullWidth={true}
-									onChange={handleChange}
+								<CountryCombobox autocompleteParams={{fullWidth: true}}
+																 inputParams={{
+																	 label: `${textLabels.whats_your_country_of_residence}`,
+																	 ...fieldAttrs('country', values, errors)
+																 }}
+																 setFieldValue={setFieldValue}
+																 fieldName={'country'}
 								/>
+								{/*<TextField*/}
+								{/*	id={'form-what-is-your-country'}*/}
+								{/*	label={`${textLabels.whats_your_country_of_residence}`}*/}
+								{/*	{...fieldAttrs('country', values, errors)}*/}
+								{/*	fullWidth={true}*/}
+								{/*	onChange={handleChange}*/}
+								{/*/>*/}
 								<TextField
 									id={'form-how-can-we-help'}
 									label={`${textLabels.how_can_we_help_you}`}
@@ -83,6 +100,26 @@ export default function MainOfficeForm({title, sendType, to}) {
 									onChange={handleChange}
 									multiline={true}
 								/>
+								<FormGroup className={'mb-4'}>
+									<FormControlLabel
+										control={
+											<Checkbox
+												onChange={handleChange}
+												name="gdpr"
+												value={1}
+												icon={<RadioButtonUncheckedIcon />}
+												checkedIcon={<CheckCircleIcon />}
+												className={'blue-checkbox'}
+												required={true}
+											/>
+										}
+										label={<ResolvedHtmlField content={textLabels.gdpr_checkbox} />}
+										classes={{label: 'no-last-margin'}}
+									/>
+									{errors.gdpr &&
+									<FormHelperText error={true}>{errors.gdpr}</FormHelperText>
+									}
+								</FormGroup>
 								<div className={'btns-row'}>
 									<button type={'submit'}
 													className={'btn btn_border_stretched_30'}

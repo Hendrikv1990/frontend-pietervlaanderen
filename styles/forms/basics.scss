@@ -14,3 +14,13 @@
 		text-align: center;
 	}
 }
+
+.blue-checkbox {
+	&.Mui-checked {
+		.MuiIconButton-label {
+			svg {
+				color: #20b2c5;
+			}
+		}
+	}
+}

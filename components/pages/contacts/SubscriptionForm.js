@@ -62,7 +62,7 @@ export default function SubscriptionForm() {
 											required={true}
 											type={'email'}
 										/>
-										<div className={'agree-with-terms'}>
+										<div className={'checkbox-row agree-with-terms'}>
 											<Checkbox
 												id={'subscribe-agreed'}
 												name={'agreed'}
@@ -74,6 +74,20 @@ export default function SubscriptionForm() {
 											/>
 											<label htmlFor={'subscribe-agreed'}>
 												<ResolvedHtmlField content={textLabels.i_agree_with} />
+											</label>
+										</div>
+										<div className={'checkbox-row'}>
+											<Checkbox
+												id={'subscribe-gdpr'}
+												name={'gdpr'}
+												required={true}
+												onChange={handleChange}
+												value={1}
+												icon={<RadioButtonUncheckedIcon />}
+												checkedIcon={<CheckCircleIcon />}
+											/>
+											<label htmlFor={'subscribe-gdpr'}>
+												<ResolvedHtmlField content={textLabels.gdpr_checkbox} />
 											</label>
 										</div>
 										<div className={'btns-row'}>

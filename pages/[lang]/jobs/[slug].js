@@ -58,7 +58,7 @@ JobPositionPage.propTypes = {
 };
 
 export async function getStaticProps(context) {
-	const jobPositionPage = await fetchJobPositionPage(context.params.slug, context)
+	const jobPositionPage = await fetchJobPositionPage(context.params.slug, context);
 	const {menus, textLabels} = await fetchLayoutData(context);
 
 	return {

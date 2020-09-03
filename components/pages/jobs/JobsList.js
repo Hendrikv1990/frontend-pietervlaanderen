@@ -3,8 +3,8 @@ import {jobPositionPropType} from '../../../propTypes/jobs';
 import AsText from '../../AsText';
 import ResolvedHtmlField from '../../ResolvedHtmlField';
 import {useTextLabels} from '../../../hooks/appData';
-import {useState} from 'react';
-import ApplyDialog from './ApplyDialog';
+// import {useState} from 'react';
+// import ApplyDialog from './ApplyDialog';
 import NextLink from 'next/link';
 import {useTranslation} from '../../Locale';
 
@@ -12,15 +12,15 @@ export default function JobsList({positions}) {
 	const {textLabels} = useTextLabels();
 	const {locale} = useTranslation();
 
-	const [modalOpen, setModalOpen] = useState(false);
-	const handleModalClose = () => setModalOpen(false);
+	// const [modalOpen, setModalOpen] = useState(false);
+	// const handleModalClose = () => setModalOpen(false);
 
-	const [applyTo, setApplyTo] = useState(null);
-	const applyToClicked = (position, e) => {
-		e.preventDefault();
-		setApplyTo(position);
-		setModalOpen(true);
-	};
+	// const [applyTo, setApplyTo] = useState(null);
+	// const applyToClicked = (position, e) => {
+	// 	e.preventDefault();
+	// 	setApplyTo(position);
+	// 	setModalOpen(true);
+	// };
 
 	return (
 		<>
@@ -56,10 +56,10 @@ export default function JobsList({positions}) {
 					</div>
 				</div>
 			</section>
-			<ApplyDialog open={modalOpen}
-									 handleClose={handleModalClose}
-									 position={applyTo}
-			/>
+			{/*<ApplyDialog open={modalOpen}*/}
+			{/*						 handleClose={handleModalClose}*/}
+			{/*						 position={applyTo}*/}
+			{/*/>*/}
 		</>
 	);
 }

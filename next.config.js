@@ -9,7 +9,7 @@ module.exports = withImages({
 				'process.env.PRISMIC_REPOSITORY_NAME': `'${process.env.PRISMIC_REPOSITORY_NAME}'`,
 				'process.env.FORM_APN': `'${process.env.FORM_APN}'`,
 				'process.env.MAPBOX_TOKEN': `'${process.env.MAPBOX_TOKEN}'`,
-				'process.env.GOOGLE_TAG_MANAGER_ID': `'${process.env.GOOGLE_TAG_MANAGER_ID}'`,
+				'process.env.GOOGLE_TAG_MANAGER_ID': JSON.stringify(process.env.GOOGLE_TAG_MANAGER_ID)
 			})
 		);
 
@@ -29,6 +29,6 @@ module.exports = withImages({
 				destination: '/en/yacht/45-fly',
 				permanent: true,
 			},
-		]
+		];
 	},
 });

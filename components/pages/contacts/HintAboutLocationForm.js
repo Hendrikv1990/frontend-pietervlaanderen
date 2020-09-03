@@ -11,11 +11,18 @@ import {useTranslation} from '../../Locale';
 import {createGetStr} from '../../../lib/utils';
 import {useEffect, useRef} from 'react';
 import ProgressBar from './ProgressBar';
+import CountryCombobox, {countryEmptyVal} from '../../forms/CountryCombobox';
+import _defaults from 'lodash/defaults';
 
 export default function HintAboutLocationForm({queryParams, onSubmit}) {
 	const {textLabels} = useTextLabels();
 	const {locale} = useTranslation();
 	const formikRef = useRef();
+
+	_defaults(queryParams, {
+		country: countryEmptyVal,
+		navigation: countryEmptyVal,
+	});
 
 	useEffect(() => {
 		if (formikRef.current) {
@@ -34,25 +41,44 @@ export default function HintAboutLocationForm({queryParams, onSubmit}) {
 						errors,
 						handleChange,
 						handleSubmit,
-						isSubmitting
+						isSubmitting,
+						setFieldValue
 					}) => (
 					<form onSubmit={handleSubmit}>
 						<div className={'centered-form'}>
 							<ThemeProvider theme={basicTheme}>
-								<TextField
-									id={'form-what-is-your-country'}
-									label={`${textLabels.whats_your_country_of_residence}`}
-									{...fieldAttrs('country', values, errors)}
-									fullWidth={true}
-									onChange={handleChange}
+								{/*<TextField*/}
+								{/*	id={'form-what-is-your-country'}*/}
+								{/*	label={`${textLabels.whats_your_country_of_residence}`}*/}
+								{/*	{...fieldAttrs('country', values, errors)}*/}
+								{/*	fullWidth={true}*/}
+								{/*	onChange={handleChange}*/}
+								{/*/>*/}
+								<CountryCombobox autocompleteParams={{fullWidth: true}}
+																 inputParams={{
+																	 label: `${textLabels.whats_your_country_of_residence}`,
+																	 ...fieldAttrs('country', values, errors)
+																 }}
+																 setFieldValue={setFieldValue}
+																 fieldName={'country'}
+																 value={values.country}
 								/>
-								<TextField
-									id={'form-what-is-your-navigation'}
-									label={`${textLabels.what_is_your_navigation_area}`}
-									{...fieldAttrs('navigation', values, errors)}
-									fullWidth={true}
-									onChange={handleChange}
+								<CountryCombobox autocompleteParams={{fullWidth: true}}
+																 inputParams={{
+																	 label: `${textLabels.what_is_your_navigation_area}`,
+																	 ...fieldAttrs('navigation', values, errors)
+																 }}
+																 setFieldValue={setFieldValue}
+																 fieldName={'navigation'}
+																 value={values.navigation}
 								/>
+								{/*<TextField*/}
+								{/*	id={'form-what-is-your-navigation'}*/}
+								{/*	label={`${textLabels.what_is_your_navigation_area}`}*/}
+								{/*	{...fieldAttrs('navigation', values, errors)}*/}
+								{/*	fullWidth={true}*/}
+								{/*	onChange={handleChange}*/}
+								{/*/>*/}
 							</ThemeProvider>
 						</div>
 						<nav className={'footer-nav'}>

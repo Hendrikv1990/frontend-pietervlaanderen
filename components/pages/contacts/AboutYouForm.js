@@ -10,11 +10,17 @@ import {basicTheme} from '../../materialUI/theme';
 import NextLink from 'next/link';
 import {useTranslation} from '../../Locale';
 import {createGetStr} from '../../../lib/utils';
-import axios from 'axios';
 import {contactModelsPropType} from '../../../propTypes/contacts';
 import {RichText} from 'prismic-reactjs';
-import NProgress from 'nprogress';
 import ProgressBar from './ProgressBar';
+import FormGroup from '@material-ui/core/FormGroup';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
+import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
+import CheckCircleIcon from '@material-ui/icons/CheckCircle';
+import ResolvedHtmlField from '../../ResolvedHtmlField';
+import FormHelperText from '@material-ui/core/FormHelperText';
+import {postForm} from '../../../lib/api';
 
 export default function AboutYouForm({queryParams, models}) {
 	const {textLabels} = useTextLabels();
@@ -22,25 +28,16 @@ export default function AboutYouForm({queryParams, models}) {
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	function onSubmit(values, helpers) {
-		NProgress.start();
-		axios.post(process.env.FORM_APN, Object.assign(values, queryParams, {
+		postForm(Object.assign(values, queryParams, {
 			type: 'interestedInNewBoat',
 			model_titles: models
-				.filter((model, i) => queryParams.models.includes(String(i)))
+				.filter((model, i) => queryParams.models.includes(Number(i)))
 				.map(({title}) => RichText.asText(title))
 		}))
-			.then(() => {
-				NProgress.done();
-
+			.then(() => setSentSuccessfully(true))
+			.catch(({errors}) => {
+				helpers.setErrors(errors);
 				helpers.setSubmitting(false);
-				setSentSuccessfully(true);
-			})
-			.catch(({response: {data}}) => {
-				NProgress.done();
-
-				helpers.setSubmitting(false);
-				if (data.errors)
-					helpers.setErrors(data.errors);
 			});
 	}
 
@@ -92,6 +89,26 @@ export default function AboutYouForm({queryParams, models}) {
 										onChange={handleChange}
 										multiline={true}
 									/>
+									<FormGroup className={'mb-4'}>
+										<FormControlLabel
+											control={
+												<Checkbox
+													onChange={handleChange}
+													name="gdpr"
+													value={1}
+													icon={<RadioButtonUncheckedIcon />}
+													checkedIcon={<CheckCircleIcon />}
+													className={'blue-checkbox'}
+													required={true}
+												/>
+											}
+											label={<ResolvedHtmlField content={textLabels.gdpr_checkbox} />}
+											classes={{label: 'no-last-margin'}}
+										/>
+										{errors.gdpr &&
+										<FormHelperText error={true}>{errors.gdpr}</FormHelperText>
+										}
+									</FormGroup>
 									<div className={'btns-row'}>
 										<button type={'submit'}
 														className={'btn btn_border_stretched_30'}
