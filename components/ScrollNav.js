@@ -10,6 +10,7 @@ export default function ScrollNav({links}) {
 	const [color, setColor] = useState(null);
 
 	const reCalcPositions = _throttle(() => {
+
 		const sections = document.querySelectorAll('[data-section]');
 
 		const sectionsWithVisibility = Array.from(sections).map(($section) => ({
