@@ -17,12 +17,18 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormGroup from '@material-ui/core/FormGroup';
 import CountryCombobox from '../../forms/CountryCombobox';
+import * as gtag from '../../../lib/gautils';
 
 export default function MainOfficeForm({title, sendType, to}) {
 	const {textLabels} = useTextLabels();
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	function onSubmit(values, helpers) {
+		gtag.event({
+			action: 'submit_form',
+			category: 'generalForm',
+			label: 'Submit'
+		})
 		postForm(Object.assign(values, {type: sendType, to: to}))
 			.then(() => setSentSuccessfully(true))
 			.catch(({errors}) => {

@@ -1,3 +1,26 @@
+.yacht-page, .home-page {
+	@media only screen and (min-width:1024px){
+
+		scroll-snap-type: y mandatory;
+		overflow-y: scroll;
+		height: 100vh;
+
+		.cover, .slider {
+			scroll-snap-align: start;
+			height: 100vh;
+			.cover__wrapper {
+				max-height:unset;
+			}
+		}
+		.footer, .text-block {
+			scroll-snap-align: start;
+			.cover__wrapper {
+				max-height:unset;
+			}
+		}
+	}
+}
+
 .section {
 	padding: 70px 0;
 	background: $color-white;

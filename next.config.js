@@ -9,6 +9,7 @@ module.exports = withImages({
 				'process.env.PRISMIC_REPOSITORY_NAME': `'${process.env.PRISMIC_REPOSITORY_NAME}'`,
 				'process.env.FORM_APN': `'${process.env.FORM_APN}'`,
 				'process.env.MAPBOX_TOKEN': `'${process.env.MAPBOX_TOKEN}'`,
+				'process.env.BACKEND_SECRET_API_TOKEN': `'${process.env.BACKEND_SECRET_API_TOKEN}'`,
 				'process.env.GOOGLE_TAG_MANAGER_ID': JSON.stringify(process.env.GOOGLE_TAG_MANAGER_ID)
 			})
 		);

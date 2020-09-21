@@ -10,13 +10,18 @@ import ResolvedHtmlField from '../../ResolvedHtmlField';
 import RadioButtonUncheckedIcon from '@material-ui/icons/RadioButtonUnchecked';
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import {postForm} from '../../../lib/api';
-
+import * as gtag from '../../../lib/gautils';
 
 export default function SubscriptionForm() {
 	const {textLabels} = useTextLabels();
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	function onSubmit(values, {setErrors, setSubmitting}) {
+		gtag.event({
+			action: 'submit_form',
+			category: 'Newsletter',
+			label: 'Submit'
+		})
 		postForm(Object.assign(values, {type: 'subscribeForm'}))
 			.then(() => setSentSuccessfully(true))
 			.catch(({errors}) => {

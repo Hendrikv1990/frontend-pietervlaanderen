@@ -21,13 +21,20 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import ResolvedHtmlField from '../../ResolvedHtmlField';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import {postForm} from '../../../lib/api';
+import * as gtag from '../../../lib/gautils';
 
-export default function AboutYouForm({queryParams, models}) {
+
+export default function AboutYouForm({queryuthorizationParams, models}) {
 	const {textLabels} = useTextLabels();
 	const {locale} = useTranslation();
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	function onSubmit(values, helpers) {
+		gtag.event({
+			action: 'submit_form',
+			category: 'interestedInNewBoat',
+			label: 'Submit'
+		})
 		postForm(Object.assign(values, queryParams, {
 			type: 'interestedInNewBoat',
 			model_titles: models

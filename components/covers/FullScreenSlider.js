@@ -18,7 +18,7 @@ export default function FullScreenSlider(props) {
 		const imgs = slides.reduce((accumulator, slide) => {
 			accumulator.push(slide.image.url);
 
-			['md', 'sm', 'xs'].forEach((size) => {
+			['main', 'md', 'sm', 'xs'].forEach((size) => {
 				if (size in slide.image) {
 					accumulator.push(slide.image[size].url);
 				}

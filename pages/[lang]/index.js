@@ -7,6 +7,8 @@ import FullScreenSlider from '../../components/covers/FullScreenSlider';
 import CoverWithBtn from '../../components/covers/CoverWithBtn';
 import LowCover from '../../components/covers/LowCover';
 import ScrollNav from '../../components/ScrollNav';
+import ReactFullpage from '@fullpage/react-fullpage';
+
 
 export default function Index({homePage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -21,11 +23,12 @@ export default function Index({homePage, menus, textLabels}) {
 				<title>{seo_title}</title>
 				<meta name={'Description'} content={seo_meta_description} />
 			</Head>
-			<MainLayout>
+			<MainLayout extraClasses={'home-page'}>
 				<FullScreenSlider slides={group_slides}
 													showDownArrow={true}
 													blockIndex={0}
 				/>
+
 				{group_sections.map((block, i) => {
 					const blockIndex = i + 1;
 

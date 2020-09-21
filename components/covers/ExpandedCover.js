@@ -7,14 +7,16 @@ import ResolvedLink from '../ResolvedLink';
 import clsx from 'clsx';
 import {scrollToElement} from '../../lib/scrollToElement';
 import {getSectionIdByIndex, isRichEmpty} from '../../lib/utils';
+
 import AsText from '../AsText';
 import CoverEngineTypesImgList from './components/CoverEngineTypesImgList';
 import _isFunction from 'lodash/isFunction';
 
+
+
 export default function ExpandedCover({blockIndex, block, isWhite, children, sectionColor, showEngineTypesList}) {
 	const {textLabels} = useTextLabels();
 	const [isOpened, setIsOpened] = useState(false);
-
 	function discoverMoreClicked(e) {
 		e.preventDefault();
 		const newVal = !isOpened;
@@ -60,6 +62,7 @@ export default function ExpandedCover({blockIndex, block, isWhite, children, sec
 															aAttrs={{
 																className: clsx('btn btn_xs btn_border btn_width_auto', {btn_border_white: isWhite})
 															}}
+
 								>
 									<AsText value={block.link_label} />
 								</ResolvedLink>

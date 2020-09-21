@@ -7,7 +7,7 @@ export default function CoverImg({image}) {
 	if (_isEmpty(image))
 		return null;
 
-	let existsResolutions = ['xs', 'sm', 'md'].filter((item) => item in image);
+	let existsResolutions = ['xs', 'sm', 'md', 'main'].filter((item) => item in image);
 
 	return (
 		<>
@@ -28,7 +28,7 @@ CoverImg.propTypes = {
 
 export function BgImg({src, className}) {
 	return (
-		<div className={clsx('cover__img', className)} style={{backgroundImage: `url(${src})`}} />
+		<div className={clsx('cover__img', className)} style={{backgroundImage: `url(${src+'&q=100'})`}} />
 	);
 }
 

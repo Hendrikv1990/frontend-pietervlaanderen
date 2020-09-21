@@ -24,7 +24,7 @@ export default class DealersMap extends Component {
 		mapboxgl.accessToken = process.env.MAPBOX_TOKEN;
 		this.mapbox = new mapboxgl.Map({
 			container: this.$mapContainer.current,
-			style: 'mapbox://styles/mapbox/streets-v11',
+			style: 'mapbox://styles/detailwun/cka4dqthf01cf1iqlnypzkpsw',
 			center: [-37.2577037854993, 23.88948087457861],
 			zoom: 1.8623566060751735,
 			scrollZoom: false

@@ -129,10 +129,12 @@ export default function AboutPage({aboutPage, menus, textLabels}) {
 function makeScrollNavLinks(aboutPage, textLabels) {
 	const keys = {};
 
+	console.log(textLabels);
+
 	if (!_isEmpty(aboutPage.header_title) && !_isEmpty(aboutPage.header_image)) {
 		keys.ourDream = {
 			sectionKey: 1,
-			title: RichText.asText(aboutPage.header_title)
+			title: textLabels.our_dream_nav_label
 		};
 	}
 
@@ -146,35 +148,35 @@ function makeScrollNavLinks(aboutPage, textLabels) {
 	if (!_isEmpty(aboutPage.identity_title) && !_isEmpty(aboutPage.group_values)) {
 		keys.ourIdentity = {
 			sectionKey: 3,
-			title: RichText.asText(aboutPage.identity_title)
+			title: textLabels.identity_title_nav_label
 		};
 	}
 
 	if (!_isEmpty(aboutPage.responsible_image) && !_isEmpty(aboutPage.responsible_title)) {
 		keys.ourResponsibility = {
 			sectionKey: 4,
-			title: aboutPage.responsible_name_in_scroll_nav || RichText.asText(aboutPage.responsible_title)
+			title: textLabels.responsible_title_nav_label || RichText.asText(aboutPage.responsible_title)
 		};
 	}
 
 	if (!_isEmpty(aboutPage.environment_title) && !_isEmpty(aboutPage.group_environment_specifications)) {
 		keys.environments = {
 			sectionKey: 5,
-			title: null
+			title: textLabels.responsible_title_nav_label
 		};
 	}
 
 	if (!_isEmpty(aboutPage.comfort_title) && !_isEmpty(aboutPage.comfort_cover_image)) {
 		keys.comfort = {
 			sectionKey: 6,
-			title: aboutPage.comfort_name_in_scroll_menu || RichText.asText(aboutPage.comfort_title)
+			title: textLabels.comfort_title_nav_label || RichText.asText(aboutPage.comfort_title)
 		};
 	}
 
 	if (!_isEmpty(aboutPage.made_cover_image) && !_isEmpty(aboutPage.made_title)) {
 		keys.motherland = {
-			sectionKey: null,
-			title: null
+			sectionKey: 7,
+			title: textLabels.made_in_nav_label
 		};
 	}
 

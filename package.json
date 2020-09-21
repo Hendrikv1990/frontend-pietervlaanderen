@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.0.2",
+    "@fullpage/react-fullpage": "^0.1.17",
     "@mapbox/mapbox-gl-geocoder": "^4.7.0",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
