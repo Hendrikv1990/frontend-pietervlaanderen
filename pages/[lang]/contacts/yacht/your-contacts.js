@@ -37,9 +37,9 @@ export default function ContactsYachtYourContactsPage({contactsPage, menus, text
 					</div>
 				</TopNarrowCoverWithGradient>
 				<div className={'container'}>
-					<AboutYouForm queryParams={queryParams}
-												models={contactsPage.models}
-					/>
+					{/*<AboutYouForm queryParams={queryParams}*/}
+					{/*							models={contactsPage.models}*/}
+					{/*/>*/}
 					<h2 className={'meet-the-team'}>{textLabels.meet_the_team}</h2>
 					<TeamList team={contactsPage.team} />
 				</div>
