@@ -7,7 +7,6 @@ import FullScreenSlider from '../../components/covers/FullScreenSlider';
 import CoverWithBtn from '../../components/covers/CoverWithBtn';
 import LowCover from '../../components/covers/LowCover';
 import ScrollNav from '../../components/ScrollNav';
-import ReactFullpage from '@fullpage/react-fullpage';
 
 
 export default function Index({homePage, menus, textLabels}) {
