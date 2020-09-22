@@ -17,11 +17,15 @@ export default function SubscriptionForm() {
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	function onSubmit(values, {setErrors, setSubmitting}) {
-		gtag.event({
-			action: 'submit_form',
-			category: 'Newsletter',
-			label: 'Submit'
-		})
+		console.log(values)
+		if(values.faxme)
+			return false;
+
+		// gtag.event({
+		// 	action: 'submit_form',
+		// 	category: 'Newsletter',
+		// 	label: 'Submit'
+		// })
 		postForm(Object.assign(values, {type: 'subscribeForm'}))
 			.then(() => setSentSuccessfully(true))
 			.catch(({errors}) => {
@@ -68,6 +72,12 @@ export default function SubscriptionForm() {
 											type={'email'}
 										/>
 										<div className={'checkbox-row agree-with-terms'}>
+											<Checkbox
+												id={'faxme'}
+												name={'faxme'}
+												required={false}
+												onChange={handleChange}
+											/>
 											<Checkbox
 												id={'subscribe-agreed'}
 												name={'agreed'}

@@ -9,12 +9,13 @@
     "lint": "npx eslint --ext .js ."
   },
   "dependencies": {
+    "@ap.cx/react-fullpage": "^0.2.0",
     "@apollo/client": "^3.0.2",
     "@mapbox/mapbox-gl-geocoder": "^4.7.0",
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
     "@material-ui/lab": "^4.0.0-alpha.56",
-    "animate.css": "^4.1.0",
+    "animate.css": "^4.1.1",
     "apollo-link-logger": "^1.2.3",
     "apollo-link-prismic": "^1.0.7",
     "axios": "^0.19.2",
@@ -42,6 +43,7 @@
     "query-strings-parser": "^2.1.6",
     "querystringify": "^2.2.0",
     "react": "16.13.1",
+    "react-animate-on-scroll": "^2.1.5",
     "react-dom": "16.13.1",
     "react-redux": "^7.2.0",
     "react-use-gesture": "^7.0.15",

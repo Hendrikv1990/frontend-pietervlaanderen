@@ -4,11 +4,15 @@ import ResolvedLink from '../ResolvedLink';
 import PropTypes from 'prop-types';
 import GoDownLink from './components/GoDownLink';
 import AsText from '../AsText';
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
 
 export default function	CoverWithBtn(props) {
 	const {block, showDownArrow, blockIndex} = props;
 
 	return (
+		<FullpageSection style={{
+
+		}}>
 		<section className="cover"
 						 id={`section-key-${blockIndex}`}
 						 data-section={blockIndex}
@@ -36,6 +40,7 @@ export default function	CoverWithBtn(props) {
 				</div>
 			</div>
 		</section>
+		</FullpageSection>
 	);
 }
 

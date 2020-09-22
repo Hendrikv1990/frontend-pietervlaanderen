@@ -7,6 +7,8 @@ import FullScreenSlider from '../../components/covers/FullScreenSlider';
 import CoverWithBtn from '../../components/covers/CoverWithBtn';
 import LowCover from '../../components/covers/LowCover';
 import ScrollNav from '../../components/ScrollNav';
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
+
 
 
 export default function Index({homePage, menus, textLabels}) {
@@ -23,10 +25,17 @@ export default function Index({homePage, menus, textLabels}) {
 				<meta name={'Description'} content={seo_meta_description} />
 			</Head>
 			<MainLayout extraClasses={'home-page'}>
-				<FullScreenSlider slides={group_slides}
-													showDownArrow={true}
-													blockIndex={0}
-				/>
+				<Fullpage>
+
+					<FullPageSections>
+						<FullpageSection style={{
+
+						}}>
+							<FullScreenSlider slides={group_slides}
+																showDownArrow={true}
+																blockIndex={0}
+							/>
+						</FullpageSection>
 
 				{group_sections.map((block, i) => {
 					const blockIndex = i + 1;
@@ -52,12 +61,23 @@ export default function Index({homePage, menus, textLabels}) {
 					// }
 				})}
 
-				<LowCover block={{title: textLabels.looking_for_a_new_boat,
-					text: textLabels.looking_for_a_new_boat_subtitle,
-					link: textLabels.get_in_touch_link,
-					link_label: textLabels.get_in_touch_label
-				}}
-				/>
+
+						<FullpageSection style={{
+							height: '55vh'
+						}}>
+							<LowCover block={{title: textLabels.looking_for_a_new_boat,
+								text: textLabels.looking_for_a_new_boat_subtitle,
+								link: textLabels.get_in_touch_link,
+								link_label: textLabels.get_in_touch_label
+							}}
+							/>
+							<Footer />
+						</FullpageSection>
+					</FullPageSections>
+				</Fullpage>
+
+
+
 
 				<ScrollNav links={scrollNavLinks} />
 			</MainLayout>
@@ -88,6 +108,7 @@ function makeScrollNavLinks(homePage) {
 import {textLabelsPropType} from '../../propTypes/textLabels';
 import {homePagePropType} from '../../propTypes/homePage';
 import {menusPropType} from '../../propTypes/menu';
+import Footer from '../../components/Footer';
 
 Index.propTypes = {
 	textLabels: textLabelsPropType().isRequired,

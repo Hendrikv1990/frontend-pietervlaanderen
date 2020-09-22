@@ -8,6 +8,8 @@ import {connect} from 'react-redux';
 import clsx from 'clsx';
 import {actionTypes as asideMenuActionTypes} from '../redux/reducers/asideMenu';
 import GoogleTagManager from '../components/GoogleTagManager';
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
+
 
 function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses, isWhite, topLineExtraClasses}) {
 	return (
@@ -35,7 +37,7 @@ function MainLayout({children, asideIsOpened, closeAsideMenu, extraClasses, isWh
 				<main className="main">
 					{children}
 				</main>
-				<Footer />
+
 				<PrismicScript />
 				<div className={'aside-backdrop'} onClick={() => closeAsideMenu()} />
 			</div>

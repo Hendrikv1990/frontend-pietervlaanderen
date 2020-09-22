@@ -24,11 +24,11 @@ export default function MainOfficeForm({title, sendType, to}) {
 	const [sentSuccessfully, setSentSuccessfully] = useState(false);
 
 	function onSubmit(values, helpers) {
-		gtag.event({
-			action: 'submit_form',
-			category: 'generalForm',
-			label: 'Submit'
-		})
+		// gtag.event({
+		// 	action: 'submit_form',
+		// 	category: 'generalForm',
+		// 	label: 'Submit'
+		// })
 		postForm(Object.assign(values, {type: sendType, to: to}))
 			.then(() => setSentSuccessfully(true))
 			.catch(({errors}) => {
