@@ -12,6 +12,7 @@ import {blogPostsPropType} from '../../propTypes/blogPost';
 import AsText from '../../components/AsText';
 import BlogPosts from '../../components/lists/BlogPosts';
 import SubscriptionForm from '../../components/pages/contacts/SubscriptionForm';
+import Footer from '../../components/Footer';
 
 export default function BlogPage({blogPage, blogPosts, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -40,6 +41,7 @@ export default function BlogPage({blogPage, blogPosts, menus, textLabels}) {
 				</section>
 				<BlogPosts blogPosts={blogPosts} />
 				<SubscriptionForm />
+				<Footer />
 			</MainLayout>
 		</>
 	);

@@ -13,6 +13,7 @@ import AboutYouForm from '../../../../components/pages/contacts/AboutYouForm';
 import parseContactsQueryParams from '../../../../lib/contactsQueryParams';
 import SubscriptionForm from '../../../../components/pages/contacts/SubscriptionForm';
 import ProgressBar from '../../../../components/pages/contacts/ProgressBar';
+import Footer from '../../../../components/Footer';
 
 export default function ContactsYachtYourContactsPage({contactsPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -44,6 +45,7 @@ export default function ContactsYachtYourContactsPage({contactsPage, menus, text
 					<TeamList team={contactsPage.team} />
 				</div>
 				<SubscriptionForm />
+				<Footer />
 			</MainLayout>
 		</>
 	);

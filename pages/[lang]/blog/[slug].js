@@ -13,6 +13,7 @@ import ResolvedHtmlField from '../../../components/ResolvedHtmlField';
 import EnjoyResponsibleBoatingShort from '../../../components/pages/blog/EnjoyResponsibleBoatingShort';
 import BlogPagePrevNext from '../../../components/pages/blog/PrevNext';
 import SubscriptionForm from '../../../components/pages/contacts/SubscriptionForm';
+import Footer from '../../../components/Footer';
 
 export default function BlogPostPage({blogPostPage, blogPosts, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -41,6 +42,7 @@ export default function BlogPostPage({blogPostPage, blogPosts, menus, textLabels
 				<EnjoyResponsibleBoatingShort />
 				<BlogPagePrevNext blogPosts={blogPosts} blogPostPage={blogPostPage} />
 				<SubscriptionForm />
+				<Footer />
 			</MainLayout>
 		</>
 	);

@@ -10,6 +10,7 @@ import {fetchLayoutData} from '../../lib/services/layoutData';
 import CoverNarrow from '../../components/covers/CoverNarrow';
 import CharterSpotsList from '../../components/pages/charter/SpotsList';
 import LowCover from '../../components/covers/LowCover';
+import Footer from '../../components/Footer';
 
 export default function CharterPage({charterPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -40,6 +41,8 @@ export default function CharterPage({charterPage, menus, textLabels}) {
 					link_label: textLabels.get_in_touch_label
 				}}
 				/>
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

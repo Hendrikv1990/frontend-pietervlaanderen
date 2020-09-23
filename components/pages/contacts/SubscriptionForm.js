@@ -77,6 +77,7 @@ export default function SubscriptionForm() {
 												name={'faxme'}
 												required={false}
 												onChange={handleChange}
+												style={{display:'none!important'}}
 											/>
 											<Checkbox
 												id={'subscribe-agreed'}

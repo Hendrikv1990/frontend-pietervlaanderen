@@ -10,6 +10,7 @@ import {fetchLayoutData} from '../../lib/services/layoutData';
 import JobsList from '../../components/pages/jobs/JobsList';
 import SubscriptionForm from '../../components/pages/contacts/SubscriptionForm';
 import CoverNarrow from '../../components/covers/CoverNarrow';
+import Footer from '../../components/Footer';
 
 export default function JobsPage({jobsPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -33,6 +34,8 @@ export default function JobsPage({jobsPage, menus, textLabels}) {
 				}} />
 				<JobsList positions={jobsPage.positions} />
 				<SubscriptionForm />
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

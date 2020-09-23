@@ -3,6 +3,8 @@ import {aboutPagePropType} from '../../../propTypes/about';
 import AsText from '../../AsText';
 import ResolvedHtmlField from '../../ResolvedHtmlField';
 import {getSectionIdByIndex} from '../../../lib/utils';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 export default function AboutComfortSection({aboutPage, blockIndex}) {
 	return (
@@ -21,17 +23,26 @@ export default function AboutComfortSection({aboutPage, blockIndex}) {
 					<div className="container">
 						<div className="gravity flex flex_column flex_sb_c flex_sm_sb-fs">
 							<div className="title-block">
+								<ScrollAnimation animateIn='animate__fadeInDown'
+																 animateOut='animate__fadeInDown'>
 								<h2 className="h1">
 									<AsText value={aboutPage.comfort_title} />
 								</h2>
+								</ScrollAnimation>
+								<ScrollAnimation animateIn='animate__fadeInDown'
+																 animateOut='animate__fadeInDown'>
 								<div className="title-block__sub-title">
 									<AsText value={aboutPage.comfort_sub_title} />
 								</div>
+								</ScrollAnimation>
 							</div>
 							<div className="gravity__bottom flex flex_sb_c flex_sm_column">
+								<ScrollAnimation animateIn='animate__fadeInDown'
+																 animateOut='animate__fadeInDown'>
 								<div className="gravity__text no-last-margin">
 									<ResolvedHtmlField content={aboutPage.comfort_description} />
 								</div>
+								</ScrollAnimation>
 								<div className="gravity__img-block">
 									<img src={aboutPage.gravity_image.url}
 											 alt={aboutPage.gravity_image.alt}

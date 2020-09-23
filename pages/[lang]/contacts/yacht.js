@@ -12,6 +12,9 @@ import ModelsForm from '../../../components/pages/contacts/ModelsForm';
 import TeamList from '../../../components/lists/Team';
 import SubscriptionForm from '../../../components/pages/contacts/SubscriptionForm';
 import ProgressBar from '../../../components/pages/contacts/ProgressBar';
+import Footer from '../../../components/Footer';
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
+
 
 export default function ContactsYachtPage({contactsPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -40,6 +43,7 @@ export default function ContactsYachtPage({contactsPage, menus, textLabels}) {
 					<TeamList team={contactsPage.team} />
 				</div>
 				<SubscriptionForm />
+				<Footer />
 			</MainLayout>
 		</>
 	);

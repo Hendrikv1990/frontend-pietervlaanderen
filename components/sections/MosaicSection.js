@@ -3,6 +3,8 @@ import {getSectionIdByIndex} from '../../lib/utils';
 import AsText from '../AsText';
 import {imagePropType} from '../../propTypes/common';
 import ResolvedHtmlField from '../ResolvedHtmlField';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 export default function MosaicSection({blockIndex, listNumber, title, grid}) {
 	return (
@@ -12,10 +14,17 @@ export default function MosaicSection({blockIndex, listNumber, title, grid}) {
 		>
 			<div className="container">
 				<div className="mosaic__title">
+					<ScrollAnimation animateIn='animate__fadeInDown'
+													 animateOut='animate__fadeInDown'>
 					<div className="gallery-list__number">{listNumber}</div>
+					</ScrollAnimation>
+
+					<ScrollAnimation animateIn='animate__fadeInDown'
+													 animateOut='animate__fadeInDown'>
 					<h2 className="h2">
 						<AsText value={title} />
 					</h2>
+					</ScrollAnimation>
 				</div>
 				<div className="mosaic__wrapper">
 					<div className="mosaic__grid">
@@ -32,16 +41,25 @@ export default function MosaicSection({blockIndex, listNumber, title, grid}) {
 									</div>
 								</div>
 								<div className="mosaic__descr">
+									<ScrollAnimation animateIn='animate__fadeInDown'
+																	 animateOut='animate__fadeInDown'>
 									<img src={item.icon.url}
 											 alt={item.icon.alt}
 											 className="mosaic__ico"
 									/>
+									</ScrollAnimation>
+									<ScrollAnimation animateIn='animate__fadeInDown'
+																	 animateOut='animate__fadeInDown'>
 									<h4 className="mosaic__name h4">
 										<AsText value={item.title} />
 									</h4>
+									</ScrollAnimation>
+									<ScrollAnimation animateIn='animate__fadeIn'
+																	 animateOut='animate__fadeIn'>
 									<div className="mosaic__text no-last-margin">
 										<ResolvedHtmlField content={item.description} />
 									</div>
+									</ScrollAnimation>
 								</div>
 							</div>
 						))}

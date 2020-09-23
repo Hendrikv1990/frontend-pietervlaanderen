@@ -26,6 +26,9 @@ import YachtVideos from '../../../components/pages/yacht/Videos';
 import YachtPosts from '../../../components/pages/yacht/Posts';
 import ScrollNav from '../../../components/ScrollNav';
 import {fetchLayoutData} from '../../../lib/services/layoutData';
+import Footer from '../../../components/Footer';
+import Fullpage, { FullPageSections, FullpageSection } from '@ap.cx/react-fullpage'
+
 
 export default function YachtPage({yacht, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -93,6 +96,8 @@ export default function YachtPage({yacht, menus, textLabels}) {
 												blockIndex={9} />
 				}
 				{scrollNavLinks.length && <ScrollNav links={scrollNavLinks} />}
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

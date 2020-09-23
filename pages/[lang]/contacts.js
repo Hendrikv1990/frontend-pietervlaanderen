@@ -15,6 +15,7 @@ import NextLink from 'next/link';
 import {useTranslation} from '../../components/Locale';
 import {scrollToElement} from '../../lib/scrollToElement';
 import SubscriptionForm from '../../components/pages/contacts/SubscriptionForm';
+import Footer from '../../components/Footer';
 
 export default function ContactsPage({contactsPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -72,6 +73,8 @@ export default function ContactsPage({contactsPage, menus, textLabels}) {
 					<TeamList team={teamAfterForm} className={'hide_md'} />
 				</div>
 				<SubscriptionForm />
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

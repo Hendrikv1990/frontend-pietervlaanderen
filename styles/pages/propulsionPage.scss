@@ -1,9 +1,12 @@
 .propulsion-page {
 	.section_propulsion {
 		.section__menu {
+			.link_video {
+				margin-right:50px;
+			}
 			.top-menu {
 				flex-grow: 1;
-
+				width: 60%;
 				.swiper-container {
 					text-align: right;
 

@@ -19,6 +19,7 @@ import MosaicSection from '../../components/sections/MosaicSection';
 import VideosSection from '../../components/sections/Videos';
 import LowCover from '../../components/covers/LowCover';
 import ScrollNav from '../../components/ScrollNav';
+import Footer from '../../components/Footer';
 
 export default function AboutPage({aboutPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -121,6 +122,8 @@ export default function AboutPage({aboutPage, menus, textLabels}) {
 				/>
 
 				{scrollNavLinks.length && <ScrollNav links={scrollNavLinks} />}
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

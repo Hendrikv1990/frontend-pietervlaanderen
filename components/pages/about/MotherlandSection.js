@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import {getSectionIdByIndex} from '../../../lib/utils';
 import CoverImg from '../../covers/components/CoverImg';
 import ResolvedHtmlField from '../../ResolvedHtmlField';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 export default function MotherlandSection({aboutPage, blockIndex}) {
 	return (
@@ -23,6 +25,8 @@ export default function MotherlandSection({aboutPage, blockIndex}) {
 									<li key={i}
 											className="list-icon__item flex flex_column"
 									>
+										<ScrollAnimation animateIn='animate__fadeInDown'
+																		 animateOut='animate__fadeInDown'>
 										<div className="list-icon__icon-block">
 											<img src={item.icon.url} alt={item.icon.alt} className="list-icon__icon" />
 										</div>
@@ -34,13 +38,19 @@ export default function MotherlandSection({aboutPage, blockIndex}) {
 												<ResolvedHtmlField content={item.xs_description} />
 											</span>
 										</div>
+										</ScrollAnimation>
 									</li>
 								))}
 							</ul>
 							<div className="info-block">
+								<ScrollAnimation animateIn='animate__fadeInDown'
+																 animateOut='animate__fadeInDown'>
 								<h2 className="h2 info-block__title no-last-margin">
 									<ResolvedHtmlField content={aboutPage.made_title} />
 								</h2>
+								</ScrollAnimation>
+								<ScrollAnimation animateIn='animate__fadeIn'
+																 animateOut='animate__fadeIn'>
 								<div className="info-block__text">
 									{/*<span className="hide_xs">*/}
 									<ResolvedHtmlField content={aboutPage.made_description} />
@@ -49,6 +59,7 @@ export default function MotherlandSection({aboutPage, blockIndex}) {
 									{/*	<p>Greenline Yachts are built in Slovenia, a country praised for its intact nature and sustainable mindset of its inhabitants.</p>*/}
 									{/*</span>*/}
 								</div>
+								</ScrollAnimation>
 							</div>
 						</div>
 					</div>

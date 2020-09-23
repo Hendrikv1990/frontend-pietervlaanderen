@@ -17,6 +17,7 @@ import SolarBenefitsSlider from '../../components/pages/yacht/solar/BenefitsSlid
 import AsText from '../../components/AsText';
 import clsx from 'clsx';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import Footer from '../../components/Footer';
 
 export default function SolarPage({solarPage, menus, textLabels, yachtsData}) {
 	const {setAppData} = useAppData();
@@ -58,6 +59,8 @@ export default function SolarPage({solarPage, menus, textLabels, yachtsData}) {
 				</section>
 
 				<EnjoyResponsibleBoating />
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

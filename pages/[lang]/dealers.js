@@ -13,6 +13,7 @@ import DealersMapSection from '../../components/pages/dealers/MapSection';
 import _trim from 'lodash/trim';
 import _uniq from 'lodash/uniq';
 import AsText from '../../components/AsText';
+import Footer from '../../components/Footer';
 
 
 export default function DealersPage({dealersPage, dealersTree, textLabels, menus}) {
@@ -49,6 +50,8 @@ export default function DealersPage({dealersPage, dealersTree, textLabels, menus
 				<DealersMapSection dealersTree={dealersTree}
 													 dealersPage={dealersPage}
 				/>
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

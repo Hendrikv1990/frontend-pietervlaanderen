@@ -15,6 +15,7 @@ import PropulsionHybridSection from '../../components/pages/propulsion/HybridSec
 import PropulsionElectricSection from '../../components/pages/propulsion/ElectricSection';
 import ScrollNav from '../../components/ScrollNav';
 import EnjoyResponsibleBoating from '../../components/pages/propulsion/EnjoyResponsibleBoating';
+import Footer from '../../components/Footer';
 
 
 export default function PropulsionPage({propulsionPage, menus, textLabels, yachtsData}) {
@@ -58,6 +59,8 @@ export default function PropulsionPage({propulsionPage, menus, textLabels, yacht
 				<EnjoyResponsibleBoating />
 
 				{scrollNavLinks.length && <ScrollNav links={scrollNavLinks} />}
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

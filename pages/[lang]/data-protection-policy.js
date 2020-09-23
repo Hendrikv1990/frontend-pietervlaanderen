@@ -10,6 +10,7 @@ import {fetchLayoutData} from '../../lib/services/layoutData';
 import CoverNarrow from '../../components/covers/CoverNarrow';
 import ResolvedHtmlField from '../../components/ResolvedHtmlField';
 import TopNarrowSection from '../../components/covers/TopNarrowSection';
+import Footer from '../../components/Footer';
 
 export default function dataProtectionPolicyPage({dataProtectionPolicyPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -38,6 +39,8 @@ export default function dataProtectionPolicyPage({dataProtectionPolicyPage, menu
 					</div>
 				</section>
 
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

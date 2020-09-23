@@ -11,6 +11,7 @@ import {fetchLayoutData} from '../../../lib/services/layoutData';
 import TopNarrowSection from '../../../components/covers/TopNarrowSection';
 import AsText from '../../../components/AsText';
 import ResolvedHtmlField from '../../../components/ResolvedHtmlField';
+import Footer from '../../../components/Footer';
 
 export default function JobPositionPage({jobPositionPage, menus, textLabels}) {
 	const {setAppData} = useAppData();
@@ -46,6 +47,8 @@ export default function JobPositionPage({jobPositionPage, menus, textLabels}) {
 						</div>
 					</div>
 				</section>
+
+				<Footer />
 			</MainLayout>
 		</>
 	);

@@ -6,6 +6,8 @@ import ResolvedHtmlField from '../../ResolvedHtmlField';
 import _isEmpty from 'lodash/isEmpty';
 import ResolvedLink from '../../ResolvedLink';
 import SliderGallery from '../../galleries/SliderGallery';
+import ScrollAnimation from 'react-animate-on-scroll';
+
 
 export default function OpenShipyard({aboutPage, blockIndex}) {
 	return (
@@ -16,12 +18,18 @@ export default function OpenShipyard({aboutPage, blockIndex}) {
 			<div className="container">
 				<div className="section__header flex flex_sa_c flex_md_sb-c flex_sm_column">
 					<div className="title-block">
+						<ScrollAnimation animateIn='animate__fadeInDown'
+														 animateOut='animate__fadeInDown'>
 						<h2 className="h1">
 							<AsText value={aboutPage.shipyard_title} />
 						</h2>
+						</ScrollAnimation>
+						<ScrollAnimation animateIn='animate__fadeIn'
+														 animateOut='animate__fadeIn'>
 						<div className="title-block__sub-title no-last-margin">
 							<ResolvedHtmlField content={aboutPage.shipyard_description} />
 						</div>
+						</ScrollAnimation>
 					</div>
 					{!_isEmpty(aboutPage.shipyard_button_title) && !_isEmpty(aboutPage.shipyard_button_link) &&
 						<ResolvedLink link={aboutPage.shipyard_button_link}

@@ -16,6 +16,7 @@ import {useRouter} from 'next/router';
 import parseContactsQueryParams from '../../../../lib/contactsQueryParams';
 import SubscriptionForm from '../../../../components/pages/contacts/SubscriptionForm';
 import ProgressBar from '../../../../components/pages/contacts/ProgressBar';
+import Footer from '../../../../components/Footer';
 
 export default function ContactsYachtLocationPage({contactsPage, menus, textLabels}) {
 	const router = useRouter();
@@ -59,6 +60,7 @@ export default function ContactsYachtLocationPage({contactsPage, menus, textLabe
 					<TeamList team={contactsPage.team} />
 				</div>
 				<SubscriptionForm />
+				<Footer />
 			</MainLayout>
 		</>
 	);
