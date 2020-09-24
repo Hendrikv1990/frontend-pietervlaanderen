@@ -21,7 +21,7 @@ export const textLabelsPropType = () => PropTypes.shape({
 	terms_of_use_label: PropTypes.string.isRequired,
 	terms_of_use_link: linkPropType().isRequired,
 	privacy_label: PropTypes.string.isRequired,
-	privacy_link: linkPropType().isRequired,
+	privacy_policy_link: linkPropType().isRequired,
 	models_label: PropTypes.string.isRequired,
 	download_brochure_label: PropTypes.string.isRequired,
 	download_brochure_link: linkPropType().isRequired,

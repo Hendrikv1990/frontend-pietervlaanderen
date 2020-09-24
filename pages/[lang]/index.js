@@ -63,7 +63,7 @@ export default function Index({homePage, menus, textLabels}) {
 
 
 						<FullpageSection style={{
-							height: '55vh'
+							height: '60vh'
 						}}>
 							<LowCover block={{title: textLabels.looking_for_a_new_boat,
 								text: textLabels.looking_for_a_new_boat_subtitle,

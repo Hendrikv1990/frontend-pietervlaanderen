@@ -8,7 +8,7 @@ import ResolvedLink from './ResolvedLink';
 
 export default function Footer() {
 	const {textLabels} = useTextLabels();
-
+	console.log(textLabels)
 	return (
 		<footer className="footer">
 			<div className="container">
@@ -25,6 +25,7 @@ export default function Footer() {
 						<ResolvedHtmlField content={textLabels.copyright} />
 					</div>
 					<ul className="link-list flex flex_fs_c">
+
 						<li className="link-list__item">
 							<ResolvedLink link={textLabels.terms_of_use_link}
 														aAttrs={{className: 'link-list__link'}}
@@ -32,13 +33,15 @@ export default function Footer() {
 								{textLabels.terms_of_use_label}
 							</ResolvedLink>
 						</li>
+
 						<li className="link-list__item">
-							<ResolvedLink link={textLabels.privacy_link}
+							<ResolvedLink link={textLabels.privacy_policy_link}
 														aAttrs={{className: 'link-list__link'}}
 							>
 								{textLabels.privacy_label}
 							</ResolvedLink>
 						</li>
+
 					</ul>
 				</div>
 			</div>
