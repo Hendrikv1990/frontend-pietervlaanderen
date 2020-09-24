@@ -17,7 +17,7 @@ export const linkResolver = function(doc) {
 		return `/${locale}/blog/${doc._meta.uid}`;
 	} else if (type == 'job_position_page') {
 		return '/${locale}/jobs/${doc._meta.uid}';
-	} else if (/_page$/.test(type) || type == 'propulsion') {
+	} else if (/_page$/.test(type) || type == 'propulsion' || type == 'data_protection_policy') {
 		return `/${locale}/${doc._meta.uid}`;
 	}
 
@@ -35,7 +35,7 @@ export const hrefResolver = (doc) => {
 		return '/[lang]/blog/[slug]';
 	} else if (type == 'job_position_page') {
 		return '/[lang]/jobs/[slug]';
-	} else if (/_page$/.test(type) || type == 'propulsion') {
+	} else if (/_page$/.test(type) || type == 'propulsion' || type == 'data_protection_policy') {
 		return `/[lang]/${doc._meta.uid}`;
 	}
 
